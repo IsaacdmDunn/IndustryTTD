@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BuildingOption" format=3 uid="uid://bmweswvkfrhpj"]
+
+[ext_resource type="PackedScene" uid="uid://cd1ell5hrkpby" path="res://Buildings/BaseTower.tscn" id="1_opq2m"]
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_jc7yx"]
+[ext_resource type="Script" uid="uid://iq3c26glpjyj" path="res://Buildings/BuildingOptions/BuildingOptionData.gd" id="3_sg4af"]
+
+[resource]
+script = ExtResource("3_sg4af")
+building = ExtResource("1_opq2m")
+costID = Array[int]([0, 1])
+costAmount = Array[int]([10, 10])
+buildingName = "Test Tower"
+buildingType = 0
+buildingImg = ExtResource("2_jc7yx")
+description = "testing stuff rn"
+metadata/_custom_type_script = "uid://iq3c26glpjyj"

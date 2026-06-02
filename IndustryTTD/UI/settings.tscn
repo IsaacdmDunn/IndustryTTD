@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://b1lddafirrkr3"]
+
+[ext_resource type="Texture2D" uid="uid://cj7k1ecaoxkks" path="res://Sprites/UIRect.png" id="1_7iqql"]
+[ext_resource type="Script" uid="uid://diysn4jkao10t" path="res://UI/settings.gd" id="2_vbc7n"]
+
+[node name="Settings" type="NinePatchRect" unique_id=91697285]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.0
+offset_top = -210.5
+offset_right = 243.0
+offset_bottom = 210.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("1_7iqql")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+script = ExtResource("2_vbc7n")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=752429834]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 54.0
+offset_right = -44.0
+offset_bottom = -22.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBox" unique_id=190611122]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="HBoxContainer" parent="VBox" unique_id=1616324118]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/Music" unique_id=742436486]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Music"
+
+[node name="HSlider" type="HSlider" parent="VBox/Music" unique_id=981779813]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SFX" type="HBoxContainer" parent="VBox" unique_id=1429462572]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/SFX" unique_id=1391150916]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "SFX"
+
+[node name="HSlider" type="HSlider" parent="VBox/SFX" unique_id=496813299]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Buttons" type="HBoxContainer" parent="VBox" unique_id=1662552073]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Apply" type="Button" parent="VBox/Buttons" unique_id=871856639]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Apply"
+
+[node name="Cancel" type="Button" parent="VBox/Buttons" unique_id=341320399]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 18
+text = "Cancel"

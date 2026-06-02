@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://iuostmg0nmhq"]
+
+[ext_resource type="Texture2D" uid="uid://cj7k1ecaoxkks" path="res://Sprites/UIRect.png" id="1_i8jpt"]
+[ext_resource type="Script" uid="uid://datkpyisvpruw" path="res://UI/building_ui.gd" id="2_88sq5"]
+
+[node name="BuildingUI" type="NinePatchRect" unique_id=489727850 node_paths=PackedStringArray("pm1", "pm2", "pm3", "inputTextContainer", "outputTextContainer") groups=["BuildingUI"]]
+process_mode = 1
+offset_right = 248.0
+offset_bottom = 297.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+texture = ExtResource("1_i8jpt")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+script = ExtResource("2_88sq5")
+pm1 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/ProductionMethodDD")
+pm2 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/ProductionMethodDD2")
+pm3 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/ProductionMethodDD3")
+inputTextContainer = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input")
+outputTextContainer = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output")
+
+[node name="Button" type="Button" parent="." unique_id=1722424751]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -18.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "X"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1749742596]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_right = -10.0
+offset_bottom = -12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1546149222]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Building Name"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1139245914]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=327099464]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=367227632]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer" unique_id=1603437513]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=324420467]
+layout_mode = 2
+
+[node name="input" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1893450516]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input" unique_id=2117669825]
+layout_mode = 2
+text = "Input"
+
+[node name="output" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1825816143]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output" unique_id=294280389]
+layout_mode = 2
+text = "Output"
+
+[node name="ProductionMethodDD" type="OptionButton" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1824732645]
+layout_mode = 2
+expand_icon = true
+selected = 0
+allow_reselect = true
+item_count = 2
+popup/item_0/text = "PM1"
+popup/item_0/icon = ExtResource("1_i8jpt")
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "PM2"
+popup/item_1/icon = ExtResource("1_i8jpt")
+popup/item_1/id = 1
+
+[node name="ProductionMethodDD2" type="OptionButton" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2061279007]
+layout_mode = 2
+expand_icon = true
+selected = 0
+allow_reselect = true
+item_count = 2
+popup/item_0/text = "PM1"
+popup/item_0/icon = ExtResource("1_i8jpt")
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "PM2"
+popup/item_1/icon = ExtResource("1_i8jpt")
+popup/item_1/id = 1
+
+[node name="ProductionMethodDD3" type="OptionButton" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=480082417]
+layout_mode = 2
+expand_icon = true
+selected = 0
+allow_reselect = true
+item_count = 2
+popup/item_0/text = "PM1"
+popup/item_0/icon = ExtResource("1_i8jpt")
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "PM2"
+popup/item_1/icon = ExtResource("1_i8jpt")
+popup/item_1/id = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="item_selected" from="VBoxContainer/ScrollContainer/VBoxContainer/ProductionMethodDD" to="." method="_on_production_method_dd_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/ScrollContainer/VBoxContainer/ProductionMethodDD2" to="." method="_on_production_method_dd_2_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/ScrollContainer/VBoxContainer/ProductionMethodDD3" to="." method="_on_production_method_dd_3_item_selected"]

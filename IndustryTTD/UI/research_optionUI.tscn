@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://boqv57glqllf4"]
+
+[ext_resource type="Texture2D" uid="uid://cj7k1ecaoxkks" path="res://Sprites/UIRect.png" id="1_nnf0a"]
+[ext_resource type="Script" uid="uid://7j8622pmuiam" path="res://UI/research_option_ui.gd" id="2_0v1df"]
+
+[node name="ResearchOption" type="NinePatchRect" unique_id=1937967938]
+visible = false
+custom_minimum_size = Vector2(0, 84)
+texture = ExtResource("1_nnf0a")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+script = ExtResource("2_0v1df")
+
+[node name="Control" type="Control" parent="." unique_id=1132324504]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1458975056]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 74.0
+offset_bottom = 74.0
+expand_mode = 1
+
+[node name="Header" type="Label" parent="Control" unique_id=1300837682]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 85.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "Research Name"
+vertical_alignment = 1
+
+[node name="Header2" type="Label" parent="Control" unique_id=1496712306]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = -12.0
+offset_right = 88.5
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+text = "Research Description
+"
+
+[node name="Button" type="Button" parent="Control" unique_id=538370299]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = 2.0
+offset_right = -6.0
+offset_bottom = 33.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Research"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

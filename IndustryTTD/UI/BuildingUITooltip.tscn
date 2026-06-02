@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://yhuf7g7xp1w2"]
+
+[ext_resource type="Texture2D" uid="uid://cj7k1ecaoxkks" path="res://Sprites/UIRect.png" id="1_5os0i"]
+[ext_resource type="Script" uid="uid://dbacu4b5ghce4" path="res://UI/BuildingUITooltip.gd" id="2_e7dbh"]
+
+[node name="Control" type="NinePatchRect" unique_id=2143839679 groups=["BuildingUITooltip"]]
+custom_minimum_size = Vector2(144, 96)
+offset_right = 250.0
+offset_bottom = 150.0
+texture = ExtResource("1_5os0i")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+script = ExtResource("2_e7dbh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1444500052]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 7.0
+offset_right = -11.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="name" type="Label" parent="VBoxContainer" unique_id=127249705]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Building Name"
+
+[node name="desription" type="Label" parent="VBoxContainer" unique_id=679962852]
+layout_mode = 2
+text = "description"
+
+[node name="Cost" type="Label" parent="VBoxContainer" unique_id=344848988]
+layout_mode = 2
+size_flags_vertical = 3

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://sjnwq24lfo2k"]
+
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="1_asadq"]
+[ext_resource type="Script" uid="uid://cgdcu5i4vwuwg" path="res://GameData/Levels/LevelData.gd" id="1_u7t8t"]
+[ext_resource type="PackedScene" uid="uid://ogl4512po3k" path="res://game.tscn" id="2_yv2wv"]
+
+[resource]
+script = ExtResource("1_u7t8t")
+levelName = "The Valley"
+levelSize = Vector2i(128, 64)
+levelImg = ExtResource("1_asadq")
+levelScene = ExtResource("2_yv2wv")
+metadata/_custom_type_script = "uid://cgdcu5i4vwuwg"

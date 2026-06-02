@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://dhnlnmbrvda1c"]
+
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="1_hhjxm"]
+[ext_resource type="Script" uid="uid://cgdcu5i4vwuwg" path="res://GameData/Levels/LevelData.gd" id="1_itqv3"]
+[ext_resource type="PackedScene" uid="uid://ogl4512po3k" path="res://game.tscn" id="2_0apg1"]
+
+[resource]
+script = ExtResource("1_itqv3")
+levelName = "Test"
+waveLength = 1000
+levelSize = Vector2i(64, 128)
+levelImg = ExtResource("1_hhjxm")
+levelScene = ExtResource("2_0apg1")
+metadata/_custom_type_script = "uid://cgdcu5i4vwuwg"

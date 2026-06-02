@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://bptpaikkwgbf"]
+
+[ext_resource type="Script" uid="uid://dv07btgnau61x" path="res://UI/MainMenu.gd" id="1_8aown"]
+[ext_resource type="Texture2D" uid="uid://duu5ajjx8idbm" path="res://Sprites/BuildingTiles.png" id="2_t6syg"]
+[ext_resource type="Script" uid="uid://hlum88b85lb5" path="res://UI/MainMenuButtons.gd" id="3_8aown"]
+[ext_resource type="Texture2D" uid="uid://cj7k1ecaoxkks" path="res://Sprites/UIRect.png" id="3_y6s48"]
+[ext_resource type="PackedScene" uid="uid://b1lddafirrkr3" path="res://UI/settings.tscn" id="4_obtq6"]
+[ext_resource type="PackedScene" uid="uid://cpyiexhx25ylt" path="res://UI/level_option.tscn" id="5_y6s48"]
+[ext_resource type="Script" uid="uid://p6y1amwmxrn6" path="res://UI/level_select.gd" id="6_obtq6"]
+[ext_resource type="Script" uid="uid://cgdcu5i4vwuwg" path="res://GameData/Levels/LevelData.gd" id="7_w5vcv"]
+[ext_resource type="Resource" uid="uid://dhnlnmbrvda1c" path="res://GameData/Levels/TestLevel.tres" id="8_d2d4f"]
+[ext_resource type="Resource" uid="uid://sjnwq24lfo2k" path="res://GameData/Levels/The Valley.tres" id="9_d2d4f"]
+
+[node name="Control" type="Control" unique_id=778264575]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8aown")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=2122581847]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1534393171]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.3732143, 0.3734094, 1)
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1319090121]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 170.0
+grow_horizontal = 2
+texture = ExtResource("2_t6syg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2118940273]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -491.0
+offset_top = 197.0
+offset_bottom = -23.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="StartGame" type="Button" parent="VBoxContainer" unique_id=1628980689]
+custom_minimum_size = Vector2(0, 84)
+layout_mode = 2
+script = ExtResource("3_8aown")
+
+[node name="Continue" type="Button" parent="VBoxContainer" unique_id=1168603290]
+custom_minimum_size = Vector2(0, 84)
+layout_mode = 2
+script = ExtResource("3_8aown")
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1497101393]
+custom_minimum_size = Vector2(0, 84)
+layout_mode = 2
+script = ExtResource("3_8aown")
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1144492996]
+custom_minimum_size = Vector2(0, 84)
+layout_mode = 2
+script = ExtResource("3_8aown")
+
+[node name="Settings" parent="." unique_id=91697285 instance=ExtResource("4_obtq6")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 486.0
+offset_bottom = 421.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="LevelSelect" type="NinePatchRect" parent="." unique_id=252396046]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -378.0
+offset_top = -210.5
+offset_right = 400.0
+offset_bottom = 210.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("3_y6s48")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+script = ExtResource("6_obtq6")
+levelList = Array[ExtResource("7_w5vcv")]([ExtResource("8_d2d4f"), ExtResource("9_d2d4f")])
+levelOptionPrefab = ExtResource("5_y6s48")
+
+[node name="Label" type="Label" parent="LevelSelect" unique_id=1074615539]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Level Selection"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LevelSelect" unique_id=2046078896]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 79.5
+offset_right = -26.0
+offset_bottom = -15.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelect/ScrollContainer" unique_id=876494917]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="LevelSelect" unique_id=117611516]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+text = "X"
+
+[connection signal="mouse_entered" from="VBoxContainer/StartGame" to="VBoxContainer/StartGame" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/StartGame" to="VBoxContainer/StartGame" method="_on_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Continue" to="VBoxContainer/Continue" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Continue" to="VBoxContainer/Continue" method="_on_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Settings" to="VBoxContainer/Settings" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Settings" to="VBoxContainer/Settings" method="_on_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Quit" to="VBoxContainer/Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Quit" to="VBoxContainer/Quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="LevelSelect/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dbe7ggp8ccx4q"]
+
+[ext_resource type="Script" uid="uid://dwlvyaocaomhd" path="res://BaseProjectile.gd" id="1_nni5j"]
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_cjvtj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_huhwn"]
+radius = 128.0
+
+[node name="TestProjectile" type="CharacterBody2D" unique_id=1280637482]
+script = ExtResource("1_nni5j")
+speed = 25.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=222272848]
+scale = Vector2(0.25, 0.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=589308743]
+scale = Vector2(0.25, 0.25)
+shape = SubResource("CircleShape2D_huhwn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1495076675]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_cjvtj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

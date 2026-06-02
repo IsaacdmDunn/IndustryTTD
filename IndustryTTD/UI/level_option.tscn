@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://cpyiexhx25ylt"]
+
+[ext_resource type="Texture2D" uid="uid://cj7k1ecaoxkks" path="res://Sprites/UIRect.png" id="1_28g3l"]
+[ext_resource type="Script" uid="uid://dsi1cqtg78dqh" path="res://UI/level_option.gd" id="2_ea0rs"]
+
+[node name="LevelOption" type="NinePatchRect" unique_id=1101551996]
+custom_minimum_size = Vector2(600, 200)
+mouse_filter = 1
+texture = ExtResource("1_28g3l")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+script = ExtResource("2_ea0rs")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=658089171]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -62.0
+offset_right = 256.0
+offset_bottom = 62.0
+grow_vertical = 2
+expand_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1359197747]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -66.5
+offset_right = 89.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Wave" type="Label" parent="VBoxContainer2" unique_id=1543682191]
+layout_mode = 2
+text = "Wave Length "
+
+[node name="mapsize" type="Label" parent="VBoxContainer2" unique_id=915654252]
+layout_mode = 2
+text = "Map Size        "
+
+[node name="tplayed" type="Label" parent="VBoxContainer2" unique_id=1305670356]
+layout_mode = 2
+text = "Times Played   "
+
+[node name="twon" type="Label" parent="VBoxContainer2" unique_id=1197840401]
+layout_mode = 2
+text = "Times Won  "
+
+[node name="highestwave" type="Label" parent="VBoxContainer2" unique_id=1101824739]
+layout_mode = 2
+text = "Highest Wave  "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=818784398]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -66.5
+offset_right = -11.0
+offset_bottom = 66.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Wave" type="Label" parent="VBoxContainer" unique_id=418775382]
+layout_mode = 2
+
+[node name="mapsize" type="Label" parent="VBoxContainer" unique_id=1567371746]
+layout_mode = 2
+
+[node name="tplays" type="Label" parent="VBoxContainer" unique_id=2002786257]
+layout_mode = 2
+text = "0"
+
+[node name="twon" type="Label" parent="VBoxContainer" unique_id=454911144]
+layout_mode = 2
+text = "0"
+
+[node name="highestWave" type="Label" parent="VBoxContainer" unique_id=1042537146]
+layout_mode = 2
+text = "80"
+
+[node name="Label" type="Label" parent="." unique_id=1053328639]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "Level Name"
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

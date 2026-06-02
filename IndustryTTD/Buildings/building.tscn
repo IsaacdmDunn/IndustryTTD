@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cnxebwyshe8dp"]
+
+[ext_resource type="Script" uid="uid://rdm71k2nwxoc" path="res://Buildings/BaseBuilding.gd" id="1_282m8"]
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_hr4wu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
+size = Vector2(128, 128)
+
+[node name="Building" type="CharacterBody2D" unique_id=879372978]
+script = ExtResource("1_282m8")
+productionMethodID = Array[int]([0, 1])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1669888096]
+texture = ExtResource("2_hr4wu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1992954678]
+shape = SubResource("RectangleShape2D_eow3j")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=38139107]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1704790519]
+shape = SubResource("RectangleShape2D_eow3j")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

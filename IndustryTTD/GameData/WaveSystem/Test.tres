@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://cl2o02063qukw"]
+
+[ext_resource type="PackedScene" uid="uid://cdx1mon35x0a2" path="res://Enemies/BaseEnemy.tscn" id="1_aqe4n"]
+[ext_resource type="Script" uid="uid://dps00bdx4sf7n" path="res://GameData/WaveSystem/WaveDataResource.gd" id="1_bxk6k"]
+[ext_resource type="PackedScene" uid="uid://c3p7v7lxtixq1" path="res://Enemies/BaseEnemyFast.tscn" id="2_3xddc"]
+[ext_resource type="PackedScene" uid="uid://c4twbn00ov8uy" path="res://Enemies/BaseEnemyTank.tscn" id="3_dwo4x"]
+
+[sub_resource type="Curve" id="Curve_bxk6k"]
+_limits = [0.0, 500.0, 0.0, 80.0]
+_data = [Vector2(0, 10), 0.0, 0.0, 0, 0, Vector2(10, 130), 8.0, 8.0, 0, 0, Vector2(20, 250), 7.9882407, 7.9882407, 0, 0, Vector2(50, 500), 4.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_4ddgn"]
+_limits = [1.0, 25.0, 0.0, 80.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(42.06388, 25), 1.2860683, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_aqe4n"]
+_limits = [1.0, 3.0, 0.0, 80.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 3), 0.0, 0.0, 0, 0, Vector2(26.339066, 2.0127785), 0.0, 0.0, 0, 0, Vector2(39.312035, 3), 0.0, 0.0, 0, 0, Vector2(60.34398, 3), 0.0, 0.0, 0, 0]
+point_count = 5
+metadata/_snap_enabled = true
+metadata/_snap_count = 2
+
+[resource]
+script = ExtResource("1_bxk6k")
+enemyCount = SubResource("Curve_bxk6k")
+enemyPerSecond = SubResource("Curve_4ddgn")
+enemiesList = Array[PackedScene]([ExtResource("1_aqe4n"), ExtResource("2_3xddc"), ExtResource("3_dwo4x")])
+numberOfEnemyTypes = SubResource("Curve_aqe4n")
+enemiesRatio = Array[int]([10, 3, 1])
+metadata/_custom_type_script = "uid://dps00bdx4sf7n"
