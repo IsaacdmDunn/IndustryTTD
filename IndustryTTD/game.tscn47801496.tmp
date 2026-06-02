@@ -28,11 +28,6 @@
 [ext_resource type="PackedScene" uid="uid://yhuf7g7xp1w2" path="res://UI/BuildingUITooltip.tscn" id="22_i2p71"]
 [ext_resource type="Script" uid="uid://dmlcwl0u70a7v" path="res://UI/pause_menu.gd" id="25_xa8c5"]
 [ext_resource type="PackedScene" uid="uid://b1lddafirrkr3" path="res://UI/settings.tscn" id="26_5b14r"]
-[ext_resource type="AudioStream" uid="uid://doymhqmkuj1ub" path="res://Audio/soundreality-battle-pop-424581.mp3" id="29_bnpwn"]
-[ext_resource type="Script" uid="uid://ctqhxyrtnsff3" path="res://SoundManager.gd" id="29_dhpj7"]
-[ext_resource type="AudioStream" uid="uid://bxtud71ofm3uc" path="res://Audio/1- Dark Fantasy Studio - Particle voyager.mp3" id="31_7knny"]
-[ext_resource type="AudioStream" uid="uid://dstls6ieamlgh" path="res://Audio/audley_fergine-ui-button-click-5-327756.mp3" id="32_082n1"]
-[ext_resource type="AudioStream" uid="uid://gdvcpuk7g0ms" path="res://Audio/universfield-wine-cork-pop-352295.mp3" id="33_7knny"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eow3j"]
 texture = ExtResource("2_ryrav")
@@ -542,27 +537,6 @@ script = ExtResource("1_fc0e3")
 
 [node name="BuildingData" type="TileMapLayer" parent="BuildingTiles" unique_id=10226103]
 visible = false
-
-[node name="SoundContainer" type="Node" parent="." unique_id=1309778012 groups=["SoundManager"]]
-process_mode = 3
-script = ExtResource("29_dhpj7")
-
-[node name="WaveSound" type="AudioStreamPlayer" parent="SoundContainer" unique_id=1195291229]
-stream = ExtResource("29_bnpwn")
-bus = &"SFX"
-
-[node name="Music" type="AudioStreamPlayer" parent="SoundContainer" unique_id=2069737377]
-stream = ExtResource("31_7knny")
-volume_db = -10.0
-autoplay = true
-bus = &"Music"
-
-[node name="Button" type="AudioStreamPlayer" parent="SoundContainer" unique_id=1964681841]
-stream = ExtResource("32_082n1")
-
-[node name="Button2" type="AudioStreamPlayer" parent="SoundContainer" unique_id=1105048149]
-stream = ExtResource("33_7knny")
-volume_db = -20.0
 
 [connection signal="pressed" from="Camera2D/CanvasLayer/GameUI/BottomUI/TimeCounter/HBoxContainer/Button" to="Camera2D/CanvasLayer/GameUI/BottomUI/TimeCounter" method="_on_button_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/GameUI/BottomUI/TimeCounter/HBoxContainer/Button2" to="Camera2D/CanvasLayer/GameUI/BottomUI/TimeCounter" method="_on_button_2_pressed"]

@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-
+	get_tree().get_first_node_in_group("SoundManager").ButtonSound()
 	if $Control/Button.text == "Research":
 		research.isResearching = true
 		$Control/Button.text = "Cancel"

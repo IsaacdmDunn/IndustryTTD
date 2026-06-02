@@ -24,7 +24,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if selected and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		get_tree().get_first_node_in_group("GameUI").OpenBuildingUI(self)
-	
+		get_tree().get_first_node_in_group("SoundManager").ButtonSound()
 	
 	#run production method
 	if cooldown < 0:

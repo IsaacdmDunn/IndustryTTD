@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxtud71ofm3uc"
+path="res://.godot/imported/1- Dark Fantasy Studio - Particle voyager.mp3-eb552a531233771e48fed3e30a37867e.mp3str"
+
+[deps]
+
+source_file="res://Audio/1- Dark Fantasy Studio - Particle voyager.mp3"
+dest_files=["res://.godot/imported/1- Dark Fantasy Studio - Particle voyager.mp3-eb552a531233771e48fed3e30a37867e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

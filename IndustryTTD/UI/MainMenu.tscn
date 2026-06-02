@@ -10,6 +10,10 @@
 [ext_resource type="Script" uid="uid://cgdcu5i4vwuwg" path="res://GameData/Levels/LevelData.gd" id="7_w5vcv"]
 [ext_resource type="Resource" uid="uid://dhnlnmbrvda1c" path="res://GameData/Levels/TestLevel.tres" id="8_d2d4f"]
 [ext_resource type="Resource" uid="uid://sjnwq24lfo2k" path="res://GameData/Levels/The Valley.tres" id="9_d2d4f"]
+[ext_resource type="Script" uid="uid://ctqhxyrtnsff3" path="res://SoundManager.gd" id="11_wxllh"]
+[ext_resource type="AudioStream" uid="uid://doymhqmkuj1ub" path="res://Audio/soundreality-battle-pop-424581.mp3" id="12_avhca"]
+[ext_resource type="AudioStream" uid="uid://bxtud71ofm3uc" path="res://Audio/1- Dark Fantasy Studio - Particle voyager.mp3" id="13_x8sin"]
+[ext_resource type="AudioStream" uid="uid://dstls6ieamlgh" path="res://Audio/audley_fergine-ui-button-click-5-327756.mp3" id="14_fxi16"]
 
 [node name="Control" type="Control" unique_id=778264575]
 layout_mode = 3
@@ -154,6 +158,25 @@ offset_left = -8.0
 offset_bottom = 8.0
 grow_horizontal = 0
 text = "X"
+
+[node name="SoundContainer" type="Node" parent="." unique_id=1309778012]
+process_mode = 3
+script = ExtResource("11_wxllh")
+
+[node name="WaveSound" type="AudioStreamPlayer" parent="SoundContainer" unique_id=1195291229]
+stream = ExtResource("12_avhca")
+bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer" parent="SoundContainer" unique_id=2069737377]
+process_mode = 3
+stream = ExtResource("13_x8sin")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="Button" type="AudioStreamPlayer" parent="SoundContainer" unique_id=1964681841]
+stream = ExtResource("14_fxi16")
 
 [connection signal="mouse_entered" from="VBoxContainer/StartGame" to="VBoxContainer/StartGame" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/StartGame" to="VBoxContainer/StartGame" method="_on_mouse_exited"]

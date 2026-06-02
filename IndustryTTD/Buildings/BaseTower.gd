@@ -48,7 +48,7 @@ func GetTarget():
 			#use resource
 			gm.GameResourceList[gm.ProductionMethods[productionMethodID[currentProductionID]].itemInputID[0]] -= gm.ProductionMethods[productionMethodID[0]].itemInput[0]
 		
-	
+			Globals.PitchAudioAsNote(randi_range(-6,6), $AudioStreamPlayer)
 	pass
 
 

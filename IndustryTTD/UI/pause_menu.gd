@@ -20,12 +20,15 @@ func _on_save_and_quit_pressed() -> void:
 
 func _on_continue_pressed() -> void:
 	get_tree().get_first_node_in_group("GameUI").PauseGame(false)
+	get_tree().get_first_node_in_group("SoundManager").ButtonSound()
 	pass # Replace with function body.
 
 
 func _on_settings_pressed() -> void:
 	var tween = create_tween()
 	tween.tween_property($Settings, "scale", Vector2.ONE, .16).set_trans(Tween.TRANS_BOUNCE)
+	
+	get_tree().get_first_node_in_group("SoundManager").ButtonSound()
 	pass # Replace with function body.
 
 func CloseSettings():

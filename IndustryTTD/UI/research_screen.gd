@@ -18,6 +18,7 @@ func UpdateLeftReseachUI(research: Research):
 	pass
 
 func _ready() -> void:
+	get_tree().get_first_node_in_group("SoundManager").ButtonSound()
 	gameManager = get_tree().get_first_node_in_group("GameManager")
 	for research in get_tree().get_first_node_in_group("GameManager").ResearchList:
 		var optionToAdd = reseachOptionPrefab.instantiate()
@@ -48,6 +49,7 @@ func _process(delta: float) -> void:
 			tween.tween_property(self,"scale", Vector2.ZERO, .16).set_trans(Tween.TRANS_BOUNCE)
 
 func FinishResearch():
+	#needs a sound
 	if currentResearch.functionToCall != null:
 		Globals.call(currentResearch.functionToCall) 
 	if currentResearch.isRepeatable:
@@ -62,6 +64,7 @@ func FinishResearch():
 	pass
 
 func _on_button_pressed() -> void:
+	get_tree().get_first_node_in_group("SoundManager").ButtonSound()
 	var tween = create_tween()
 	isOpen = false
 	tween.tween_property(self,"scale", Vector2.ZERO, .16).set_trans(Tween.TRANS_BOUNCE)

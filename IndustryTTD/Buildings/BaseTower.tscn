@@ -4,13 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_i5fo2"]
 [ext_resource type="Script" uid="uid://d32q318wck7wl" path="res://Buildings/BaseTower.gd" id="2_qw0k1"]
 [ext_resource type="PackedScene" uid="uid://dbe7ggp8ccx4q" path="res://Projectiles/test_projectile.tscn" id="3_mb3d8"]
+[ext_resource type="AudioStream" uid="uid://epmxe4uqxe5t" path="res://Audio/imagne_impossible-weapon-arrow-shot-01-153370.mp3" id="5_xrhtx"]
 
 [node name="Building" unique_id=879372978 instance=ExtResource("1_xhwd8")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("2_qw0k1")
-towerRange = 1000.0
+towerRange = 500.0
 attackRate = 0.2
 projectileToSpawn = ExtResource("3_mb3d8")
 
 [node name="TowerTop" type="Sprite2D" parent="." index="1" unique_id=569517392]
 texture = ExtResource("2_i5fo2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4" unique_id=593411489]
+stream = ExtResource("5_xrhtx")
+volume_db = -10.0
+bus = &"SFX"

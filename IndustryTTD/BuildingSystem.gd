@@ -41,6 +41,7 @@ func BuildMode():
 					break
 					
 		if canBuild:
+			get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 			var buildingToSpawn:Building = gameManager.BuildingList[currentBuildingOption].building.instantiate()
 			buildingToSpawn.position = mousePos
 			buildingToSpawn.buildingSize = gameManager.BuildingList[currentBuildingOption].buildingSize

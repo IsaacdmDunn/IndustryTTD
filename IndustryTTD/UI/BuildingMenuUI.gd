@@ -29,6 +29,7 @@ func UpdateOptions():
 			option.visible = false
 
 func _on_tab_bar_tab_changed(tab: int) -> void:
+	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 	optionTypeID = tab
 	UpdateOptions()
 	pass # Replace with function body.

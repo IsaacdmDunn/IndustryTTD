@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0iiep6sqthfh" path="res://Enemies/BaseEnemy.gd" id="1_1ecwi"]
 [ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_g6plq"]
+[ext_resource type="AudioStream" uid="uid://gdvcpuk7g0ms" path="res://Audio/universfield-wine-cork-pop-352295.mp3" id="3_box01"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ecwi"]
 radius = 125.0
@@ -21,3 +22,9 @@ texture = ExtResource("2_g6plq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1975240388]
 shape = SubResource("CircleShape2D_1ecwi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=148062922]
+stream = ExtResource("3_box01")
+volume_db = -25.0
+pitch_scale = 2.0
+bus = &"SFX"

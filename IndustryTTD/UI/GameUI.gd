@@ -3,6 +3,7 @@ extends Control
 @export var buildingUI: PackedScene
 
 func OpenBuildingUI(building):
+	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 	if get_tree().get_nodes_in_group("BuildingUI").size() == 0:
 		var UIToSpawn: BuildingUI = buildingUI.instantiate()
 		UIToSpawn.position = get_local_mouse_position() #- Vector2((get_viewport().size.x / 2), (get_viewport().size.y / 2))
@@ -19,6 +20,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 func PauseGame(togglePause):
 	if togglePause:
+		
 		gameManager.currentGameState = gameManager.GameState.Pause
 		var pauseUI = get_tree().get_first_node_in_group("PauseMenu")
 		var tween = create_tween()
@@ -47,12 +49,15 @@ func _process(delta: float) -> void:
 			tween2.tween_property($BottomUI, "position", Vector2(0,650), .16).set_trans(Tween.TRANS_BOUNCE)
 		elif gameManager.currentGameState == gameManager.GameState.Game:
 			PauseGame(true)
+			get_tree().get_first_node_in_group("SoundManager").ButtonSound()
 		elif gameManager.currentGameState == gameManager.GameState.Pause:
 			PauseGame(false)
+			get_tree().get_first_node_in_group("SoundManager").ButtonSound()
 	pass
 
 
 func _on_build_mode_button_pressed() -> void:
+	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 	var tween3 = create_tween()
 	var tooltip = get_tree().get_first_node_in_group("BuildingUITooltip")
 	tween3.tween_property(tooltip, "scale", Vector2.ONE, .16).set_trans(Tween.TRANS_BOUNCE)

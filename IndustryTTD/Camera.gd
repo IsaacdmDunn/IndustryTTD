@@ -32,6 +32,7 @@ func _process(delta: float) -> void:
 
 
 func _on_move_cam_right_pressed() -> void:
+	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 	inBuildingArea = true
 	var tween = create_tween()
 	tween.tween_property(self, "position", buildingArea, .6).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
@@ -40,6 +41,7 @@ func _on_move_cam_right_pressed() -> void:
 
 
 func _on_move_cam_left_pressed() -> void:
+	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 	inBuildingArea = false
 	var tween = create_tween()
 	tween.tween_property(self, "position", pathArea, .6).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)

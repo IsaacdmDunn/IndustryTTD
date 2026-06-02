@@ -74,6 +74,7 @@ func _on_button_pressed() -> void:
 
 
 func _on_production_method_dd_item_selected(index: int) -> void:
+	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input/Label2.text = "Input"
 	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output/Label.text = "Output"
 	building.currentProductionID = building.productionMethodID[index]
@@ -84,6 +85,7 @@ func _on_production_method_dd_item_selected(index: int) -> void:
 
 
 func _on_production_method_dd_2_item_selected(index: int) -> void:
+	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input/Label2.text = "Input"
 	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output/Label.text = "Output"
 	building.currentProduction2ID = building.productionMethod3ID[index]
@@ -94,6 +96,7 @@ func _on_production_method_dd_2_item_selected(index: int) -> void:
 
 
 func _on_production_method_dd_3_item_selected(index: int) -> void:
+	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input/Label2.text = "Input"
 	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output/Label.text = "Output"
 	building.currentProduction3ID = building.productionMethod3ID[index]

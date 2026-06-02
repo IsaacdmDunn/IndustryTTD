@@ -20,6 +20,7 @@ func OpenSettings():
 	pass
 	
 func CloseSettings():
+	
 	var settingTween: Tween = create_tween()
 	settingTween.tween_property($Settings, "scale", Vector2.ZERO, .2)
 	ToggleMainButtons(false)
@@ -55,6 +56,9 @@ func _on_settings_pressed() -> void:
 	#open settings
 	currentState = MainMenuState.Settings
 	OpenSettings()
+	
+	Globals.PitchAudioAsNote(randi_range(-4,2), $SoundContainer/Button)
+	
 	pass # Replace with function body.
 
 
@@ -63,6 +67,8 @@ func _on_continue_pressed() -> void:
 	#load game data
 	get_tree().current_scene.queue_free()
 	get_tree().change_scene_to_file("res://game.tscn")
+	Globals.PitchAudioAsNote(randi_range(-4,2), $SoundContainer/Button)
+	
 	pass # Replace with function body.
 
 
@@ -70,6 +76,9 @@ func _on_start_game_pressed() -> void:
 	#open level screen
 	currentState = MainMenuState.Level
 	OpenLevelSelector()
+	Globals.PitchAudioAsNote(randi_range(-4,2), $SoundContainer/Button)
+	
+	
 	pass # Replace with function body.
 
 
@@ -77,5 +86,7 @@ func _on_start_game_pressed() -> void:
 
 
 func _on_button_pressed() -> void:
+	Globals.PitchAudioAsNote(randi_range(-4,2), $SoundContainer/Button)
+	
 	CloseLevelSelector()
 	pass # Replace with function body.

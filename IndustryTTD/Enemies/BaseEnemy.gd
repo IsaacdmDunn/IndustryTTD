@@ -9,6 +9,9 @@ class_name BaseEnemy
 @onready var offsetPos = Vector2(randf_range(-50,50),randf_range(-50,50))
 
 func _ready() -> void:
+	Globals.PitchAudioAsNote(randi_range(0,12), $"../AudioStreamPlayer")
+		
+	
 	var extraSpeed:float = 1
 	baseSpeed = baseSpeed * (Globals.enemySpeedMod + Globals.enemySpeedTemp)
 	if baseSpeed > maxSpeed:
@@ -16,7 +19,7 @@ func _ready() -> void:
 		baseSpeed = maxSpeed
 	damage = damage * (Globals.enemyDamageMod + Globals.enemyDamageTemp)
 	health = health * (Globals.enemyHealthMod + Globals.enemyHealthTemp + extraSpeed)
-	print((Globals.enemySpeedMod))
+	
 func _physics_process(delta: float) -> void:
 	#velocity = global_position
 	#move enemy along path
@@ -30,4 +33,5 @@ func _physics_process(delta: float) -> void:
 func TakeDamage(damage):
 	health -= damage
 	if health <= 0:
+		#path.reparent(get_tree().root)
 		path.queue_free()

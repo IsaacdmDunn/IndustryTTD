@@ -12,6 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and mouseEntered:
+		get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 		get_tree().get_first_node_in_group("BuildingData").currentBuildingOption = buildingID
 		get_tree().get_first_node_in_group("BuildingUITooltip").SelectBuildingTooltip(get_tree().get_first_node_in_group("GameManager").BuildingList[buildingID])
 	pass

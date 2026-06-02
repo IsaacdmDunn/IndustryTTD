@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dvr6i0d2558x2"]
+
+[ext_resource type="Script" uid="uid://ctqhxyrtnsff3" path="res://SoundManager.gd" id="1_vafy1"]
+[ext_resource type="AudioStream" uid="uid://doymhqmkuj1ub" path="res://Audio/soundreality-battle-pop-424581.mp3" id="2_y1ifk"]
+[ext_resource type="AudioStream" uid="uid://bxtud71ofm3uc" path="res://Audio/1- Dark Fantasy Studio - Particle voyager.mp3" id="3_k42h1"]
+[ext_resource type="AudioStream" uid="uid://dstls6ieamlgh" path="res://Audio/audley_fergine-ui-button-click-5-327756.mp3" id="4_pwv8c"]
+
+[node name="SoundContainer" type="Node" unique_id=1309778012]
+script = ExtResource("1_vafy1")
+
+[node name="WaveSound" type="AudioStreamPlayer" parent="." unique_id=1195291229]
+stream = ExtResource("2_y1ifk")
+bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=2069737377]
+stream = ExtResource("3_k42h1")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+
+[node name="Button" type="AudioStreamPlayer" parent="." unique_id=1964681841]
+stream = ExtResource("4_pwv8c")
