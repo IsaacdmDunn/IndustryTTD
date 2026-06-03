@@ -11,7 +11,7 @@ var enemySpawnTimer = 0
 var maxEnemyCountReached: bool = false
 
 @export var downWaveTime = 5
-var downWaveTimer = 100
+var downWaveTimer = 1000
 
 func GetNextWave():
 	Globals.PitchAudioAsNote(randi_range(-12,0),$"../SoundContainer/AudioStreamPlayer")

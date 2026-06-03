@@ -27,8 +27,8 @@ func _physics_process(delta: float) -> void:
 	#velocity -= global_position
 	position = offsetPos
 	if path.progress_ratio == 1:
+		get_tree().get_first_node_in_group("Wall").TakeDamage(damage)
 		path.queue_free()
-		
 		
 func TakeDamage(damage):
 	health -= damage

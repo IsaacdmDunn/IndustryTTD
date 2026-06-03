@@ -67,3 +67,7 @@ func _on_build_mode_button_pressed() -> void:
 	var tween2 = create_tween()
 	tween2.tween_property($BottomUI, "position", Vector2(0,850), .16).set_trans(Tween.TRANS_BOUNCE)
 	pass # Replace with function body.
+	
+func GameOverUIOpen():
+	$"../GameOver".GameOver()
+	pass

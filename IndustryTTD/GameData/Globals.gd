@@ -1,5 +1,6 @@
 extends Node
 var timeScale = 1
+var level
 var enemyHealthMod: float = 1
 var enemyHealthTemp: float = 0
 var enemyDamageMod: float = 1

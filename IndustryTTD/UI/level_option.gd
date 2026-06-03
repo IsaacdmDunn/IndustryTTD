@@ -14,6 +14,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and isMouseEntered:
 		#set level data to draw from
+		Globals.level = levelData.levelScene.resource_path
 		get_tree().current_scene.queue_free()
 		get_tree().change_scene_to_file(levelData.levelScene.resource_path)
 	pass
