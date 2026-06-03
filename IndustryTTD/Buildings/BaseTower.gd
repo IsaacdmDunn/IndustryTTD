@@ -57,5 +57,5 @@ func _draw() -> void:
 		var cen = Vector2.ZERO
 		var rad = towerRange
 		var color = Color(1,1,1,.5)
-		draw_circle(cen, rad, color)
-		draw_circle(cen, rad, color, false, 10, false)
+		draw_circle(cen, rad*2, color)
+		draw_circle(cen, rad*2, color, false, 10, false)

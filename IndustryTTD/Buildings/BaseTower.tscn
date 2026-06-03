@@ -9,7 +9,7 @@
 [node name="Building" unique_id=879372978 instance=ExtResource("1_xhwd8")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("2_qw0k1")
-towerRange = 500.0
+towerRange = 250.0
 attackRate = 0.2
 projectileToSpawn = ExtResource("3_mb3d8")
 

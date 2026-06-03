@@ -7,7 +7,7 @@
 script = ExtResource("2_3lic8")
 itemOutputID = Array[int]([2])
 itemOutput = Array[int]([2])
-baseProductionRate = 1.0
+baseProductionRate = 0.2
 img = ExtResource("1_4hs7t")
 pmName = "Test PM2"
 metadata/_custom_type_script = "uid://b4norc8o4gqy1"

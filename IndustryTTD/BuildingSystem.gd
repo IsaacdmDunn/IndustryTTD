@@ -2,12 +2,14 @@ extends TileMapLayer
 @onready var gameManager: GameManager = $".."
 @onready var BuildingData: TileMapLayer = $BuildingData
 @onready var BuildingContainer: Node2D = $"../BuildingContainer"
-
+@onready var environment:TileMapLayer = get_tree().get_first_node_in_group("Environment")
 
 var currentBuildingOption = 1
 
 
 func BuildMode():
+	
+		
 	for x in 11:
 		for y in 11:
 			var tilePos = Vector2i(local_to_map(get_global_mouse_position()).x + x - 5, local_to_map(get_global_mouse_position()).y + y - 5)
@@ -17,8 +19,11 @@ func BuildMode():
 				if x == 5 or x == 6:
 					if y == 5 or y == 6:
 						set_cell(tilePos, 0, Vector2i(1,0),0) 
+						print(environment.get_cell_atlas_coords(tilePos))
+			
 			elif BuildingData.get_cell_atlas_coords(tilePos) == Vector2i(2,0):
 				set_cell(tilePos, 0, Vector2i(2,0),0)
+			
 			else:
 				set_cell(tilePos, 0, Vector2i(0,0),0)
 			
@@ -35,7 +40,7 @@ func BuildMode():
 				
 		for x in gameManager.BuildingList[currentBuildingOption].buildingSize.x:
 			for y in gameManager.BuildingList[currentBuildingOption].buildingSize.y:
-				if BuildingData.get_cell_atlas_coords(local_to_map(mousePos) + Vector2i(x,y)) == Vector2i(2,0):
+				if BuildingData.get_cell_atlas_coords(local_to_map(mousePos) + Vector2i(x,y)) == Vector2i(2,0) or environment.get_cell_atlas_coords(local_to_map(mousePos) + Vector2i(x,y)) != Vector2i(1,1):
 					canBuild = false
 					break
 					break
@@ -65,6 +70,9 @@ func _ready() -> void:
 	for x in gameManager.MapSize.x:
 		for y in gameManager.MapSize.y:
 			BuildingData.set_cell(Vector2i(x,y),0,Vector2i(0,0))
+			if environment.get_cell_atlas_coords(Vector2i(x,y)) != Vector2i(1,1):
+				
+				BuildingData.set_cell(Vector2i(x,y),0,Vector2i(2,0))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
