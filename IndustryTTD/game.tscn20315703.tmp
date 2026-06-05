@@ -613,8 +613,6 @@ stream = ExtResource("32_082n1")
 stream = ExtResource("33_7knny")
 volume_db = -20.0
 
-[node name="SaveSystem" type="Node" parent="." unique_id=1028927621 groups=["Save"]]
-
 [connection signal="pressed" from="Camera2D/CanvasLayer/GameUI/BottomUI/TimeCounter/HBoxContainer/Button" to="Camera2D/CanvasLayer/GameUI/BottomUI/TimeCounter" method="_on_button_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/GameUI/BottomUI/TimeCounter/HBoxContainer/Button2" to="Camera2D/CanvasLayer/GameUI/BottomUI/TimeCounter" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/GameUI/BottomUI/TimeCounter/HBoxContainer/Button3" to="Camera2D/CanvasLayer/GameUI/BottomUI/TimeCounter" method="_on_button_3_pressed"]

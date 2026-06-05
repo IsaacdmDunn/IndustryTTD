@@ -88,5 +88,7 @@ size_flags_horizontal = 10
 theme_override_font_sizes/font_size = 18
 text = "Cancel"
 
+[connection signal="value_changed" from="VBox/Music/HSlider" to="." method="OnMusicChanged"]
+[connection signal="value_changed" from="VBox/SFX/HSlider" to="." method="SFXVolumeChanged"]
 [connection signal="pressed" from="VBox/Buttons/Apply" to="." method="_on_apply_pressed"]
 [connection signal="pressed" from="VBox/Buttons/Cancel" to="." method="_on_cancel_pressed"]
