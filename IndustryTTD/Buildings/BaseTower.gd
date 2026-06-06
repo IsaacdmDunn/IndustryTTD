@@ -1,13 +1,18 @@
 extends Building
 
 @export var towerRange: float = 10
-@export var attackRate: float = .2
+@export var attackRate: float = 1
 
 @export var projectileToSpawn: PackedScene
 var targetNode: Node2D
 
 func _physics_process(delta: float) -> void:
-	#ProduceResource()
+	#open buildingUI
+	if selected and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		get_tree().get_first_node_in_group("GameUI").OpenBuildingUI(self)
+		get_tree().get_first_node_in_group("SoundManager").ButtonSound()
+	
+	#
 	#draw range circle
 	queue_redraw()
 	attackRate = gm.ProductionMethods[productionMethodID[currentProductionID]].baseProductionRate
@@ -45,9 +50,7 @@ func GetTarget():
 			projectile.global_position = global_position
 			get_tree().get_first_node_in_group("ProjectileContainer").add_child(projectile)
 			
-			#use resource
-			gm.GameResourceList[gm.ProductionMethods[productionMethodID[currentProductionID]].itemInputID[0]] -= gm.ProductionMethods[productionMethodID[0]].itemInput[0]
-		
+			ProduceResource()
 			Globals.PitchAudioAsNote(randi_range(-6,6), $AudioStreamPlayer)
 	pass
 

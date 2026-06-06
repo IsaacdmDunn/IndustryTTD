@@ -25,7 +25,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.get_parent().is_in_group("Enemy"):
-		body.TakeDamage(damage)
+		if peircing >= 0:
+			body.TakeDamage(damage)
 		peircing -=1
 	if lifetime < 0 or peircing <= 0:
 		queue_free()

@@ -53,6 +53,7 @@ func BuildMode():
 			buildingToSpawn.buildingName = gameManager.BuildingList[currentBuildingOption].buildingName
 			buildingToSpawn.buildingDescription = gameManager.BuildingList[currentBuildingOption].description
 			buildingToSpawn.buildingImage = gameManager.BuildingList[currentBuildingOption].buildingImg
+			buildingToSpawn.buildingID = currentBuildingOption
 			BuildingContainer.add_child(buildingToSpawn)
 			
 			for x in buildingToSpawn.buildingSize.x:

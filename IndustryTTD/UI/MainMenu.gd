@@ -64,7 +64,7 @@ func _on_settings_pressed() -> void:
 
 func _on_continue_pressed() -> void:
 	#open game
-	#load game data
+	Globals.openFromSave = true
 	get_tree().current_scene.queue_free()
 	get_tree().change_scene_to_file("res://game.tscn")
 	Globals.PitchAudioAsNote(randi_range(-4,2), $SoundContainer/Button)

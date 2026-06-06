@@ -1,4 +1,5 @@
 extends Node
+var openFromSave = false
 var timeScale = 1
 var level
 var enemyHealthMod: float = 1

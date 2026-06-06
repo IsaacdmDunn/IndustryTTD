@@ -2,9 +2,20 @@ extends Node
 
 const savePath = "user://save.tres"
 const saveSettingsPath = "user://saveSettings.tres"
-var settings: SettingsData 
+var settings: SettingsData = SettingsData.new()
+var saveData: SaveData = SaveData.new()
 
 
+
+func WriteSave():
+	ResourceSaver.save(saveData,savePath)
+	
+func LoadSave():
+	if ResourceLoader.exists(savePath):
+		saveData = ResourceLoader.load(savePath).duplicate(true)
+	else:
+		saveData = SaveData.new()
+	pass
 
 func WriteSaveSettings():
 	ResourceSaver.save(settings,saveSettingsPath)
@@ -14,14 +25,4 @@ func LoadSaveSettings():
 		settings = ResourceLoader.load(saveSettingsPath).duplicate(true)
 	else:
 		settings = SettingsData.new()
-	pass
-
-#func WriteSave():
-	#ResourceSaver.save(self, savePath)
-	
-#func SaveExists():
-	#return ResourceLoader.exists(savePath)
-	
-func LoadSave():
-	
 	pass

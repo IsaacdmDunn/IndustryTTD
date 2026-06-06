@@ -10,10 +10,12 @@ var enemySpawnTimer = 0
 @export var maxEnemies:int = 500
 var maxEnemyCountReached: bool = false
 
-@export var downWaveTime = 5
+@export var downWaveMod: float = 2
+@export var downWaveTime = 7
 var downWaveTimer = 1000
 
 func GetNextWave():
+	
 	Globals.PitchAudioAsNote(randi_range(-12,0),$"../SoundContainer/AudioStreamPlayer")
 	
 	if maxEnemyCountReached:
@@ -22,8 +24,15 @@ func GetNextWave():
 	Globals.enemyDamageMod += 0.05
 	Globals.enemyHealthMod += 0.1
 	currentWave += 1
+	
+	SaveSystem.saveData.waveID = currentWave
+	get_parent().SetSaveData()
+	
+	
+	
 	currentEnemyCount = waveData.enemyCount.sample(currentWave)
 	downWaveTimer = downWaveTime
+	print(1/waveData.enemyPerSecond.sample(currentWave))
 	timeBetweenEnemies = 1/waveData.enemyPerSecond.sample(currentWave)
 	
 	pass
@@ -32,7 +41,9 @@ func GetNextWave():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GetNextWave()
+	
+	
+	
 	
 	pass # Replace with function body.
 
@@ -45,7 +56,8 @@ func _process(delta: float) -> void:
 	#if no enemies then start next wave
 	if currentEnemyCount <= 0:
 		downWaveTimer -= delta * Globals.timeScale
-		timeBetweenEnemies = 1/waveData.enemyPerSecond.sample(currentWave)*10
+		timeBetweenEnemies = 1/waveData.enemyPerSecond.sample(currentWave)*downWaveMod
+		print(1/waveData.enemyPerSecond.sample(currentWave)*downWaveMod)
 	if downWaveTimer < 0:
 		GetNextWave()
 		pass

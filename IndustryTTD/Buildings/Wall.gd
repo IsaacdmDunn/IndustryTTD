@@ -8,6 +8,12 @@ class_name Wall
 @export var repairRateMod: float = 1
 var isGameOver = false
 func _physics_process(delta: float) -> void:
+	#open buildingUI
+	if selected and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		get_tree().get_first_node_in_group("GameUI").OpenBuildingUI(self)
+		get_tree().get_first_node_in_group("SoundManager").ButtonSound()
+	
+	
 	if currentHealth < 0:
 		isGameOver = true
 		get_tree().get_first_node_in_group("GameUI").GameOverUIOpen()

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Building
 @export var buildingSize: Vector2i = Vector2i(2,2)
+var buildingID = -1
 var buildingName: String
 var buildingImage: Texture2D
 var buildingDescription: String
@@ -22,6 +23,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	#open buildingUI
 	if selected and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		get_tree().get_first_node_in_group("GameUI").OpenBuildingUI(self)
 		get_tree().get_first_node_in_group("SoundManager").ButtonSound()

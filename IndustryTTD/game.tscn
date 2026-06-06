@@ -76,7 +76,7 @@ sources/1 = SubResource("TileSetAtlasSource_iu0sx")
 
 [sub_resource type="Curve2D" id="Curve2D_7jktm"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -87, 333, 0, 0, 0, 0, 284, 339, 0, 0, 0, 0, 269, 166, 0, 0, 0, 0, 509, 190, 0, 0, 0, 0, 490, 445, 0, 0, 0, 0, 746, 433, 0, 0, 0, 0, 736, 327, 0, 0, 0, 0, 946, 321)
+"points": PackedVector2Array(0, 0, 0, 0, -7, 343, 0, 0, 0, 0, 284, 339, 0, 0, 0, 0, 269, 166, 0, 0, 0, 0, 509, 190, 0, 0, 0, 0, 490, 445, 0, 0, 0, 0, 746, 433, 0, 0, 0, 0, 736, 327, 0, 0, 0, 0, 946, 321)
 }
 point_count = 8
 
@@ -101,6 +101,8 @@ curve = SubResource("Curve2D_7jktm")
 script = ExtResource("2_fc0e3")
 baseEnemy = ExtResource("3_feb5d")
 waveData = ExtResource("10_lc2xo")
+downWaveMod = 3.0
+downWaveTime = 10
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=231816473 groups=["Camera"]]
 position = Vector2(600, 328)
