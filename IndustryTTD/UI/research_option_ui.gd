@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		$Control/Button.text = "Research"
 	else:
 		$Control/Button.text = "Cancel"
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and mouseEntered:
 		researchManager.UpdateLeftReseachUI(research)
 	if !research.isUnlocked or research.researchLeft <= 0:
 

@@ -32,7 +32,6 @@ func GetNextWave():
 	
 	currentEnemyCount = waveData.enemyCount.sample(currentWave)
 	downWaveTimer = downWaveTime
-	print(1/waveData.enemyPerSecond.sample(currentWave))
 	timeBetweenEnemies = 1/waveData.enemyPerSecond.sample(currentWave)
 	
 	pass
@@ -57,7 +56,6 @@ func _process(delta: float) -> void:
 	if currentEnemyCount <= 0:
 		downWaveTimer -= delta * Globals.timeScale
 		timeBetweenEnemies = 1/waveData.enemyPerSecond.sample(currentWave)*downWaveMod
-		print(1/waveData.enemyPerSecond.sample(currentWave)*downWaveMod)
 	if downWaveTimer < 0:
 		GetNextWave()
 		pass

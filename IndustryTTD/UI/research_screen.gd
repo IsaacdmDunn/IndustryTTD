@@ -20,10 +20,13 @@ func UpdateLeftReseachUI(research: Research):
 func _ready() -> void:
 	get_tree().get_first_node_in_group("SoundManager").ButtonSound()
 	gameManager = get_tree().get_first_node_in_group("GameManager")
-	for research in get_tree().get_first_node_in_group("GameManager").ResearchList:
-		var optionToAdd = reseachOptionPrefab.instantiate()
-		optionToAdd.research = research
-		$NinePatchRect/OptionPanel/ScrollContainer/VBoxContainer.add_child(optionToAdd)
+	for research:Research in get_tree().get_first_node_in_group("GameManager").ResearchList:
+		if research.researchLeft > 0:
+			var optionToAdd = reseachOptionPrefab.instantiate()
+			optionToAdd.research = research
+			print(research.researchID)
+			$NinePatchRect/OptionPanel/ScrollContainer/VBoxContainer.add_child(optionToAdd)
+	UpdateLeftReseachUI(get_tree().get_first_node_in_group("GameManager").ResearchList[0])
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,7 +39,7 @@ func _process(delta: float) -> void:
 		if canResearch:
 			for resourceID in currentResearch.resourceRequiredID.size():
 				gameManager.GameResourceList[resourceID] -= currentResearch.resourceRequiredAmount[resourceID] * Globals.timeScale
-			currentResearch.researchLeft -= 10 * Globals.timeScale
+			currentResearch.researchLeft -= 1 * Globals.timeScale
 		$NinePatchRect/Info/VBoxContainer/ProgressBar.value = currentResearch.researchLeft
 		if currentResearch.researchLeft <= 0:
 			FinishResearch()
@@ -63,6 +66,7 @@ func FinishResearch():
 		
 	pass
 
+#exit menu shrink ui
 func _on_button_pressed() -> void:
 	get_tree().get_first_node_in_group("SoundManager").ButtonSound()
 	var tween = create_tween()

@@ -43,15 +43,23 @@ func _ready() -> void:
 				$BuildingTiles/BuildingData.set_cell(cell, 0, tiles.get_cell_atlas_coords(cell))
 			GameResourceList = SaveSystem.saveData.resourceList
 			GameResourceLimit = SaveSystem.saveData.resourceLimitList
-			ResearchList = SaveSystem.saveData.research
+			#ResearchList = SaveSystem.saveData.research
+			for i in SaveSystem.saveData.researchLeft.size():
+				print(i)
+				ResearchList[i].researchLeft = SaveSystem.saveData.researchLeft[i]
+				ResearchList[i].isResearching = SaveSystem.saveData.isResearching[i]
 	$Path2D.GetNextWave()
 	pass # Replace with function body.
 
 
 func SetSaveData():
+	SaveSystem.saveData = SaveData.new()
 	SaveSystem.saveData.resourceList = GameResourceList
 	SaveSystem.saveData.resourceLimitList = GameResourceLimit
-	SaveSystem.saveData.research = ResearchList
+	for research in ResearchList.size():
+		SaveSystem.saveData.researchLeft.append(ResearchList[research].researchLeft)
+		SaveSystem.saveData.isResearching.append(ResearchList[research].isResearching)
+	print(ResearchList[0].researchLeft)
 	for building in $BuildingContainer.get_children():
 		var buildingToSave = PackedScene.new()
 		buildingToSave.pack(building)

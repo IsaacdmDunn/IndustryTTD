@@ -8,5 +8,6 @@ class_name SaveData
 #@export var buildings: Dictionary[int, float, Vector2] = {}
 @export var buildings: Array[PackedScene] #issues
 @export var enemies: Array[PackedScene]
-@export var research: Array[Research]
+@export var researchLeft: Array[float]
+@export var isResearching: Array[bool]
 @export var tilemapData: PackedScene

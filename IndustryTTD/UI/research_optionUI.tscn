@@ -4,8 +4,11 @@
 [ext_resource type="Script" uid="uid://7j8622pmuiam" path="res://UI/research_option_ui.gd" id="2_0v1df"]
 
 [node name="ResearchOption" type="NinePatchRect" unique_id=1937967938]
-visible = false
 custom_minimum_size = Vector2(0, 84)
+offset_left = -193.0
+offset_right = 148.0
+offset_bottom = 84.0
+mouse_filter = 0
 texture = ExtResource("1_nnf0a")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -22,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control" unique_id=1458975056]
 custom_minimum_size = Vector2(64, 64)
