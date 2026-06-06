@@ -31,7 +31,7 @@ func BuildMode():
 	if Input.is_action_just_pressed("ui_accept"):
 		var canBuild = true
 		var currentBuildingResource: BuildingOption = gameManager.BuildingList[currentBuildingOption]
-		var mousePos: Vector2i = get_global_mouse_position().snapped(Vector2i(gameManager.MapSize.x, gameManager.MapSize.y))
+		var mousePos: Vector2i = get_global_mouse_position()#.snapped(Vector2i(gameManager.MapSize.x, gameManager.MapSize.y))
 		
 		for cost in currentBuildingResource.costAmount.size():
 			if currentBuildingResource.costAmount[currentBuildingResource.costID[cost]] > gameManager.GameResourceList[currentBuildingResource.costID[cost]]:
@@ -48,8 +48,9 @@ func BuildMode():
 		if canBuild:
 			get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 			var buildingToSpawn:Building = gameManager.BuildingList[currentBuildingOption].building.instantiate()
-			buildingToSpawn.position = mousePos
+			
 			buildingToSpawn.buildingSize = gameManager.BuildingList[currentBuildingOption].buildingSize
+			buildingToSpawn.position = map_to_local(local_to_map(mousePos)) + Vector2(buildingToSpawn.buildingSize.x * 8, buildingToSpawn.buildingSize.y * 8)
 			buildingToSpawn.buildingName = gameManager.BuildingList[currentBuildingOption].buildingName
 			buildingToSpawn.buildingDescription = gameManager.BuildingList[currentBuildingOption].description
 			buildingToSpawn.buildingImage = gameManager.BuildingList[currentBuildingOption].buildingImg
@@ -58,7 +59,7 @@ func BuildMode():
 			
 			for x in buildingToSpawn.buildingSize.x:
 				for y in buildingToSpawn.buildingSize.y:
-					BuildingData.set_cell(local_to_map(buildingToSpawn.position) + Vector2i(x,y),0,Vector2i(2,0))
+					BuildingData.set_cell(local_to_map(buildingToSpawn.position) + Vector2i(x - 1,y - 1),0,Vector2i(2,0))
 			
 			for cost in currentBuildingResource.costAmount.size():
 				gameManager.GameResourceList[currentBuildingResource.costID[cost]] -= currentBuildingResource.costAmount[currentBuildingResource.costID[cost]]

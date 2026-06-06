@@ -114,8 +114,10 @@ buildingArea = Vector2(1300, 328)
 [node name="ResourceUI" type="NinePatchRect" parent="Camera2D/CanvasLayer" unique_id=726260075 node_paths=PackedStringArray("labelList")]
 texture_filter = 1
 texture_repeat = 1
-offset_right = 309.0
-offset_bottom = 300.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 54.0
+grow_horizontal = 2
 size_flags_horizontal = 4
 texture = ExtResource("7_eow3j")
 patch_margin_left = 3
@@ -125,43 +127,37 @@ patch_margin_bottom = 3
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 script = ExtResource("8_j5wjh")
-labelList = NodePath("LabelList")
+labelList = NodePath("")
 
-[node name="Resources" type="Label" parent="Camera2D/CanvasLayer/ResourceUI" unique_id=1622943410]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 50.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 36
-text = "Resources"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LabelList" type="VBoxContainer" parent="Camera2D/CanvasLayer/ResourceUI" unique_id=1052757556]
+[node name="LabelList" type="HBoxContainer" parent="Camera2D/CanvasLayer/ResourceUI" unique_id=1678583789]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
-offset_top = 56.0
+offset_top = 8.0
 offset_right = -15.0
-offset_bottom = -13.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 16
 
 [node name="Wood" type="Label" parent="Camera2D/CanvasLayer/ResourceUI/LabelList" unique_id=601733691]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
 [node name="Stone" type="Label" parent="Camera2D/CanvasLayer/ResourceUI/LabelList" unique_id=38811959]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
 [node name="Food" type="Label" parent="Camera2D/CanvasLayer/ResourceUI/LabelList" unique_id=2057597862]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
 [node name="Health" type="ProgressBar" parent="Camera2D/CanvasLayer/ResourceUI/LabelList" unique_id=987162646 groups=["HealthBar"]]
-custom_minimum_size = Vector2(0, 36)
+custom_minimum_size = Vector2(200, 36)
 layout_mode = 2
+size_flags_horizontal = 10
 theme_override_styles/background = SubResource("StyleBoxFlat_7knny")
 theme_override_styles/fill = SubResource("StyleBoxFlat_082n1")
 value = 100.0
