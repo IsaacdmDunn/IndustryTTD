@@ -31,11 +31,13 @@ func _physics_process(delta: float) -> void:
 	#run production method
 	if cooldown < 0:
 		ProduceResource()
+		cooldown = productionRate
 	cooldown -= delta * Globals.timeScale
 	pass
 #produces resources
 func ProduceResource():
 	var canProduce: bool = true
+	productionRate = gm.ProductionMethods[productionMethodID[currentProductionID]].baseProductionRate
 	#check can produce
 	for inputID in gm.ProductionMethods[productionMethodID[currentProductionID]].itemInput.size():
 		#if resources for pm are not available then cant make resource
