@@ -12,27 +12,29 @@ func _physics_process(delta: float) -> void:
 	if selected and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		get_tree().get_first_node_in_group("GameUI").OpenBuildingUI(self)
 		get_tree().get_first_node_in_group("SoundManager").ButtonSound()
-	
+	if cooldown < 0 and gm.GameResourceList[0] > 0 and currentHealth > 0 and currentHealth < baseMaxHealth:
+		ProduceResource()
+		
+		cooldown = repairRate
+	cooldown -= delta * Globals.timeScale
 	
 	if currentHealth < 0:
 		isGameOver = true
 		get_tree().get_first_node_in_group("GameUI").GameOverUIOpen()
 		currentHealth = 0
-	elif currentHealth > baseMaxHealth:
+	if currentHealth > baseMaxHealth:
 		currentHealth = baseMaxHealth
 		UpdateHealthBar()
 	repairRate = gm.ProductionMethods[productionMethodID[currentProductionID]].baseProductionRate * repairRate
 	#$TowerTop.rotat
-	if cooldown < 0 and gm.GameResourceList[0] > 0 and currentHealth > 0:
-		ProduceResource()
-		
-		cooldown = repairRate
-	cooldown -= delta * Globals.timeScale
+	
 	pass
 	
 #produces resources
 func ProduceResource():
 	var canProduce: bool = true
+	repairRate = gm.ProductionMethods[productionMethodID[currentProductionID]].baseProductionRate
+	
 	#check can produce
 	for inputID in gm.ProductionMethods[productionMethodID[currentProductionID]].itemInput.size():
 		#if resources for pm are not available then cant make resource
@@ -59,4 +61,4 @@ func UpdateHealthBar():
 	var bar:ProgressBar = get_tree().get_first_node_in_group("HealthBar")
 	bar.max_value = baseMaxHealth
 	bar.value = currentHealth
-	bar.get_child(0).text = str(currentHealth) + "/" + str(baseMaxHealth)
+	bar.get_child(0).text = str(int(floor(currentHealth))) + "/" + str(int(floor(baseMaxHealth)))

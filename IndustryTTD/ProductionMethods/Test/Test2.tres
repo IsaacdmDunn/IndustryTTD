@@ -5,6 +5,8 @@
 
 [resource]
 script = ExtResource("2_3lic8")
+itemInputID = Array[int]([0])
+itemInput = Array[int]([1])
 itemOutputID = Array[int]([2])
 itemOutput = Array[int]([2])
 baseProductionRate = 2.0

@@ -164,7 +164,7 @@ custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_7knny")
 theme_override_styles/fill = SubResource("StyleBoxFlat_082n1")
-value = 50.0
+value = 100.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="Camera2D/CanvasLayer/ResourceUI/LabelList/Health" unique_id=986264178]
