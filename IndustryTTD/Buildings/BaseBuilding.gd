@@ -5,6 +5,7 @@ var buildingID = -1
 var buildingName: String
 var buildingImage: Texture2D
 var buildingDescription: String
+var extraDetails: String
 var buildingData: BuildingOption
 var selected: bool = false
 @export var productionMethodID: Array[int]
@@ -53,31 +54,40 @@ func ProduceResource():
 			gm.GameResourceList[gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutputID[outputID]] += gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutput[outputID]
 		pass
 
-
+#stops hover over effect disallows building to be selected
 func _on_area_2d_mouse_exited() -> void:
+	#undraw range circle
+	queue_redraw()
+	
+	
 	var sizeTween: Tween = create_tween()
 	sizeTween.tween_property($Sprite2D, "scale", Vector2(1,1), .3).set_trans(Tween.TRANS_BOUNCE)
 	
 	selected = false
 	pass # Replace with function body.
 
-
+#hover over effect allows building to be selected
 func _on_area_2d_mouse_entered() -> void:
+	
+	#draw range circle
+	queue_redraw()
+	
 	var sizeTween: Tween = create_tween()
 	sizeTween.tween_property($Sprite2D, "scale", Vector2(1.16,1.16), .2).set_trans(Tween.TRANS_BOUNCE)
 	
 	selected = true
 	pass # Replace with function body.
 
+#destroys building when deleted
 func DestroyBuilding():
 	get_tree().get_first_node_in_group("BuildingData").DestroyBuilding(buildingSize, position)
+	
+	##removing unbuildable tiles
+	
 	queue_free()
 	pass
-	
+
+#moves building to new position
 func MoveBuilding():
 	get_tree().get_first_node_in_group("BuildingData").MoveBuilding(buildingSize, position)
 	pass
-
-
-func _on_mouse_entered() -> void:
-	pass # Replace with function body.

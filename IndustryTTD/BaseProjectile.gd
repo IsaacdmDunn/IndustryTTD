@@ -8,21 +8,22 @@ var lifetime = 5
 var dir
 var predictedPos
 func _ready() -> void:
+	#set direction on spawn
 	dir = position.direction_to(target.get_child(0).global_position).normalized() * speed
-	print(target.position)
+	
 
 func _physics_process(delta: float) -> void:
-	#if target != null and position.distance_to(target.global_position) > 5 :
-		
-		#dir = position.direction_to(target.global_position).normalized() * speed
-
+	#countdown lifetime
 	lifetime -= delta
-	
-	#print(position)
+	#sets velocity and move
 	velocity = dir * Globals.timeScale
 	move_and_collide(velocity)
+	
+	#destroy self
+	if lifetime < 0 or peircing <= 0:
+		queue_free()
 
-
+#if in enemy collision damage enemy and either lose piercing or destroy self
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.get_parent().is_in_group("Enemy"):
 		if peircing >= 0:

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Industry TTD"
-run/main_scene="uid://ogl4512po3k"
+run/main_scene="uid://bptpaikkwgbf"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,6 +26,7 @@ SaveSystem="*uid://1655so1ycwbt"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

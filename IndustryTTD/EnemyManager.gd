@@ -14,41 +14,33 @@ var maxEnemyCountReached: bool = false
 @export var downWaveTime = 7
 var downWaveTimer = 1000
 
+#sets data for next wave
 func GetNextWave():
-	
 	Globals.PitchAudioAsNote(randi_range(-12,0),$"../SoundContainer/AudioStreamPlayer")
-	
+	#if max enemy count reached set extra penealties
 	if maxEnemyCountReached:
 		Globals.enemySpeedMod += 0.01
 	maxEnemyCountReached = false
+	
+	#add modifiers for enemys
 	Globals.enemyDamageMod += 0.05
 	Globals.enemyHealthMod += 0.1
 	currentWave += 1
 	
+	#auto save game
 	SaveSystem.saveData.waveID = currentWave
 	get_parent().SetSaveData()
 	
-	
-	
+	#set enemies in round/ down wave timer for break between waves/ enemy spawn rate
 	currentEnemyCount = waveData.enemyCount.sample(currentWave)
 	downWaveTimer = downWaveTime
 	timeBetweenEnemies = 1/waveData.enemyPerSecond.sample(currentWave)
-	
-	pass
-
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	
-	
-	
-	
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	#enemy spawn timer
 	enemySpawnTimer -= delta * Globals.timeScale
 	if enemySpawnTimer < 0:
 		_on_timer_timeout()
@@ -61,25 +53,20 @@ func _process(delta: float) -> void:
 		pass
 	pass
 
-
+#spawn enemy
 func _on_timer_timeout() -> void:
 	if $".".get_child_count() < maxEnemies:
 		var enemyToSpawn
-		#var weight
+	
 		for i in waveData.numberOfEnemyTypes.sample(currentWave):
-			#weight += waveData.enemiesRatio[i]
+			
 			var enemyValue = randi_range(0, waveData.enemiesRatio[i])
 			if enemyValue < waveData.enemiesRatio[i]:
 				enemyToSpawn = waveData.enemiesList[i-1].instantiate()
-		
-		#for i in waveData.numberOfEnemyTypes.sample(currentWave):
-		#
-			#if enemyValue < waveData.enemiesRatio[i]:
-				#enemyToSpawn = waveData.enemiesList[i].instantiate()
-			#else:
-				#weight -= 
+	
 		currentEnemyCount -= 1
 		add_child(enemyToSpawn)
+	#if max enemies reached set temp penealities
 	else:
 		maxEnemyCountReached = true
 		Globals.enemyDamageTemp = 0.1
@@ -87,5 +74,3 @@ func _on_timer_timeout() -> void:
 		Globals.enemyHealthTemp = 0.1
 	enemySpawnTimer = timeBetweenEnemies
 	
-	#$EnemySpawnTimer.start(timeBetweenEnemies)
-	pass # Replace with function body.

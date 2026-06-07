@@ -12,20 +12,15 @@ func _physics_process(delta: float) -> void:
 		get_tree().get_first_node_in_group("GameUI").OpenBuildingUI(self)
 		get_tree().get_first_node_in_group("SoundManager").ButtonSound()
 	
-	#
-	#draw range circle
-	queue_redraw()
-	attackRate = gm.ProductionMethods[productionMethodID[currentProductionID]].baseProductionRate
-	#$TowerTop.rotat
+	#try find target if cooldown timer reset
 	if cooldown < 0 and gm.GameResourceList[0] > 0:
 		GetTarget()
-		cooldown = attackRate
+		cooldown = productionRate
 	cooldown -= delta * Globals.timeScale
 	pass
 
-
+#gets clostest enemy
 func GetTarget():
-	
 	var closestDisance = 10000
 	var distanceTo
 	var timeToTarget
@@ -54,7 +49,7 @@ func GetTarget():
 			Globals.PitchAudioAsNote(randi_range(-6,6), $AudioStreamPlayer)
 	pass
 
-
+#draw range circle
 func _draw() -> void:
 	if selected:
 		var cen = Vector2.ZERO

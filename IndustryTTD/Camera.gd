@@ -10,16 +10,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if inBuildingArea:
-		$CanvasLayer/MoveCamRight.disabled = true
-		$CanvasLayer/MoveCamRight.visible = false
-		$CanvasLayer/MoveCamLeft.disabled = false
-		$CanvasLayer/MoveCamLeft.visible = true
-	else:
-		$CanvasLayer/MoveCamRight.disabled = false
-		$CanvasLayer/MoveCamRight.visible = true
-		$CanvasLayer/MoveCamLeft.disabled = true
-		$CanvasLayer/MoveCamLeft.visible = false
+	
+	#moves between camera moves
 	if Input.is_action_just_pressed("MoveRight") and !inBuildingArea:
 		inBuildingArea = true
 		var tween = create_tween()
@@ -32,6 +24,10 @@ func _process(delta: float) -> void:
 
 
 func _on_move_cam_right_pressed() -> void:
+	$CanvasLayer/MoveCamRight.disabled = true
+	$CanvasLayer/MoveCamRight.visible = false
+	$CanvasLayer/MoveCamLeft.disabled = false
+	$CanvasLayer/MoveCamLeft.visible = true
 	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 	inBuildingArea = true
 	var tween = create_tween()
@@ -41,6 +37,10 @@ func _on_move_cam_right_pressed() -> void:
 
 
 func _on_move_cam_left_pressed() -> void:
+	$CanvasLayer/MoveCamRight.disabled = false
+	$CanvasLayer/MoveCamRight.visible = true
+	$CanvasLayer/MoveCamLeft.disabled = true
+	$CanvasLayer/MoveCamLeft.visible = false
 	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 	inBuildingArea = false
 	var tween = create_tween()

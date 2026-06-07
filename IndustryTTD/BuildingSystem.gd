@@ -6,10 +6,9 @@ extends TileMapLayer
 
 var currentBuildingOption = 1
 
-
+#build mode when building button pressed
 func BuildMode():
-	
-		
+	#sets tiles around mouse showing what can be built where
 	for x in 11:
 		for y in 11:
 			var tilePos = Vector2i(local_to_map(get_global_mouse_position()).x + x - 5, local_to_map(get_global_mouse_position()).y + y - 5)
@@ -19,7 +18,6 @@ func BuildMode():
 				if x == 5 or x == 6:
 					if y == 5 or y == 6:
 						set_cell(tilePos, 0, Vector2i(1,0),0) 
-						print(environment.get_cell_atlas_coords(tilePos))
 			
 			elif BuildingData.get_cell_atlas_coords(tilePos) == Vector2i(2,0):
 				set_cell(tilePos, 0, Vector2i(2,0),0)
@@ -27,24 +25,27 @@ func BuildMode():
 			else:
 				set_cell(tilePos, 0, Vector2i(0,0),0)
 			
-			
+	#try building where mouse is	
 	if Input.is_action_just_pressed("ui_accept"):
 		var canBuild = true
 		var currentBuildingResource: BuildingOption = gameManager.BuildingList[currentBuildingOption]
-		var mousePos: Vector2i = get_global_mouse_position()#.snapped(Vector2i(gameManager.MapSize.x, gameManager.MapSize.y))
+		var mousePos: Vector2i = get_global_mouse_position()
 		
+		#check has resources to build
 		for cost in currentBuildingResource.costAmount.size():
 			if currentBuildingResource.costAmount[currentBuildingResource.costID[cost]] > gameManager.GameResourceList[currentBuildingResource.costID[cost]]:
 				canBuild = false
 				pass
-				
+		
+		#check tiles are free to building on	
 		for x in gameManager.BuildingList[currentBuildingOption].buildingSize.x:
 			for y in gameManager.BuildingList[currentBuildingOption].buildingSize.y:
 				if BuildingData.get_cell_atlas_coords(local_to_map(mousePos) + Vector2i(x,y)) == Vector2i(2,0) or environment.get_cell_atlas_coords(local_to_map(mousePos) + Vector2i(x,y)) != Vector2i(1,1):
 					canBuild = false
 					break
 					break
-					
+		
+		#build bulding		
 		if canBuild:
 			get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 			var buildingToSpawn:Building = gameManager.BuildingList[currentBuildingOption].building.instantiate()
@@ -57,17 +58,19 @@ func BuildMode():
 			buildingToSpawn.buildingID = currentBuildingOption
 			BuildingContainer.add_child(buildingToSpawn)
 			
+			#add blocks to tiles where building is 
 			for x in buildingToSpawn.buildingSize.x:
 				for y in buildingToSpawn.buildingSize.y:
 					BuildingData.set_cell(local_to_map(buildingToSpawn.position) + Vector2i(x - 1,y - 1),0,Vector2i(2,0))
 			
+			#remove resources
 			for cost in currentBuildingResource.costAmount.size():
 				gameManager.GameResourceList[currentBuildingResource.costID[cost]] -= currentBuildingResource.costAmount[currentBuildingResource.costID[cost]]
 	pass
 	
 	
 
-
+#set default map data based on enviroment
 func _ready() -> void:
 	for x in gameManager.MapSize.x:
 		for y in gameManager.MapSize.y:
@@ -81,6 +84,8 @@ func _process(delta: float) -> void:
 	clear()
 	if gameManager.currentGameState == gameManager.GameState.Build:
 		BuildMode()
+		
+#reset block cells when building is destroyed
 func DestroyBuilding(buildingSize: Vector2i, buildingPosition: Vector2):
 	
 	for x in buildingSize.x:
@@ -88,7 +93,8 @@ func DestroyBuilding(buildingSize: Vector2i, buildingPosition: Vector2):
 			BuildingData.set_cell(local_to_map(buildingPosition) + Vector2i(x,y),0,Vector2i(0,0))
 			
 	pass
-	
+
+#move block cells when building is moved
 func MoveBuilding(buildingSize: Vector2i, buildingPosition: Vector2):
 	
 	pass

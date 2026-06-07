@@ -3,7 +3,7 @@ extends Control
 var buildingData
 @onready var optionContainer = $NinePatchRect/ScrollContainer/HBoxContainer
 var optionTypeID = 0
-# Called when the node enters the scene tree for the first time.
+#for each building create a ui option in the building menu
 func _ready() -> void:
 	buildingData = get_tree().get_first_node_in_group("GameManager").BuildingList
 	for building in buildingData.size():
@@ -16,18 +16,13 @@ func _ready() -> void:
 	UpdateOptions()
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	
-	pass
+#change options when tab select
 func UpdateOptions():
 	for option: BuildingOptionUI in optionContainer.get_children():
 		if option.buildingType == optionTypeID:
 			option.visible = true
 		else:
 			option.visible = false
-
 func _on_tab_bar_tab_changed(tab: int) -> void:
 	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 	optionTypeID = tab

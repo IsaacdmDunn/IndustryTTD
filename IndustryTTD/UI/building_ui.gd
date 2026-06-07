@@ -11,7 +11,7 @@ var building: Building
 var gm: GameManager
 	
 
-# Called when the node enters the scene tree for the first time.
+#set initial data and production method options
 func _ready() -> void:
 	gm = get_tree().get_first_node_in_group("GameManager")
 	$VBoxContainer/Label.text = building.buildingName
@@ -22,7 +22,7 @@ func _ready() -> void:
 	initPMUI(pm2, building.currentProduction2ID, building.productionMethod2ID)
 	initPMUI(pm3, building.currentProduction3ID, building.productionMethod3ID)
 	
-	
+#populates drop down menu with production method options
 func initPMUI(pm: OptionButton, currPM: int, pmIDList):
 	pm.clear()
 	if pmIDList.size() > 0:
@@ -37,6 +37,7 @@ func initPMUI(pm: OptionButton, currPM: int, pmIDList):
 	UpdateIOText(pm, currPM, pmIDList)
 	pass
 	
+#updates input/ output text to show what resources the building needs
 func UpdateIOText(pm, currentProductionID, pmIDList):
 	if pmIDList.size() > 0:
 		for input in gm.ProductionMethods[pmIDList[currentProductionID]].itemInputID.size():
@@ -48,13 +49,10 @@ func UpdateIOText(pm, currentProductionID, pmIDList):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	if Input.is_action_just_pressed("ui_cancel"):
+	#closes UI
+	if Input.is_action_just_pressed("ui_cancel") or (!mousedOver and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 		queue_free()
-		
-	#if !mousedOver:
-		#if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-			#queue_free()
+	
 	pass
 
 
@@ -67,12 +65,12 @@ func _on_mouse_entered() -> void:
 	mousedOver = true
 	pass # Replace with function body.
 
-
+#on close button pressed
 func _on_button_pressed() -> void:
 	queue_free()
 	pass # Replace with function body.
 
-
+#change pm 1
 func _on_production_method_dd_item_selected(index: int) -> void:
 	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input/Label2.text = "Input"
@@ -83,7 +81,7 @@ func _on_production_method_dd_item_selected(index: int) -> void:
 	UpdateIOText(pm3, building.currentProduction3ID, building.productionMethod3ID)
 	pass # Replace with function body.
 
-
+#change pm 2
 func _on_production_method_dd_2_item_selected(index: int) -> void:
 	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input/Label2.text = "Input"
@@ -94,7 +92,7 @@ func _on_production_method_dd_2_item_selected(index: int) -> void:
 	UpdateIOText(pm3, building.currentProduction3ID, building.productionMethod3ID)
 	pass # Replace with function body.
 
-
+#change pm 3
 func _on_production_method_dd_3_item_selected(index: int) -> void:
 	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input/Label2.text = "Input"

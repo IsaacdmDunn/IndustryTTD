@@ -9,9 +9,10 @@ class_name BaseEnemy
 @onready var offsetPos = Vector2(randf_range(-50,50),randf_range(-50,50))
 
 func _ready() -> void:
+	#spawn noise
 	Globals.PitchAudioAsNote(randi_range(0,12), $"../AudioStreamPlayer")
 		
-	
+	#sets stats using modifiers 
 	var extraSpeed:float = 1
 	baseSpeed = baseSpeed * (Globals.enemySpeedMod + Globals.enemySpeedTemp)
 	if baseSpeed > maxSpeed:
@@ -21,15 +22,16 @@ func _ready() -> void:
 	health = health * (Globals.enemyHealthMod + Globals.enemyHealthTemp + extraSpeed)
 	
 func _physics_process(delta: float) -> void:
-	#velocity = global_position
 	#move enemy along path
 	path.progress += baseSpeed * Globals.timeScale
-	#velocity -= global_position
 	position = offsetPos
+	
+	#when at end of path damage wall and destroy self
 	if path.progress_ratio == 1:
 		get_tree().get_first_node_in_group("Wall").TakeDamage(damage)
 		path.queue_free()
-		
+
+#take damage when hit with projectile
 func TakeDamage(damage):
 	health -= damage
 	if health <= 0:
