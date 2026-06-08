@@ -4,6 +4,7 @@ var currentState = MainMenuState.Menu
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globals.timeScale = 0
 	var settingTween: Tween = create_tween()
 	settingTween.tween_property($Settings, "scale", Vector2.ZERO, .2)
 	

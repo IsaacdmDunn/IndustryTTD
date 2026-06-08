@@ -13,10 +13,9 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	get_tree().get_first_node_in_group("SoundManager").ButtonSound()
-	if !get_tree().paused:
-		$"../..".PauseGame(true)
-	else:
-		$"../..".PauseGame(false)
+	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
+	Globals.timeScale = 0
+	$"../..".PauseGame(false)
 	pass # Replace with function body.
 
 
