@@ -9,8 +9,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$LabelList/Wood.text = "Wood: " + str(gm.GameResourceList[0]) + " / " + str(gm.GameResourceLimit[0])
-	$LabelList/Stone.text = "Stone: " + str(gm.GameResourceList[1]) + " / " + str(gm.GameResourceLimit[1])
-	$LabelList/Food.text = "Food: " + str(gm.GameResourceList[2]) + " / " + str(gm.GameResourceLimit[2])
+	$LabelList/Wood.text = ""
+	$LabelList/Stone.text = ""
+	$LabelList/Food.text = ""
+	
+	$LabelList/Wood.append_text("[img]res://Sprites/ResourceIcons/Wood.png[/img]" + " " + str(gm.GameResourceList[0]) + " / " + str(gm.GameResourceLimit[0]))
+	$LabelList/Stone.append_text("[img]res://Sprites/ResourceIcons/Stone.png[/img]" + " " + str(gm.GameResourceList[1]) + " / " + str(gm.GameResourceLimit[1]))
+	$LabelList/Food.append_text("[img]res://Sprites/ResourceIcons/Food.png[/img]" + " " + str(gm.GameResourceList[2]) + " / " + str(gm.GameResourceLimit[2]))
 	
 	pass

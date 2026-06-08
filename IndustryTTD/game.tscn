@@ -116,7 +116,7 @@ texture_filter = 1
 texture_repeat = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 54.0
+offset_bottom = 90.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 texture = ExtResource("7_eow3j")
@@ -134,25 +134,35 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 16.0
+offset_left = 12.5
 offset_top = 8.0
-offset_right = -15.0
-offset_bottom = -10.0
+offset_right = -11.5
+offset_bottom = -46.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 16
 
-[node name="Wood" type="Label" parent="Camera2D/CanvasLayer/ResourceUI/LabelList" unique_id=601733691]
-custom_minimum_size = Vector2(100, 0)
+[node name="Wood" type="RichTextLabel" parent="Camera2D/CanvasLayer/ResourceUI/LabelList" unique_id=1194918024]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 
-[node name="Stone" type="Label" parent="Camera2D/CanvasLayer/ResourceUI/LabelList" unique_id=38811959]
-custom_minimum_size = Vector2(100, 0)
+[node name="Stone" type="RichTextLabel" parent="Camera2D/CanvasLayer/ResourceUI/LabelList" unique_id=186044073]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 
-[node name="Food" type="Label" parent="Camera2D/CanvasLayer/ResourceUI/LabelList" unique_id=2057597862]
-custom_minimum_size = Vector2(100, 0)
+[node name="Food" type="RichTextLabel" parent="Camera2D/CanvasLayer/ResourceUI/LabelList" unique_id=1672138323]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Pop" type="RichTextLabel" parent="Camera2D/CanvasLayer/ResourceUI/LabelList" unique_id=1629710354]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
 
 [node name="Health" type="ProgressBar" parent="Camera2D/CanvasLayer/ResourceUI/LabelList" unique_id=987162646 groups=["HealthBar"]]
 custom_minimum_size = Vector2(200, 36)
@@ -172,6 +182,51 @@ grow_horizontal = 2
 text = "100/100"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LabelList2" type="HBoxContainer" parent="Camera2D/CanvasLayer/ResourceUI" unique_id=660746938]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 48.0
+offset_right = -224.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Iron" type="RichTextLabel" parent="Camera2D/CanvasLayer/ResourceUI/LabelList2" unique_id=752841031]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Tools" type="RichTextLabel" parent="Camera2D/CanvasLayer/ResourceUI/LabelList2" unique_id=339682003]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Coal" type="RichTextLabel" parent="Camera2D/CanvasLayer/ResourceUI/LabelList2" unique_id=345985153]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Niter" type="RichTextLabel" parent="Camera2D/CanvasLayer/ResourceUI/LabelList2" unique_id=1742711724]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
 
 [node name="GameUI" type="Control" parent="Camera2D/CanvasLayer" unique_id=1017380371 groups=["GameUI"]]
 process_mode = 3
