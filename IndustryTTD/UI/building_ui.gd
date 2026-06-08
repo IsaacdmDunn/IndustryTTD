@@ -41,7 +41,7 @@ func initPMUI(pm: OptionButton, currPM: int, pmIDList):
 #updates input/ output text to show what resources the building needs
 func UpdateIOText(pm, currentProductionID, pmIDList):
 	#$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output/Label.clear()
-	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output/Label.text = "Output"
+	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output/Label.clear()
 	
 	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input/Label2.clear()
 	
@@ -53,7 +53,7 @@ func UpdateIOText(pm, currentProductionID, pmIDList):
 	
 	
 	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input/Label2.append_text(inputText)
-	
+	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output/Label.append_text(outputText)
 	pass	
 	
 

@@ -17,7 +17,7 @@ var currentProduction3ID = 0
 var cooldown = .2
 var productionRate= 1
 var gm: GameManager
-
+@export var popupIcon: PackedScene
 
 func _ready() -> void:
 	gm = get_tree().get_first_node_in_group("GameManager")
@@ -53,6 +53,9 @@ func ProduceResource():
 				
 		for outputID in gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutput.size():
 			gm.GameResourceList[gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutputID[outputID]] += gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutput[outputID]
+			var popupToAdd = popupIcon.instantiate()
+			popupToAdd.data = "[img]" + gm.GameResourceIcon[gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutputID[outputID]]  + "[/img]" + " " + str(gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutput[outputID])
+			$VBoxContainer.add_child(popupToAdd)
 		pass
 
 #stops hover over effect disallows building to be selected
