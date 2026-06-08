@@ -17,7 +17,7 @@ func _ready() -> void:
 	gm = get_tree().get_first_node_in_group("GameManager")
 	$VBoxContainer/Label.text = building.buildingName
 	$VBoxContainer/TextureRect.texture = building.buildingImage
-	$VBoxContainer/Label2.text = building.buildingDescription
+	$VBoxContainer/Label2.text = building.buildingDescription + building.extraDetails
 	
 	initPMUI(pm1, building.currentProductionID, building.productionMethodID)
 	initPMUI(pm2, building.currentProduction2ID, building.productionMethod2ID)
@@ -86,11 +86,13 @@ func _on_production_method_dd_item_selected(index: int) -> void:
 	outputText= "Ouput" 
 	
 	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
-	
 	building.currentProductionID = building.productionMethodID[index]
 	UpdateIOText(pm1, building.currentProductionID, building.productionMethodID)
 	UpdateIOText(pm2, building.currentProduction2ID, building.productionMethod2ID)
 	UpdateIOText(pm3, building.currentProduction3ID, building.productionMethod3ID)
+	building.AddAdditionInfo()
+	$VBoxContainer/Label2.text = building.buildingDescription + building.extraDetails
+	
 	pass # Replace with function body.
 
 #change pm 2
@@ -103,6 +105,9 @@ func _on_production_method_dd_2_item_selected(index: int) -> void:
 	UpdateIOText(pm1, building.currentProductionID, building.productionMethodID)
 	UpdateIOText(pm2, building.currentProduction2ID, building.productionMethod2ID)
 	UpdateIOText(pm3, building.currentProduction3ID, building.productionMethod3ID)
+	building.AddAdditionInfo()
+	$VBoxContainer/Label2.text = building.buildingDescription + building.extraDetails
+	
 	pass # Replace with function body.
 
 #change pm 3
@@ -111,8 +116,13 @@ func _on_production_method_dd_3_item_selected(index: int) -> void:
 	outputText= "Ouput" 
 	
 	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
+	
 	building.currentProduction3ID = building.productionMethod3ID[index]
 	UpdateIOText(pm1, building.currentProductionID, building.productionMethodID)
 	UpdateIOText(pm2, building.currentProduction2ID, building.productionMethod2ID)
 	UpdateIOText(pm3, building.currentProduction3ID, building.productionMethod3ID)
+	
+	building.AddAdditionInfo()
+	$VBoxContainer/Label2.text = building.buildingDescription + building.extraDetails
+	
 	pass # Replace with function body.

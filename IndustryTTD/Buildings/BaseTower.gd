@@ -2,7 +2,11 @@ extends Building
 
 @export var towerRange: float = 10
 @export var attackRate: float = 1
-
+@export var baseDamage: float = 5
+@export var basePierce: int = 0
+@export var baseAoE: float = 0#above 0 means AoE can happen
+@export var burn: float = 0#0 means no burn
+@export var freeze: float = 0#0 means no freeze
 @export var projectileToSpawn: PackedScene
 var targetNode: Node2D
 
@@ -57,3 +61,19 @@ func _draw() -> void:
 		var color = Color(1,1,1,.5)
 		draw_circle(cen, rad*2, color)
 		draw_circle(cen, rad*2, color, false, 10, false)
+
+
+func AddAdditionInfo():
+	extraDetails = "\nAttack Rate: " + str(gm.ProductionMethods[productionMethodID[currentProductionID]].baseProductionRate)
+	extraDetails += "\nDamage: " + str(baseDamage)
+	extraDetails += "\nRange: " + str(towerRange)
+	if basePierce > 0:
+		extraDetails += "\nPeirce: " + str(basePierce)
+	if baseAoE > 0:
+		extraDetails += "\nAoE Range: " + str(baseAoE)
+	if burn > 0:
+		extraDetails += "\nBurn: " + str(burn)
+	if freeze > 0:
+		extraDetails += "\nFreeze: " + str(freeze)
+	
+	pass

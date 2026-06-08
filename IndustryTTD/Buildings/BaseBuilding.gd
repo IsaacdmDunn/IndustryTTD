@@ -21,7 +21,7 @@ var gm: GameManager
 
 func _ready() -> void:
 	gm = get_tree().get_first_node_in_group("GameManager")
-
+	AddAdditionInfo()
 
 func _physics_process(delta: float) -> void:
 	#open buildingUI
@@ -39,6 +39,7 @@ func _physics_process(delta: float) -> void:
 func ProduceResource():
 	var canProduce: bool = true
 	productionRate = gm.ProductionMethods[productionMethodID[currentProductionID]].baseProductionRate
+	AddAdditionInfo()
 	#check can produce
 	for inputID in gm.ProductionMethods[productionMethodID[currentProductionID]].itemInput.size():
 		#if resources for pm are not available then cant make resource
@@ -90,4 +91,9 @@ func DestroyBuilding():
 #moves building to new position
 func MoveBuilding():
 	get_tree().get_first_node_in_group("BuildingData").MoveBuilding(buildingSize, position)
+	pass
+
+
+func AddAdditionInfo():
+	extraDetails = "\nProduction Rate: " + str(gm.ProductionMethods[productionMethodID[currentProductionID]].baseProductionRate)
 	pass

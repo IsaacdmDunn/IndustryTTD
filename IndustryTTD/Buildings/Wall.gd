@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 		currentHealth = baseMaxHealth
 		UpdateHealthBar()
 	repairRate = gm.ProductionMethods[productionMethodID[currentProductionID]].baseProductionRate * repairRate
+	AddAdditionInfo()
 	#$TowerTop.rotat
 	
 	pass
@@ -62,3 +63,7 @@ func UpdateHealthBar():
 	bar.max_value = baseMaxHealth
 	bar.value = currentHealth
 	bar.get_child(0).text = str(int(floor(currentHealth))) + "/" + str(int(floor(baseMaxHealth)))
+
+func AddAdditionInfo():
+	extraDetails = "\nRepair Rate: " + str(gm.ProductionMethods[productionMethodID[currentProductionID]].baseProductionRate)
+	pass
