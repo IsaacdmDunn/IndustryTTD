@@ -75,4 +75,8 @@ func SetSaveData():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#check resource limit
+	for i in GameResourceList.size():
+		if GameResourceList[i] > GameResourceLimit[i]:
+			GameResourceList[i] = GameResourceLimit[i]
 	pass
