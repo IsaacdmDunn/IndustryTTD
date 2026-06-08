@@ -9,7 +9,8 @@ var building: Building
 @export var inputTextContainer: VBoxContainer
 @export var outputTextContainer: VBoxContainer
 var gm: GameManager
-	
+var inputText = "Input"
+var outputText = "Output"
 
 #set initial data and production method options
 func _ready() -> void:
@@ -39,18 +40,27 @@ func initPMUI(pm: OptionButton, currPM: int, pmIDList):
 	
 #updates input/ output text to show what resources the building needs
 func UpdateIOText(pm, currentProductionID, pmIDList):
+	#$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output/Label.clear()
+	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output/Label.text = "Output"
+	
+	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input/Label2.clear()
+	
 	if pmIDList.size() > 0:
 		for input in gm.ProductionMethods[pmIDList[currentProductionID]].itemInputID.size():
-			$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input/Label2.text += "\n" + gm.GameResourceName[gm.ProductionMethods[pmIDList[currentProductionID]].itemInputID[input]] + " : " + str(gm.ProductionMethods[pmIDList[currentProductionID]].itemInput[input])#gm.ProductionMethods[building.productionMethodID[building.currentProductionID]].itemInput[input])
+			inputText += "\n" + "[img]" + gm.GameResourceIcon[gm.ProductionMethods[pmIDList[currentProductionID]].itemInputID[input]]  + "[/img]" + " " +  str(gm.ProductionMethods[pmIDList[currentProductionID]].itemInput[input])
 		for output in gm.ProductionMethods[pmIDList[currentProductionID]].itemOutputID.size():
-			$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output/Label.text += "\n" + gm.GameResourceName[gm.ProductionMethods[pmIDList[currentProductionID]].itemOutputID[output]] + " : " + str(gm.ProductionMethods[pmIDList[currentProductionID]].itemOutput[output])#gm.ProductionMethods[building.productionMethodID[building.currentProductionID]].itemInput[input])
-			
+			outputText +="\n" + "[img]" + gm.GameResourceIcon[gm.ProductionMethods[pmIDList[currentProductionID]].itemOutputID[output]]  + "[/img]" + " " + str(gm.ProductionMethods[pmIDList[currentProductionID]].itemOutput[output])
+	
+	
+	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input/Label2.append_text(inputText)
+	
+	pass	
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#closes UI
-	if Input.is_action_just_pressed("ui_cancel") or (!mousedOver and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
+	if Input.is_action_just_pressed("ui_cancel"):# or (!mousedOver and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 		queue_free()
 	
 	pass
@@ -72,9 +82,11 @@ func _on_button_pressed() -> void:
 
 #change pm 1
 func _on_production_method_dd_item_selected(index: int) -> void:
+	inputText= "Input" 
+	outputText= "Ouput" 
+	
 	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
-	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input/Label2.text = "Input"
-	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output/Label.text = "Output"
+	
 	building.currentProductionID = building.productionMethodID[index]
 	UpdateIOText(pm1, building.currentProductionID, building.productionMethodID)
 	UpdateIOText(pm2, building.currentProduction2ID, building.productionMethod2ID)
@@ -83,9 +95,10 @@ func _on_production_method_dd_item_selected(index: int) -> void:
 
 #change pm 2
 func _on_production_method_dd_2_item_selected(index: int) -> void:
+	inputText= "Input" 
+	outputText= "Ouput" 
+	
 	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
-	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input/Label2.text = "Input"
-	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output/Label.text = "Output"
 	building.currentProduction2ID = building.productionMethod3ID[index]
 	UpdateIOText(pm1, building.currentProductionID, building.productionMethodID)
 	UpdateIOText(pm2, building.currentProduction2ID, building.productionMethod2ID)
@@ -94,9 +107,10 @@ func _on_production_method_dd_2_item_selected(index: int) -> void:
 
 #change pm 3
 func _on_production_method_dd_3_item_selected(index: int) -> void:
+	inputText= "Input" 
+	outputText= "Ouput" 
+	
 	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
-	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input/Label2.text = "Input"
-	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output/Label.text = "Output"
 	building.currentProduction3ID = building.productionMethod3ID[index]
 	UpdateIOText(pm1, building.currentProductionID, building.productionMethodID)
 	UpdateIOText(pm2, building.currentProduction2ID, building.productionMethod2ID)

@@ -4,7 +4,7 @@ enum GameResourceTypes {Wood, Stone, Food, Pop, Ore, Charcoal, Metal}
 @export var GameResourceList: Array[int] = [500, 300, 300, 20, 0,0,0,0,0]
 @export var GameResourceLimit: Array[int] = [500, 500, 500, 100, 100,100,100,100,100]
 @export var GameResourceName: Array[String] = ["Wood", "Stone", "Food", "People", "Ore", "Charcoal", "Metal"]
-
+@export var GameResourceIcon: Array[String] = ["res://Sprites/ResourceIcons/Wood.png","res://Sprites/ResourceIcons/Stone.png","res://Sprites/ResourceIcons/Food.png"]
 
 @export var BuildingList: Array[BuildingOption]
 @export var ProductionMethods: Array[ProductionMethod]

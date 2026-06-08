@@ -111,7 +111,7 @@ buildingArea = Vector2(1300, 328)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=107058972]
 
-[node name="ResourceUI" type="NinePatchRect" parent="Camera2D/CanvasLayer" unique_id=726260075 node_paths=PackedStringArray("labelList")]
+[node name="ResourceUI" type="NinePatchRect" parent="Camera2D/CanvasLayer" unique_id=726260075]
 texture_filter = 1
 texture_repeat = 1
 anchors_preset = 10
@@ -127,7 +127,6 @@ patch_margin_bottom = 3
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 script = ExtResource("8_j5wjh")
-labelList = NodePath("")
 
 [node name="LabelList" type="HBoxContainer" parent="Camera2D/CanvasLayer/ResourceUI" unique_id=1678583789]
 layout_mode = 1

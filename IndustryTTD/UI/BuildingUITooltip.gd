@@ -39,5 +39,5 @@ func ReturnToDefault():
 	$VBoxContainer/desription.text = building.description
 	$VBoxContainer/Cost.text = "Cost:"
 	for costID in building.costID.size():
-		$VBoxContainer/Cost.text = "\n" + str(gm.GameResourceName[building.costID[costID]]) + ": " + str(building.costAmount[costID])
+		$VBoxContainer/Cost.append_text("\n" + "[img=24]" + gm.GameResourceIcon[building.costID[costID]] + "[/img]" + " " + str(building.costAmount[costID]))
 	

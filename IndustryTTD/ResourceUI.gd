@@ -13,8 +13,8 @@ func _process(delta: float) -> void:
 	$LabelList/Stone.text = ""
 	$LabelList/Food.text = ""
 	
-	$LabelList/Wood.append_text("[img]res://Sprites/ResourceIcons/Wood.png[/img]" + " " + str(gm.GameResourceList[0]) + " / " + str(gm.GameResourceLimit[0]))
-	$LabelList/Stone.append_text("[img]res://Sprites/ResourceIcons/Stone.png[/img]" + " " + str(gm.GameResourceList[1]) + " / " + str(gm.GameResourceLimit[1]))
-	$LabelList/Food.append_text("[img]res://Sprites/ResourceIcons/Food.png[/img]" + " " + str(gm.GameResourceList[2]) + " / " + str(gm.GameResourceLimit[2]))
+	$LabelList/Wood.append_text("[img]" + gm.GameResourceIcon[0] + "[/img]" + " " + str(gm.GameResourceList[0]) + " / " + str(gm.GameResourceLimit[0]))
+	$LabelList/Stone.append_text("[img]" + gm.GameResourceIcon[1] + "[/img]" + " " + str(gm.GameResourceList[1]) + " / " + str(gm.GameResourceLimit[1]))
+	$LabelList/Food.append_text("[img]" + gm.GameResourceIcon[2] + "[/img]" + " " + str(gm.GameResourceList[2]) + " / " + str(gm.GameResourceLimit[2]))
 	
 	pass

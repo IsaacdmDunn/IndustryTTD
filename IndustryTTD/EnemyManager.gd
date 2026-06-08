@@ -3,7 +3,7 @@ class_name WaveManager
 @export var baseEnemy: PackedScene
 
 @export var waveData: WaveData
-var currentWave: float = 40
+var currentWave: float = 0
 var currentEnemyCount = 0
 var timeBetweenEnemies = 0
 var enemySpawnTimer = 0

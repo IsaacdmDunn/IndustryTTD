@@ -71,23 +71,28 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=324420467]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
 [node name="input" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1893450516]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input" unique_id=2117669825]
+[node name="Label2" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input" unique_id=1606158687]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-text = "Input"
+size_flags_vertical = 3
+bbcode_enabled = true
 
 [node name="output" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1825816143]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output" unique_id=294280389]
+[node name="Label" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output" unique_id=1184300422]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-text = "Output"
+size_flags_vertical = 3
+bbcode_enabled = true
 
 [node name="ProductionMethodDD" type="OptionButton" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1824732645]
 layout_mode = 2
