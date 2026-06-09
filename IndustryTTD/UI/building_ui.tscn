@@ -25,14 +25,23 @@ inputTextContainer = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/HBoxC
 outputTextContainer = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output")
 
 [node name="Button" type="Button" parent="." unique_id=1722424751]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -18.0
-offset_bottom = 31.0
+offset_left = -32.0
+offset_bottom = 32.0
 grow_horizontal = 0
 text = "X"
+
+[node name="Label" type="Label" parent="." unique_id=1546149222]
+layout_mode = 0
+offset_left = 7.0
+offset_right = 216.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 25
+text = "Building Name"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1749742596]
 layout_mode = 1
@@ -40,17 +49,12 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 11.0
+offset_top = 39.0
 offset_right = -10.0
 offset_bottom = -12.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 8
-
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1546149222]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "Building Name"
-horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1139245914]
 custom_minimum_size = Vector2(64, 64)

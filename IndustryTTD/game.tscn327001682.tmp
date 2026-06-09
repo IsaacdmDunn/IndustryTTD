@@ -315,9 +315,8 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 300.0
-offset_top = -48.0
+offset_top = -40.0
 offset_right = 550.0
-offset_bottom = -8.0
 grow_vertical = 0
 
 [node name="TimeCounter" type="NinePatchRect" parent="Camera2D/CanvasLayer/GameUI/BottomUI" unique_id=1643080483]
@@ -329,9 +328,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -552.0
-offset_top = -56.0
-offset_right = -292.0
-offset_bottom = -6.0
+offset_top = -48.0
+offset_right = -352.0
+offset_bottom = 2.0
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("7_eow3j")
@@ -345,39 +344,34 @@ script = ExtResource("15_rvswv")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/CanvasLayer/GameUI/BottomUI/TimeCounter" unique_id=1314820921]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -15.5
-offset_bottom = 15.5
+anchor_bottom = 1.0
+offset_top = 9.0
+offset_right = -16.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 16
 alignment = 1
 
 [node name="Button" type="Button" parent="Camera2D/CanvasLayer/GameUI/BottomUI/TimeCounter/HBoxContainer" unique_id=1098141187]
-custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 text = "||"
 
 [node name="Button2" type="Button" parent="Camera2D/CanvasLayer/GameUI/BottomUI/TimeCounter/HBoxContainer" unique_id=2081215707]
-custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 text = "<<"
 
 [node name="Button3" type="Button" parent="Camera2D/CanvasLayer/GameUI/BottomUI/TimeCounter/HBoxContainer" unique_id=934674485]
-custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 text = "<"
 
 [node name="Button4" type="Button" parent="Camera2D/CanvasLayer/GameUI/BottomUI/TimeCounter/HBoxContainer" unique_id=857680905]
-custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 text = ">"
 
 [node name="Button5" type="Button" parent="Camera2D/CanvasLayer/GameUI/BottomUI/TimeCounter/HBoxContainer" unique_id=247424976]
-custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 text = ">>"
 
@@ -388,10 +382,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -158.0
-offset_top = -44.0
-offset_right = -8.0
-offset_bottom = -8.0
+offset_left = -150.0
+offset_top = -36.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Build"
@@ -640,7 +632,7 @@ text = ">"
 [node name="BuildingContainer" type="Node2D" parent="." unique_id=1282700085 groups=["BuildingContainer"]]
 
 [node name="Wall" parent="BuildingContainer" unique_id=879372978 instance=ExtResource("28_082n1")]
-position = Vector2(950, 336)
+position = Vector2(950, 300)
 baseMaxHealth = 100.0
 
 [node name="BuildingTiles" type="TileMapLayer" parent="." unique_id=1226771222 groups=["BuildingData"]]
