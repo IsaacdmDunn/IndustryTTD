@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://d1x2r0gw06p2t" path="res://UI/TimeUI.gd" id="15_rvswv"]
 [ext_resource type="PackedScene" uid="uid://dal8hd54m7rqg" path="res://UI/research_screen.tscn" id="18_e36ub"]
 [ext_resource type="PackedScene" uid="uid://iuostmg0nmhq" path="res://UI/building_ui.tscn" id="20_f1jbl"]
+[ext_resource type="PackedScene" uid="uid://cfcfq1bmi2bm5" path="res://UI/win_screen.tscn" id="21_iu0sx"]
 [ext_resource type="PackedScene" uid="uid://yhuf7g7xp1w2" path="res://UI/BuildingUITooltip.tscn" id="22_i2p71"]
 [ext_resource type="Script" uid="uid://dmlcwl0u70a7v" path="res://UI/pause_menu.gd" id="25_xa8c5"]
 [ext_resource type="PackedScene" uid="uid://b1lddafirrkr3" path="res://UI/settings.tscn" id="26_5b14r"]
@@ -238,6 +239,11 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("13_7sc4i")
 buildingUI = ExtResource("20_f1jbl")
+
+[node name="Win Screen" parent="Camera2D/CanvasLayer/GameUI" unique_id=994494026 instance=ExtResource("21_iu0sx")]
+layout_mode = 0
+anchors_preset = 0
+scale = Vector2(1e-05, 1e-05)
 
 [node name="BottomUI" type="Control" parent="Camera2D/CanvasLayer/GameUI" unique_id=2020639441]
 process_mode = 1

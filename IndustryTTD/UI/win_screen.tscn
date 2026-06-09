@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://cfcfq1bmi2bm5"]
+
+[ext_resource type="Texture2D" uid="uid://cj7k1ecaoxkks" path="res://Sprites/UIRect.png" id="1_t25dr"]
+[ext_resource type="Script" uid="uid://be3dcvbigmmng" path="res://UI/win_screen.gd" id="2_7c84e"]
+
+[node name="Win Screen" type="NinePatchRect" unique_id=994494026]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_t25dr")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+script = ExtResource("2_7c84e")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=858071423]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "You Survived"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=46433950]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -80.0
+offset_right = 130.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Mainmenu" type="Button" parent="HBoxContainer" unique_id=1320442832]
+custom_minimum_size = Vector2(128, 48)
+layout_mode = 2
+text = "Main Menu"
+
+[node name="Endless" type="Button" parent="HBoxContainer" unique_id=1716548834]
+custom_minimum_size = Vector2(128, 48)
+layout_mode = 2
+text = "Endless Mode"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="." unique_id=1920683583]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 100.0
+offset_right = -20.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="HBoxContainer3" unique_id=1904280851]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer3/HBoxContainer2" unique_id=784939941]
+layout_mode = 2
+text = "Enemies Killed: "
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer3/HBoxContainer2" unique_id=461627302]
+layout_mode = 2
+text = "Resources Mined: "
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="HBoxContainer3/HBoxContainer2" unique_id=703641210]
+layout_mode = 2
+text = "Buildings: "
+horizontal_alignment = 2
+
+[node name="Label4" type="Label" parent="HBoxContainer3/HBoxContainer2" unique_id=2539876]
+layout_mode = 2
+text = "Research: "
+horizontal_alignment = 2
+
+[node name="HBoxContainer3" type="VBoxContainer" parent="HBoxContainer3" unique_id=1253214230]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer3/HBoxContainer3" unique_id=1509714983]
+layout_mode = 2
+text = "0"
+
+[node name="Label2" type="Label" parent="HBoxContainer3/HBoxContainer3" unique_id=1873336495]
+layout_mode = 2
+text = "0"
+
+[node name="Label3" type="Label" parent="HBoxContainer3/HBoxContainer3" unique_id=1767215645]
+layout_mode = 2
+text = "0"
+
+[node name="Label4" type="Label" parent="HBoxContainer3/HBoxContainer3" unique_id=988346735]
+layout_mode = 2
+text = "0"
+
+[connection signal="pressed" from="HBoxContainer/Mainmenu" to="." method="_on_mainmenu_pressed"]
+[connection signal="pressed" from="HBoxContainer/Endless" to="." method="_on_endless_pressed"]

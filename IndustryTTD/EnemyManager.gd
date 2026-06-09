@@ -3,7 +3,7 @@ class_name WaveManager
 @export var baseEnemy: PackedScene
 
 @export var waveData: WaveData
-var currentWave: float = 0
+var currentWave: float = 78
 var currentEnemyCount = 0
 var timeBetweenEnemies = 0
 var enemySpawnTimer = 0
@@ -16,6 +16,12 @@ var downWaveTimer = 1000
 
 #sets data for next wave
 func GetNextWave():
+	if currentWave == waveData.enemyCount.max_domain:
+		$"../Camera2D/CanvasLayer/GameUI/Win Screen".SetWinscreen()
+		pass
+	
+	
+	
 	Globals.PitchAudioAsNote(randi_range(-12,0),$"../SoundContainer/AudioStreamPlayer")
 	#if max enemy count reached set extra penealties
 	if maxEnemyCountReached:
@@ -58,7 +64,7 @@ func _on_timer_timeout() -> void:
 	if $".".get_child_count() < maxEnemies:
 		var enemyToSpawn
 	
-		for i in waveData.numberOfEnemyTypes.sample(currentWave):
+		for i in waveData.numberOfEnemyTypes.sample(currentWave) - 1:
 			
 			var enemyValue = randi_range(0, waveData.enemiesRatio[i])
 			if enemyValue < waveData.enemiesRatio[i]:
