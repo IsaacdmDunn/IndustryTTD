@@ -126,3 +126,9 @@ func _on_production_method_dd_3_item_selected(index: int) -> void:
 	$VBoxContainer/Label2.text = building.buildingDescription + building.extraDetails
 	
 	pass # Replace with function body.
+
+
+func _on_destoy_building_pressed() -> void:
+	building.DestroyBuilding()
+	queue_free()
+	pass # Replace with function body.

@@ -5,8 +5,8 @@
 
 [node name="BuildingUI" type="NinePatchRect" unique_id=489727850 node_paths=PackedStringArray("pm1", "pm2", "pm3", "inputTextContainer", "outputTextContainer") groups=["BuildingUI"]]
 process_mode = 1
-offset_right = 248.0
-offset_bottom = 297.0
+offset_right = 276.0
+offset_bottom = 322.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 0
@@ -140,9 +140,25 @@ popup/item_1/text = "PM2"
 popup/item_1/icon = ExtResource("1_i8jpt")
 popup/item_1/id = 1
 
+[node name="Destoy Building" type="Button" parent="." unique_id=1412387321]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -2.0
+offset_right = -2.0
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "D"
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="item_selected" from="VBoxContainer/ScrollContainer/VBoxContainer/ProductionMethodDD" to="." method="_on_production_method_dd_item_selected"]
 [connection signal="item_selected" from="VBoxContainer/ScrollContainer/VBoxContainer/ProductionMethodDD2" to="." method="_on_production_method_dd_2_item_selected"]
 [connection signal="item_selected" from="VBoxContainer/ScrollContainer/VBoxContainer/ProductionMethodDD3" to="." method="_on_production_method_dd_3_item_selected"]
+[connection signal="pressed" from="Destoy Building" to="." method="_on_destoy_building_pressed"]

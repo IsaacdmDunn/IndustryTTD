@@ -90,7 +90,7 @@ func DestroyBuilding(buildingSize: Vector2i, buildingPosition: Vector2):
 	
 	for x in buildingSize.x:
 		for y in buildingSize.y:
-			BuildingData.set_cell(local_to_map(buildingPosition) + Vector2i(x,y),0,Vector2i(0,0))
+			BuildingData.set_cell(local_to_map(buildingPosition) + Vector2i(x-1,y-1),0,Vector2i(0,0))
 			
 	pass
 
