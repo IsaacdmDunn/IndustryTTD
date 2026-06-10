@@ -11,6 +11,11 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("2_qw0k1")
 towerRange = 250.0
 attackRate = 0.2
+baseDamage = 500.0
+basePierce = 1
+baseAoE = 200.0
+burn = 0.0
+freeze = 0.0
 projectileToSpawn = ExtResource("3_mb3d8")
 
 [node name="TowerTop" type="Sprite2D" parent="." index="1" unique_id=569517392]

@@ -1,13 +1,15 @@
 extends CharacterBody2D
 class_name BaseEnemy
 @export var path:PathFollow2D
-
+var finalspeed
 @export var baseSpeed = 1.0
 @export var health = 50
 @export var damage = 1
 @export var maxSpeed = 10
 @onready var offsetPos = Vector2(randf_range(-50,50),randf_range(-50,50))
-
+var fireTimer = 0
+var freezeTimer = 0
+var timer = 1
 func _ready() -> void:
 	#spawn noise
 	Globals.PitchAudioAsNote(randi_range(0,12), $"../AudioStreamPlayer")
@@ -22,8 +24,23 @@ func _ready() -> void:
 	health = health * (Globals.enemyHealthMod + Globals.enemyHealthTemp + extraSpeed)
 	
 func _physics_process(delta: float) -> void:
-	#move enemy along path
-	path.progress += baseSpeed * Globals.timeScale
+	if fireTimer > 0 or freezeTimer > 0:
+		timer -= delta
+	
+	finalspeed = baseSpeed * Globals.timeScale
+	
+	if timer < 0:
+		if fireTimer > 0:
+			fireTimer = fireTimer - 1
+			TakeDamage(Globals.burnDamage)
+		
+		if freezeTimer > 0:
+			freezeTimer = freezeTimer - 1
+			#move enemy along path
+			finalspeed = Globals.freezeAmount * (baseSpeed * Globals.timeScale)
+	
+			
+	path.progress += finalspeed
 	position = offsetPos
 	
 	#when at end of path damage wall and destroy self

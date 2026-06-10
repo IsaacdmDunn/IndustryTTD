@@ -8,7 +8,8 @@ var enemyDamageMod: float = 1
 var enemyDamageTemp: float = 0
 var enemySpeedMod: float = 1
 var enemySpeedTemp: float = 0
-
+var burnDamage = 3
+var freezeAmount = .3
 
 func Test():
 	timeScale = 50

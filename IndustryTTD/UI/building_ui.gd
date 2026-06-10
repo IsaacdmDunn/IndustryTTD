@@ -15,7 +15,7 @@ var outputText = "Output"
 #set initial data and production method options
 func _ready() -> void:
 	gm = get_tree().get_first_node_in_group("GameManager")
-	$VBoxContainer/Label.text = building.buildingName
+	$Label.text = building.buildingName
 	$VBoxContainer/TextureRect.texture = building.buildingImage
 	$VBoxContainer/Label2.text = building.buildingDescription + building.extraDetails
 	

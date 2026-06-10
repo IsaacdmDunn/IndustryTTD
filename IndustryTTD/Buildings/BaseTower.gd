@@ -2,12 +2,13 @@ extends Building
 
 @export var towerRange: float = 10
 @export var attackRate: float = 1
-@export var baseDamage: float = 5
-@export var basePierce: int = 0
+@export var baseDamage: float = 500
+@export var basePierce: int = 1 #needs to be more than 0
 @export var baseAoE: float = 0#above 0 means AoE can happen
 @export var burn: float = 0#0 means no burn
 @export var freeze: float = 0#0 means no freeze
 @export var projectileToSpawn: PackedScene
+
 var targetNode: Node2D
 
 func _physics_process(delta: float) -> void:
@@ -47,6 +48,11 @@ func GetTarget():
 			projectile.predictedPos = predictedPos
 			projectile.target = targetNode
 			projectile.global_position = global_position
+			projectile.damage = baseDamage
+			projectile.AoE = baseAoE
+			projectile.burn = burn
+			projectile.freeze = freeze
+			projectile.peircing = basePierce
 			get_tree().get_first_node_in_group("ProjectileContainer").add_child(projectile)
 			
 			ProduceResource()
