@@ -1,16 +1,19 @@
 extends Control
 @onready var gameManager: GameManager = get_tree().get_first_node_in_group("GameManager") 
 @export var buildingUI: PackedScene
-
+var bounds: Vector2i = Vector2i(1152,658)
+#opens building UI
 func OpenBuildingUI(building):
 	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
 	if get_tree().get_nodes_in_group("BuildingUI").size() == 0:
 		var UIToSpawn: BuildingUI = buildingUI.instantiate()
 		UIToSpawn.position = get_local_mouse_position() #- Vector2((get_viewport().size.x / 2), (get_viewport().size.y / 2))
-		if UIToSpawn.position.x > get_viewport().size.x - UIToSpawn.size.x:
-			UIToSpawn.position.x = get_viewport().size.x - (UIToSpawn.size.x)
-		if UIToSpawn.position.y > get_viewport().size.y - UIToSpawn.size.y:
-			UIToSpawn.position.y = get_viewport().size.y - (UIToSpawn.size.y)
+		print(UIToSpawn.position.x + (UIToSpawn.size.x ))
+		if UIToSpawn.position.x > bounds.x - 276:
+			UIToSpawn.position.x = bounds.x - 300# - (UIToSpawn.size.x)
+		
+		if UIToSpawn.position.y > bounds.y - 360:
+			UIToSpawn.position.y = bounds.y - 360
 		UIToSpawn.building = building
 		add_child(UIToSpawn)
 
