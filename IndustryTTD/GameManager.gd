@@ -71,6 +71,19 @@ func SetSaveData():
 	var tiles = PackedScene.new()
 	tiles.pack($BuildingTiles/BuildingData)
 	SaveSystem.saveData.tilemapData = tiles
+	##globals
+	SaveSystem.saveData.enemyHealthMod = Globals.enemyHealthMod
+	SaveSystem.saveData.enemyHealthTemp = Globals.enemyHealthTemp
+	SaveSystem.saveData.enemyDamageMod = Globals.enemyDamageMod
+	SaveSystem.saveData.enemyDamageTemp = Globals.enemyDamageTemp
+	SaveSystem.saveData.enemySpeedMod = Globals.enemySpeedMod
+	SaveSystem.saveData.enemySpeedTemp = Globals.enemySpeedTemp
+	SaveSystem.saveData.burnDamage = Globals.burnDamage
+	SaveSystem.saveData.freezeAmount = Globals.freezeAmount
+	
+	
+	
+	
 	SaveSystem.WriteSave()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

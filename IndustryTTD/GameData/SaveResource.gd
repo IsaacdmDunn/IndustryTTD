@@ -16,3 +16,13 @@ class_name SaveData
 @export var researchLeft: Array[float]
 @export var isResearching: Array[bool]
 @export var tilemapData: PackedScene
+
+##globals
+@export var enemyHealthMod: float = 1
+@export var enemyHealthTemp: float = 0
+@export var enemyDamageMod: float = 1
+@export var enemyDamageTemp: float = 0
+@export var enemySpeedMod: float = 1
+@export var enemySpeedTemp: float = 0
+@export var burnDamage = 3
+@export var freezeAmount = .3
