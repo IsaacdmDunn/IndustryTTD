@@ -14,10 +14,14 @@ func SetWinscreen():
 	var tween1 = create_tween()
 	tween1.tween_property(self, "scale", Vector2.ONE, .6).set_trans(Tween.TRANS_BOUNCE)
 	Globals.timeScale = 0
-	$HBoxContainer3/HBoxContainer3/Label.text =  str(0)
-	$HBoxContainer3/HBoxContainer3/Label2.text =  str(0)
-	$HBoxContainer3/HBoxContainer3/Label3.text =  str(0)
-	$HBoxContainer3/HBoxContainer3/Label4.text =  str(0)
+	$HBoxContainer3/HBoxContainer3/Label.text =  str(SaveSystem.saveData.kills)
+	$HBoxContainer3/HBoxContainer3/Label2.text =  str(SaveSystem.saveData.resourceMined)
+	$HBoxContainer3/HBoxContainer3/Label3.text = str(SaveSystem.saveData.buildingCount)
+	$HBoxContainer3/HBoxContainer3/Label4.text =  str(SaveSystem.saveData.researchCount)
+	
+	SaveSystem.settings.levelWonList[Globals.levelID] += 1
+	SaveSystem.WriteSaveSettings()
+	
 	pass
 
 

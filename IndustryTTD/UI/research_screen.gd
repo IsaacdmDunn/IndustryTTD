@@ -22,6 +22,7 @@ func _ready() -> void:
 	gameManager = get_tree().get_first_node_in_group("GameManager")
 	for research:Research in get_tree().get_first_node_in_group("GameManager").ResearchList:
 		if research.researchLeft > 0:
+			
 			var optionToAdd = reseachOptionPrefab.instantiate()
 			optionToAdd.research = research
 			print(research.researchID)

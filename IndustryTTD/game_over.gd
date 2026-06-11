@@ -1,19 +1,15 @@
 extends NinePatchRect
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func GameOver():
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2.ONE, 1).set_trans(Tween.TRANS_ELASTIC)
 	get_tree().paused = true
+	
+	$HBoxContainer3/HBoxContainer3/Label.text =  str(SaveSystem.saveData.kills)
+	$HBoxContainer3/HBoxContainer3/Label2.text =  str(SaveSystem.saveData.resourceMined)
+	$HBoxContainer3/HBoxContainer3/Label3.text =  str(SaveSystem.saveData.buildingCount)
+	$HBoxContainer3/HBoxContainer3/Label4.text =  str(SaveSystem.saveData.researchCount)
 
 func _on_restart_pressed() -> void:
 	get_tree().paused = false

@@ -53,6 +53,7 @@ func ProduceResource():
 				
 		for outputID in gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutput.size():
 			gm.GameResourceList[gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutputID[outputID]] += gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutput[outputID]
+			SaveSystem.saveData.resourceMined += gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutput[outputID]
 			var popupToAdd = popupIcon.instantiate()
 			popupToAdd.data = "[img]" + gm.GameResourceIcon[gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutputID[outputID]]  + "[/img]" + " " + str(gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutput[outputID])
 			$VBoxContainer.add_child(popupToAdd)

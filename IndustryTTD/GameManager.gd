@@ -53,7 +53,7 @@ func _ready() -> void:
 
 
 func SetSaveData():
-	SaveSystem.saveData = SaveData.new()
+	#SaveSystem.saveData = SaveData.new()
 	SaveSystem.saveData.resourceList = GameResourceList
 	SaveSystem.saveData.resourceLimitList = GameResourceLimit
 	for research in ResearchList.size():

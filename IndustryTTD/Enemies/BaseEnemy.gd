@@ -53,4 +53,8 @@ func TakeDamage(damage):
 	health -= damage
 	if health <= 0:
 		#path.reparent(get_tree().root)
+		SaveSystem.saveData.kills += 1
 		path.queue_free()
+
+func free() -> void:
+	SaveSystem.saveData.kills += 1

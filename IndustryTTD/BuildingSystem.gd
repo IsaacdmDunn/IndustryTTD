@@ -57,6 +57,9 @@ func BuildMode():
 			buildingToSpawn.buildingImage = gameManager.BuildingList[currentBuildingOption].buildingImg
 			buildingToSpawn.buildingID = currentBuildingOption
 			BuildingContainer.add_child(buildingToSpawn)
+			SaveSystem.saveData.buildingCount +=1
+
+			
 			
 			#add blocks to tiles where building is 
 			for x in buildingToSpawn.buildingSize.x:

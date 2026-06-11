@@ -20,8 +20,9 @@ func GetNextWave():
 		$"../Camera2D/CanvasLayer/GameUI/Win Screen".SetWinscreen()
 		pass
 	
-	
-	
+	if currentWave > SaveSystem.settings.highestWaveList[Globals.levelID]:
+		SaveSystem.settings.highestWaveList[Globals.levelID] = currentWave
+		SaveSystem.WriteSaveSettings()
 	Globals.PitchAudioAsNote(randi_range(-12,0),$"../SoundContainer/AudioStreamPlayer")
 	#if max enemy count reached set extra penealties
 	if maxEnemyCountReached:

@@ -1,4 +1,9 @@
 extends Node
+
+##level data
+var levelID = 0
+
+
 var openFromSave = false
 var timeScale = 0
 var level
@@ -12,6 +17,7 @@ var burnDamage = 3
 var freezeAmount = .3
 
 func Test():
+	SaveSystem.saveData.researchCount += 1
 	timeScale = 50
 
 #plays sound pitched to 12 scale music 

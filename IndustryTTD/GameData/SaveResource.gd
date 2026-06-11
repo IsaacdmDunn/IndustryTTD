@@ -1,6 +1,11 @@
 extends Resource
 class_name SaveData
 
+@export var kills:int = 0
+@export var buildingCount:int = 0
+@export var resourceMined:int = 0
+@export var researchCount:int = 0
+
 @export var waveID: int = 1
 @export var resourceList: Array[int]
 @export var resourceLimitList: Array[int]
