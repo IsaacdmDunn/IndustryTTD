@@ -10,6 +10,8 @@ size = Vector2(128, 128)
 [node name="Building" type="CharacterBody2D" unique_id=879372978]
 script = ExtResource("1_282m8")
 productionMethodID = Array[int]([0, 1])
+productionMethod2ID = Array[int]([0, 1])
+productionMethod3ID = Array[int]([0, 1])
 popupIcon = ExtResource("2_xt25x")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1669888096]
@@ -28,6 +30,7 @@ offset_left = -62.0
 offset_top = -150.0
 offset_right = 63.0
 offset_bottom = -44.0
+theme_override_constants/separation = 32
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

@@ -39,6 +39,9 @@ func _physics_process(delta: float) -> void:
 func ProduceResource():
 	var canProduce: bool = true
 	productionRate = gm.ProductionMethods[productionMethodID[currentProductionID]].baseProductionRate
+	productionRate += gm.ProductionMethods[productionMethod2ID[currentProduction2ID]].baseProductionRate
+	productionRate += gm.ProductionMethods[productionMethod3ID[currentProduction3ID]].baseProductionRate
+	
 	AddAdditionInfo()
 	#check can produce
 	for inputID in gm.ProductionMethods[productionMethodID[currentProductionID]].itemInput.size():
@@ -46,17 +49,34 @@ func ProduceResource():
 		if gm.GameResourceList[gm.ProductionMethods[productionMethodID[currentProductionID]].itemInputID[inputID]] < gm.ProductionMethods[productionMethodID[currentProductionID]].itemInput[inputID]:
 			canProduce = false
 			pass
+	for inputID in gm.ProductionMethods[productionMethod2ID[currentProduction2ID]].itemInput.size():
+		#if resources for pm are not available then cant make resource
+		if gm.GameResourceList[gm.ProductionMethods[productionMethod2ID[currentProduction2ID]].itemInputID[inputID]] < gm.ProductionMethods[productionMethod2ID[currentProduction2ID]].itemInput[inputID]:
+			canProduce = false
+			pass
+	for inputID in gm.ProductionMethods[productionMethod3ID[currentProduction3ID]].itemInput.size():
+		#if resources for pm are not available then cant make resource
+		if gm.GameResourceList[gm.ProductionMethods[productionMethod3ID[currentProduction3ID]].itemInputID[inputID]] < gm.ProductionMethods[productionMethod3ID[currentProduction3ID]].itemInput[inputID]:
+			canProduce = false
+			pass
 	#if can produce check each input and output and add and remove resources
 	if canProduce:	
-		for inputID in gm.ProductionMethods[productionMethodID[currentProductionID]].itemInput.size():
-			gm.GameResourceList[gm.ProductionMethods[productionMethodID[currentProductionID]].itemInputID[inputID]] -= gm.ProductionMethods[productionMethodID[currentProductionID]].itemInput[inputID]
+		IOProduce(productionMethodID, currentProductionID)
+		IOProduce(productionMethod2ID, currentProduction2ID)
+		IOProduce(productionMethod3ID, currentProduction3ID)
+		
+		pass
+
+func IOProduce(_productionMethodID, _currentProductionID):
+	for inputID in gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemInput.size():
+		gm.GameResourceList[gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemInputID[inputID]] -= gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemInput[inputID]
 				
-		for outputID in gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutput.size():
-			gm.GameResourceList[gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutputID[outputID]] += gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutput[outputID]
-			SaveSystem.saveData.resourceMined += gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutput[outputID]
-			var popupToAdd = popupIcon.instantiate()
-			popupToAdd.data = "[img]" + gm.GameResourceIcon[gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutputID[outputID]]  + "[/img]" + " " + str(gm.ProductionMethods[productionMethodID[currentProductionID]].itemOutput[outputID])
-			$VBoxContainer.add_child(popupToAdd)
+	for outputID in gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemOutput.size():
+		gm.GameResourceList[gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemOutputID[outputID]] += gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemOutput[outputID]
+		SaveSystem.saveData.resourceMined += gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemOutput[outputID]
+		var popupToAdd = popupIcon.instantiate()
+		popupToAdd.data = "[img]" + gm.GameResourceIcon[gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemOutputID[outputID]]  + "[/img]" + " " + str(gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemOutput[outputID])
+		$VBoxContainer.add_child(popupToAdd)
 		pass
 
 #stops hover over effect disallows building to be selected

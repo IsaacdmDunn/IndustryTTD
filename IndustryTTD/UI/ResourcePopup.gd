@@ -8,8 +8,8 @@ func _ready() -> void:
 	var tween2 = create_tween()
 	#tween2.tween_property($RichTextLabel, "position", Vector2.ONE, 1)
 	
-	tween1.tween_property($RichTextLabel, "scale", Vector2.ONE, .16).set_delay(1).set_trans(Tween.TRANS_ELASTIC)
-	tween1.tween_property($RichTextLabel, "scale", Vector2.ZERO, .16).set_trans(Tween.TRANS_ELASTIC)
+	tween1.tween_property($RichTextLabel, "scale", Vector2.ONE, .64).set_trans(Tween.TRANS_ELASTIC)
+	tween1.tween_property($RichTextLabel, "scale", Vector2.ZERO, .32).set_trans(Tween.TRANS_ELASTIC)
 	
 	pass # Replace with function body.
 

@@ -19,7 +19,6 @@ offset_bottom = 200.0
 scale = Vector2(0.01, 0.01)
 
 [node name="Timer" type="Timer" parent="." unique_id=1476148651]
-wait_time = 1.3199999999999998
 one_shot = true
 autostart = true
 

@@ -101,7 +101,7 @@ func _on_production_method_dd_2_item_selected(index: int) -> void:
 	outputText= "Ouput" 
 	
 	get_tree().get_first_node_in_group("SoundManager").ButtonSound2()
-	building.currentProduction2ID = building.productionMethod3ID[index]
+	building.currentProduction2ID = building.productionMethod2ID[index]
 	UpdateIOText(pm1, building.currentProductionID, building.productionMethodID)
 	UpdateIOText(pm2, building.currentProduction2ID, building.productionMethod2ID)
 	UpdateIOText(pm3, building.currentProduction3ID, building.productionMethod3ID)

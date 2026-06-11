@@ -6,7 +6,7 @@
 [node name="BuildingUI" type="NinePatchRect" unique_id=489727850 node_paths=PackedStringArray("pm1", "pm2", "pm3", "inputTextContainer", "outputTextContainer") groups=["BuildingUI"]]
 process_mode = 1
 offset_right = 276.0
-offset_bottom = 322.0
+offset_bottom = 368.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 0

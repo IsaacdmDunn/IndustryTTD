@@ -13,7 +13,7 @@ func OpenBuildingUI(building):
 			UIToSpawn.position.x = bounds.x - 300# - (UIToSpawn.size.x)
 		
 		if UIToSpawn.position.y > bounds.y - 360:
-			UIToSpawn.position.y = bounds.y - 360
+			UIToSpawn.position.y = bounds.y - 400
 		UIToSpawn.building = building
 		add_child(UIToSpawn)
 
