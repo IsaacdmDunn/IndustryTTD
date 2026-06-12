@@ -15,12 +15,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if !research.isResearching:
+	if researchManager.currentResearch != research:
 		$Control/Button.text = "Research"
+		research.isResearching = false
 	else:
 		$Control/Button.text = "Cancel"
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and mouseEntered:
+		
+		#researchManager.currentResearch = research
 		researchManager.UpdateLeftReseachUI(research)
+		
 	if !research.isUnlocked or research.researchLeft <= 0:
 
 		visible = false
@@ -35,9 +39,10 @@ func _on_button_pressed() -> void:
 		research.isResearching = true
 		$Control/Button.text = "Cancel"
 		researchManager.currentResearch = research
+		researchManager.UpdateLeftReseachUI(research)
 		
 	else:
-		$Control/Button.text = "Research"
+		$Control/Button.text = "Cancel"
 		research.isResearching = false
 		researchManager.currentResearch = null
 		pass # Replace with function body.

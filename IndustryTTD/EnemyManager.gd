@@ -13,9 +13,13 @@ var maxEnemyCountReached: bool = false
 @export var downWaveMod: float = 2
 @export var downWaveTime = 7
 var downWaveTimer = 1000
-
+var enemyRatioID = [0,1,2]
 #sets data for next wave
 func GetNextWave():
+	enemyRatioID.clear()
+	for i in waveData.numberOfEnemyTypes.sample(currentWave):
+		enemyRatioID.append(randi_range(0,waveData.enemiesList.size()-1))
+	
 	if currentWave == waveData.enemyCount.max_domain:
 		$"../Camera2D/CanvasLayer/GameUI/Win Screen".SetWinscreen()
 		pass
@@ -69,7 +73,7 @@ func _on_timer_timeout() -> void:
 			
 			var enemyValue = randi_range(0, waveData.enemiesRatio[i])
 			if enemyValue < waveData.enemiesRatio[i]:
-				enemyToSpawn = waveData.enemiesList[i-1].instantiate()
+				enemyToSpawn = waveData.enemiesList[enemyRatioID[i]].instantiate()
 	
 		currentEnemyCount -= 1
 		add_child(enemyToSpawn)

@@ -14,7 +14,8 @@ func UpdateLeftReseachUI(research: Research):
 	$NinePatchRect/Info/Label.text = research.researchName
 	$NinePatchRect/Info/VBoxContainer/Label.text = research.researchDescription
 	$NinePatchRect/Info/VBoxContainer/ProgressBar.max_value = research.researchAmount
-	$NinePatchRect/Info/VBoxContainer/ProgressBar.value = 100 / research.researchLeft
+	$NinePatchRect/Info/VBoxContainer/ProgressBar.value = research.researchLeft
+	$NinePatchRect/Info/VBoxContainer/ProgressBar/Label.text = str(int(research.researchLeft)) + " Research Left" #+ str(research.researchAmount)
 	pass
 
 func _ready() -> void:
@@ -25,7 +26,7 @@ func _ready() -> void:
 			
 			var optionToAdd = reseachOptionPrefab.instantiate()
 			optionToAdd.research = research
-			print(research.researchID)
+			
 			$NinePatchRect/OptionPanel/ScrollContainer/VBoxContainer.add_child(optionToAdd)
 	UpdateLeftReseachUI(get_tree().get_first_node_in_group("GameManager").ResearchList[0])
 	pass # Replace with function body.
@@ -41,7 +42,8 @@ func _process(delta: float) -> void:
 			for resourceID in currentResearch.resourceRequiredID.size():
 				gameManager.GameResourceList[resourceID] -= currentResearch.resourceRequiredAmount[resourceID] * Globals.timeScale
 			currentResearch.researchLeft -= 1 * Globals.timeScale
-		$NinePatchRect/Info/VBoxContainer/ProgressBar.value = currentResearch.researchLeft
+		$NinePatchRect/Info/VBoxContainer/ProgressBar.value = gameManager.ResearchList[currentSelectedResearch].researchLeft
+		$NinePatchRect/Info/VBoxContainer/ProgressBar/Label.text = str(int(gameManager.ResearchList[currentSelectedResearch].researchLeft)) + " Research Left"# + str(gameManager.ResearchList[currentSelectedResearch].researchAmount)
 		if currentResearch.researchLeft <= 0:
 			FinishResearch()
 	if Input.is_action_just_pressed("OpenResearch"):
@@ -52,6 +54,7 @@ func _process(delta: float) -> void:
 		else:
 			tween.tween_property(self,"scale", Vector2.ZERO, .16).set_trans(Tween.TRANS_BOUNCE)
 
+#if research is finish remove or reset for repeatable
 func FinishResearch():
 	#needs a sound
 	if currentResearch.functionToCall != null:

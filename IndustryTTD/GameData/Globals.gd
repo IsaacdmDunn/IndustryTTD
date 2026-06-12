@@ -20,6 +20,9 @@ func Test():
 	SaveSystem.saveData.researchCount += 1
 	timeScale = 50
 
+func Test2():
+	SaveSystem.saveData.researchCount += 1
+	#timeScale = 50
 #plays sound pitched to 12 scale music 
 func PitchAudioAsNote(semiTone: float, audio: AudioStreamPlayer):
 	if audio != null:

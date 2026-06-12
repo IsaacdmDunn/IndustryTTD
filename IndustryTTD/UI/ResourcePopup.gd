@@ -5,7 +5,6 @@ var data = ""
 func _ready() -> void:
 	$RichTextLabel.append_text(data)
 	var tween1 = create_tween()
-	var tween2 = create_tween()
 	#tween2.tween_property($RichTextLabel, "position", Vector2.ONE, 1)
 	
 	tween1.tween_property($RichTextLabel, "scale", Vector2.ONE, .64).set_trans(Tween.TRANS_ELASTIC)

@@ -134,6 +134,17 @@ layout_mode = 2
 fill_mode = 1
 show_percentage = false
 
+[node name="Label" type="Label" parent="NinePatchRect/Info/VBoxContainer/ProgressBar" unique_id=2063929682]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0/0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="OptionPanel" type="NinePatchRect" parent="NinePatchRect" unique_id=1759046498]
 layout_mode = 1
 anchors_preset = 11
