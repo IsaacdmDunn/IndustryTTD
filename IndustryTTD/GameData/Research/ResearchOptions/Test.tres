@@ -10,5 +10,7 @@ researchImage = ExtResource("1_20ptv")
 researchDescription = "test research that increases turret attack speed by 5x"
 researchID = 0
 unlocksID = Array[int]([1])
+resourceRequiredID = Array[int]([0, 1, 2])
+resourceRequiredAmount = Array[int]([1, 2, 3])
 functionToCall = "Test"
 metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

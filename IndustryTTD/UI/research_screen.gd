@@ -4,6 +4,7 @@ var isOpen = false
 @export var reseachOptionPrefab: PackedScene
 var currentSelectedResearch = 0
 var currentResearch: Research
+var researchTimer = 1
 # Called when the node enters the scene tree for the first time.
 @onready var Info = $NinePatchRect/Info
 var gameManager: GameManager
@@ -16,6 +17,13 @@ func UpdateLeftReseachUI(research: Research):
 	$NinePatchRect/Info/VBoxContainer/ProgressBar.max_value = research.researchAmount
 	$NinePatchRect/Info/VBoxContainer/ProgressBar.value = research.researchLeft
 	$NinePatchRect/Info/VBoxContainer/ProgressBar/Label.text = str(int(research.researchLeft)) + " Research Left" #+ str(research.researchAmount)
+	
+	var resourceRequiredText = ""
+	$NinePatchRect/Info/VBoxContainer/Label3.text = ""
+	for resourceID in gameManager.ResearchList[currentSelectedResearch].resourceRequiredID:
+		resourceRequiredText += "[img]" + gameManager.GameResourceIcon[resourceID] + "[/img]" + str(gameManager.ResearchList[currentSelectedResearch].resourceRequiredAmount[resourceID]) + "  "
+	resourceRequiredText += "Cost/s"
+	$NinePatchRect/Info/VBoxContainer/Label3.text = resourceRequiredText
 	pass
 
 func _ready() -> void:
@@ -34,14 +42,19 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if currentResearch != null:
-		var canResearch = true
-		for resourceID in currentResearch.resourceRequiredID.size():
-			if gameManager.GameResourceList[resourceID] < currentResearch.resourceRequiredAmount[resourceID] * Globals.timeScale:
-				canResearch = false
-		if canResearch:
+		researchTimer -= delta * Globals.timeScale
+		if researchTimer < 0:
+			researchTimer += 1
+			var canResearch = true
 			for resourceID in currentResearch.resourceRequiredID.size():
-				gameManager.GameResourceList[resourceID] -= currentResearch.resourceRequiredAmount[resourceID] * Globals.timeScale
-			currentResearch.researchLeft -= 1 * Globals.timeScale
+				if gameManager.GameResourceList[resourceID] < currentResearch.resourceRequiredAmount[resourceID] * Globals.timeScale:
+					canResearch = false
+			if canResearch:
+				
+				
+				for resourceID in currentResearch.resourceRequiredID.size():
+					gameManager.GameResourceList[resourceID] -= currentResearch.resourceRequiredAmount[resourceID] * Globals.timeScale
+				currentResearch.researchLeft -= 1 * Globals.timeScale
 		$NinePatchRect/Info/VBoxContainer/ProgressBar.value = gameManager.ResearchList[currentSelectedResearch].researchLeft
 		$NinePatchRect/Info/VBoxContainer/ProgressBar/Label.text = str(int(gameManager.ResearchList[currentSelectedResearch].researchLeft)) + " Research Left"# + str(gameManager.ResearchList[currentSelectedResearch].researchAmount)
 		if currentResearch.researchLeft <= 0:

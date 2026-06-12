@@ -122,11 +122,23 @@ text = "Game Description
 "
 autowrap_mode = 3
 
-[node name="Label2" type="Label" parent="NinePatchRect/Info/VBoxContainer" unique_id=956683169]
+[node name="Label2" type="Label" parent="NinePatchRect/Info/VBoxContainer" unique_id=1619955928]
+custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
-text = "Cost/s"
+text = "Cost per 1 research:"
 horizontal_alignment = 2
+vertical_alignment = 2
 autowrap_mode = 2
+autowrap_trim_flags = 0
+
+[node name="Label3" type="RichTextLabel" parent="NinePatchRect/Info/VBoxContainer" unique_id=1119872271]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+bbcode_enabled = true
+autowrap_mode = 2
+autowrap_trim_flags = 0
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="NinePatchRect/Info/VBoxContainer" unique_id=1955376519]
 custom_minimum_size = Vector2(0, 16)
