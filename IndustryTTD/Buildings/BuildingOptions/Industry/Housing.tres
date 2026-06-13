@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BuildingOption" format=3 uid="uid://cpfugbkpthb53"]
+
+[ext_resource type="PackedScene" uid="uid://cnxebwyshe8dp" path="res://Buildings/Buildings/building.tscn" id="1_s7vy8"]
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_b4v2f"]
+[ext_resource type="Script" uid="uid://iq3c26glpjyj" path="res://Buildings/BuildingOptions/BuildingOptionData.gd" id="3_ejuvl"]
+
+[resource]
+script = ExtResource("3_ejuvl")
+building = ExtResource("1_s7vy8")
+costID = Array[int]([1, 0])
+costAmount = Array[int]([500, 500])
+buildingName = "Charcoal Kiln"
+buildingType = 2
+buildingImg = ExtResource("2_b4v2f")
+description = "Provides workers for the factories and army"
+metadata/_custom_type_script = "uid://iq3c26glpjyj"

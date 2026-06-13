@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BuildingOption" format=3 uid="uid://da3hrxdyccxb4"]
+
+[ext_resource type="PackedScene" uid="uid://cnxebwyshe8dp" path="res://Buildings/Buildings/building.tscn" id="1_2cy5u"]
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_4ddpg"]
+[ext_resource type="Script" uid="uid://iq3c26glpjyj" path="res://Buildings/BuildingOptions/BuildingOptionData.gd" id="3_blmkb"]
+
+[resource]
+script = ExtResource("3_blmkb")
+building = ExtResource("1_2cy5u")
+costID = Array[int]([1])
+costAmount = Array[int]([400])
+buildingName = "Wood Cutter"
+buildingImg = ExtResource("2_4ddpg")
+description = "Produces wood which is used in many industries."
+metadata/_custom_type_script = "uid://iq3c26glpjyj"

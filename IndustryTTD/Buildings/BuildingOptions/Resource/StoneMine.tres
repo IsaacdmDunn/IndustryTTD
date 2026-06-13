@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BuildingOption" format=3 uid="uid://dvk1tp00td3ct"]
+
+[ext_resource type="PackedScene" uid="uid://cnxebwyshe8dp" path="res://Buildings/Buildings/building.tscn" id="1_qlehd"]
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_v50dy"]
+[ext_resource type="Script" uid="uid://iq3c26glpjyj" path="res://Buildings/BuildingOptions/BuildingOptionData.gd" id="3_uyh8h"]
+
+[resource]
+script = ExtResource("3_uyh8h")
+building = ExtResource("1_qlehd")
+costID = Array[int]([0])
+costAmount = Array[int]([400])
+buildingName = "Stone Mine"
+buildingImg = ExtResource("2_v50dy")
+description = "Produces stone which is used in many industries."
+metadata/_custom_type_script = "uid://iq3c26glpjyj"

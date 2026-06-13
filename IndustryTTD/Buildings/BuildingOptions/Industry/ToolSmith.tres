@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BuildingOption" format=3 uid="uid://b7tln44r14wnd"]
+
+[ext_resource type="PackedScene" uid="uid://cnxebwyshe8dp" path="res://Buildings/Buildings/building.tscn" id="1_xoxb5"]
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_xprf8"]
+[ext_resource type="Script" uid="uid://iq3c26glpjyj" path="res://Buildings/BuildingOptions/BuildingOptionData.gd" id="3_th47p"]
+
+[resource]
+script = ExtResource("3_th47p")
+building = ExtResource("1_xoxb5")
+costID = Array[int]([1, 0])
+costAmount = Array[int]([500, 100])
+buildingName = "Blacksmith"
+buildingType = 2
+buildingImg = ExtResource("2_xprf8")
+description = "Crafts tools to improve the efficiency of the ecomony and war machines"
+buildingSize = Vector2i(3, 3)
+metadata/_custom_type_script = "uid://iq3c26glpjyj"

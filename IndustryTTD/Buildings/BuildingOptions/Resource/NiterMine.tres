@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BuildingOption" format=3 uid="uid://db82b1sjw0ldj"]
+
+[ext_resource type="PackedScene" uid="uid://cnxebwyshe8dp" path="res://Buildings/Buildings/building.tscn" id="1_ah2q3"]
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_6dub0"]
+[ext_resource type="Script" uid="uid://iq3c26glpjyj" path="res://Buildings/BuildingOptions/BuildingOptionData.gd" id="3_c3xo8"]
+
+[resource]
+script = ExtResource("3_c3xo8")
+building = ExtResource("1_ah2q3")
+costID = Array[int]([1, 2])
+costAmount = Array[int]([400, 1000])
+buildingName = "Niter Mine"
+buildingImg = ExtResource("2_6dub0")
+description = "By refining guano from bat caves to produce niter which can be used in many advanced weaponry"
+metadata/_custom_type_script = "uid://iq3c26glpjyj"

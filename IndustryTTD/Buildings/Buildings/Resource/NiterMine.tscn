@@ -1,21 +1,22 @@
-[gd_scene format=3 uid="uid://cnxebwyshe8dp"]
+[gd_scene format=3 uid="uid://cmgvn7nhx0nl2"]
 
-[ext_resource type="Script" uid="uid://rdm71k2nwxoc" path="res://Buildings/BaseBuilding.gd" id="1_282m8"]
-[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_hr4wu"]
-[ext_resource type="PackedScene" uid="uid://tkjuwemokm52" path="res://UI/resourcePopup.tscn" id="2_xt25x"]
+[ext_resource type="Script" uid="uid://rdm71k2nwxoc" path="res://Buildings/BaseBuilding.gd" id="1_4grux"]
+[ext_resource type="PackedScene" uid="uid://tkjuwemokm52" path="res://UI/resourcePopup.tscn" id="2_d24df"]
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="3_qsnwa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
-size = Vector2(128, 128)
+size = Vector2(64, 64)
 
 [node name="Building" type="CharacterBody2D" unique_id=879372978]
-script = ExtResource("1_282m8")
+script = ExtResource("1_4grux")
 productionMethodID = Array[int]([0, 1])
 productionMethod2ID = Array[int]([0, 1])
 productionMethod3ID = Array[int]([0, 1])
-popupIcon = ExtResource("2_xt25x")
+popupIcon = ExtResource("2_d24df")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1669888096]
-texture = ExtResource("2_hr4wu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_qsnwa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1992954678]
 shape = SubResource("RectangleShape2D_eow3j")

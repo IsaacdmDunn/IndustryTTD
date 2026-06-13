@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BuildingOption" format=3 uid="uid://doxqgm73in4d5"]
+
+[ext_resource type="PackedScene" uid="uid://cnxebwyshe8dp" path="res://Buildings/Buildings/building.tscn" id="1_eqt7y"]
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_hoadi"]
+[ext_resource type="Script" uid="uid://iq3c26glpjyj" path="res://Buildings/BuildingOptions/BuildingOptionData.gd" id="3_cb46n"]
+
+[resource]
+script = ExtResource("3_cb46n")
+building = ExtResource("1_eqt7y")
+costID = Array[int]([1, 0])
+costAmount = Array[int]([500, 100])
+buildingName = "Smeltery"
+buildingType = 2
+buildingImg = ExtResource("2_hoadi")
+description = "Refines stone and charcoal into metals for a variety of uses"
+buildingSize = Vector2i(3, 3)
+metadata/_custom_type_script = "uid://iq3c26glpjyj"

@@ -11,16 +11,24 @@
 [ext_resource type="Resource" uid="uid://bmweswvkfrhpj" path="res://Buildings/BuildingOptions/Tower/ArcherTower.tres" id="4_iotsf"]
 [ext_resource type="Resource" uid="uid://dj8ddaadt0ue1" path="res://ProductionMethods/Test/Test.tres" id="4_mfdv2"]
 [ext_resource type="Resource" uid="uid://x8mbios13h24" path="res://Buildings/BuildingOptions/Tower/Catapult.tres" id="5_l1i01"]
+[ext_resource type="Resource" uid="uid://imxmd1qa2jtx" path="res://Buildings/BuildingOptions/Industry/CharcoalKiln.tres" id="6_m28ev"]
 [ext_resource type="Texture2D" uid="uid://cj7k1ecaoxkks" path="res://Sprites/UIRect.png" id="7_eow3j"]
+[ext_resource type="Resource" uid="uid://cpfugbkpthb53" path="res://Buildings/BuildingOptions/Industry/Housing.tres" id="7_lwlx3"]
 [ext_resource type="Resource" uid="uid://c2elv6holh2ei" path="res://ProductionMethods/Test/Test2.tres" id="7_vaj68"]
 [ext_resource type="Script" uid="uid://c3dc1f8fhxh8j" path="res://GameData/Research/ResearchOptions/ResearchData.gd" id="7_x5p1p"]
+[ext_resource type="Resource" uid="uid://doxqgm73in4d5" path="res://Buildings/BuildingOptions/Industry/Smeltery.tres" id="8_0de7l"]
 [ext_resource type="Script" uid="uid://b6cvphokosfq0" path="res://ResourceUI.gd" id="8_j5wjh"]
 [ext_resource type="Resource" uid="uid://cd4xua4vk8lo1" path="res://GameData/Research/ResearchOptions/test2.tres" id="8_qhcbd"]
+[ext_resource type="Resource" uid="uid://b7tln44r14wnd" path="res://Buildings/BuildingOptions/Industry/ToolSmith.tres" id="9_87ddb"]
 [ext_resource type="Resource" uid="uid://dk8ctendpw2rh" path="res://GameData/Research/ResearchOptions/Test.tres" id="9_f1jbl"]
 [ext_resource type="Resource" uid="uid://cl2o02063qukw" path="res://GameData/WaveSystem/Test.tres" id="10_lc2xo"]
+[ext_resource type="Resource" uid="uid://cihpi5hmc82fb" path="res://Buildings/BuildingOptions/Resource/Farm.tres" id="10_mljfx"]
+[ext_resource type="Resource" uid="uid://db82b1sjw0ldj" path="res://Buildings/BuildingOptions/Resource/NiterMine.tres" id="11_qpefm"]
 [ext_resource type="Texture2D" uid="uid://hfrln4gtjy4m" path="res://Sprites/LandTiles.png" id="12_aa0lp"]
+[ext_resource type="Resource" uid="uid://dvk1tp00td3ct" path="res://Buildings/BuildingOptions/Resource/StoneMine.tres" id="12_tb2lt"]
 [ext_resource type="Script" uid="uid://rlpplq38tl62" path="res://UI/GameUI.gd" id="13_7sc4i"]
 [ext_resource type="Script" uid="uid://dccdvg0kk2wuk" path="res://UI/WaveCounterUI.gd" id="13_215e1"]
+[ext_resource type="Resource" uid="uid://da3hrxdyccxb4" path="res://Buildings/BuildingOptions/Resource/WoodCutter.tres" id="13_cfc7e"]
 [ext_resource type="Script" uid="uid://de2st31qfr84u" path="res://Camera.gd" id="14_qhcbd"]
 [ext_resource type="PackedScene" uid="uid://dnug1vvo1ljuv" path="res://UI/building_option.tscn" id="15_80cx4"]
 [ext_resource type="Script" uid="uid://bspku7oycgbx8" path="res://UI/BuildingMenuUI.gd" id="15_e8heu"]
@@ -89,7 +97,7 @@ bg_color = Color(0.9019608, 0.043137256, 0.20784314, 1)
 
 [node name="Node2D" type="Node2D" unique_id=328329032 groups=["GameManager"]]
 script = ExtResource("1_7jktm")
-BuildingList = Array[ExtResource("2_mfdv2")]([ExtResource("4_iotsf"), ExtResource("4_4v2jo"), ExtResource("5_l1i01")])
+BuildingList = Array[ExtResource("2_mfdv2")]([ExtResource("4_iotsf"), ExtResource("4_4v2jo"), ExtResource("5_l1i01"), ExtResource("6_m28ev"), ExtResource("7_lwlx3"), ExtResource("8_0de7l"), ExtResource("9_87ddb"), ExtResource("10_mljfx"), ExtResource("11_qpefm"), ExtResource("12_tb2lt"), ExtResource("13_cfc7e")])
 ProductionMethods = Array[ExtResource("3_hve3p")]([ExtResource("4_mfdv2"), ExtResource("7_vaj68")])
 ResearchList = Array[ExtResource("7_x5p1p")]([ExtResource("9_f1jbl"), ExtResource("8_qhcbd")])
 metadata/_edit_vertical_guides_ = [2182.0]

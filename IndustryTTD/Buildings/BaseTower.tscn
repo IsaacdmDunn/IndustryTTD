@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cd1ell5hrkpby"]
 
-[ext_resource type="PackedScene" uid="uid://cnxebwyshe8dp" path="res://Buildings/building.tscn" id="1_xhwd8"]
+[ext_resource type="PackedScene" uid="uid://cnxebwyshe8dp" path="res://Buildings/Buildings/building.tscn" id="1_xhwd8"]
 [ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_i5fo2"]
 [ext_resource type="Script" uid="uid://d32q318wck7wl" path="res://Buildings/BaseTower.gd" id="2_qw0k1"]
 [ext_resource type="PackedScene" uid="uid://dbe7ggp8ccx4q" path="res://Projectiles/test_projectile.tscn" id="3_mb3d8"]
