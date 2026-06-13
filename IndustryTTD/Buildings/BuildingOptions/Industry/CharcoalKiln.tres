@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="BuildingOption" format=3 uid="uid://imxmd1qa2jtx"]
 
-[ext_resource type="PackedScene" uid="uid://cnxebwyshe8dp" path="res://Buildings/Buildings/building.tscn" id="1_kgm7e"]
+[ext_resource type="PackedScene" uid="uid://yan4ftqpnkyj" path="res://Buildings/Buildings/Industry/CharcoalKiln.tscn" id="1_a8jac"]
 [ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_qudk3"]
 [ext_resource type="Script" uid="uid://iq3c26glpjyj" path="res://Buildings/BuildingOptions/BuildingOptionData.gd" id="3_w7jbh"]
 
 [resource]
 script = ExtResource("3_w7jbh")
-building = ExtResource("1_kgm7e")
+building = ExtResource("1_a8jac")
 costID = Array[int]([1, 0])
 costAmount = Array[int]([500, 100])
 buildingName = "Charcoal Kiln"

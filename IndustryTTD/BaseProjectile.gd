@@ -35,7 +35,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			body.fireTimer += burn
 			body.freezeTimer += freeze
 			body.TakeDamage(damage)
-		if AoE > 0:
+		if AoE > 1:
 			AoEDamage()
 		peircing -=1
 	if lifetime < 0 or peircing <= 0:
@@ -55,4 +55,4 @@ func _draw() -> void:
 	var cen = Vector2.ZERO
 	var rad = AoE
 	var color = Color(1,0,0,.5)
-	draw_circle(global_position, rad, color)
+	draw_circle(position, rad, color)

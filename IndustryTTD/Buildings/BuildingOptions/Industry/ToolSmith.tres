@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BuildingOption" format=3 uid="uid://b7tln44r14wnd"]
 
-[ext_resource type="PackedScene" uid="uid://cnxebwyshe8dp" path="res://Buildings/Buildings/building.tscn" id="1_xoxb5"]
+[ext_resource type="PackedScene" uid="uid://lw5xsjiklb1" path="res://Buildings/Buildings/Industry/ToolSmith.tscn" id="1_xoxb5"]
 [ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_xprf8"]
 [ext_resource type="Script" uid="uid://iq3c26glpjyj" path="res://Buildings/BuildingOptions/BuildingOptionData.gd" id="3_th47p"]
 

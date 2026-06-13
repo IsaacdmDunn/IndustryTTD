@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d32q318wck7wl" path="res://Buildings/BaseTower.gd" id="1_x7vuc"]
 [ext_resource type="PackedScene" uid="uid://dbe7ggp8ccx4q" path="res://Projectiles/test_projectile.tscn" id="2_e77ne"]
 [ext_resource type="PackedScene" uid="uid://tkjuwemokm52" path="res://UI/resourcePopup.tscn" id="2_jx727"]
+[ext_resource type="Texture2D" uid="uid://p14oq6wxm4tq" path="res://Sprites/ResourceIcons/Stone.png" id="3_e77ne"]
 [ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="3_maxxr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
@@ -14,6 +15,7 @@ towerRange = 200.0
 attackRate = 3.0
 baseDamage = 20.0
 projectileToSpawn = ExtResource("2_e77ne")
+projectileImage = ExtResource("3_e77ne")
 productionMethodID = Array[int]([0, 1])
 productionMethod2ID = Array[int]([0, 1])
 productionMethod3ID = Array[int]([0, 1])

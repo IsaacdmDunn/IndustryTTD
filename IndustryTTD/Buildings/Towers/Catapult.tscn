@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://tkjuwemokm52" path="res://UI/resourcePopup.tscn" id="2_mayg2"]
 [ext_resource type="PackedScene" uid="uid://dbe7ggp8ccx4q" path="res://Projectiles/test_projectile.tscn" id="2_rdr1u"]
 [ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="3_6it6s"]
+[ext_resource type="Texture2D" uid="uid://p14oq6wxm4tq" path="res://Sprites/ResourceIcons/Stone.png" id="3_rdr1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
 size = Vector2(128, 128)
@@ -16,6 +17,7 @@ baseDamage = 5.0
 basePierce = 0
 baseAoE = 25.0
 projectileToSpawn = ExtResource("2_rdr1u")
+projectileImage = ExtResource("3_rdr1u")
 productionMethodID = Array[int]([0, 1])
 productionMethod2ID = Array[int]([0, 1])
 productionMethod3ID = Array[int]([0, 1])

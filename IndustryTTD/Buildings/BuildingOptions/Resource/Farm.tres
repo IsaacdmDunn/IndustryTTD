@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BuildingOption" format=3 uid="uid://cihpi5hmc82fb"]
 
-[ext_resource type="PackedScene" uid="uid://cnxebwyshe8dp" path="res://Buildings/Buildings/building.tscn" id="1_5gwcl"]
+[ext_resource type="PackedScene" uid="uid://cw5u614e2360e" path="res://Buildings/Buildings/Resource/Farm.tscn" id="1_5gwcl"]
 [ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_yl8wl"]
 [ext_resource type="Script" uid="uid://iq3c26glpjyj" path="res://Buildings/BuildingOptions/BuildingOptionData.gd" id="3_bmdqc"]
 

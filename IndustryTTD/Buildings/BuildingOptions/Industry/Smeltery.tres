@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BuildingOption" format=3 uid="uid://doxqgm73in4d5"]
 
-[ext_resource type="PackedScene" uid="uid://cnxebwyshe8dp" path="res://Buildings/Buildings/building.tscn" id="1_eqt7y"]
+[ext_resource type="PackedScene" uid="uid://d4ll0dfb6e0ar" path="res://Buildings/Buildings/Industry/Smeltery.tscn" id="1_eqt7y"]
 [ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_hoadi"]
 [ext_resource type="Script" uid="uid://iq3c26glpjyj" path="res://Buildings/BuildingOptions/BuildingOptionData.gd" id="3_cb46n"]
 

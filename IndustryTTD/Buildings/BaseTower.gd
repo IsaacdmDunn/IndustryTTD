@@ -8,7 +8,7 @@ extends Building
 @export var burn: float = 0#0 means no burn
 @export var freeze: float = 0#0 means no freeze
 @export var projectileToSpawn: PackedScene
-
+@export var projectileImage: Texture2D
 var targetNode: Node2D
 
 func _physics_process(delta: float) -> void:
@@ -53,6 +53,7 @@ func GetTarget():
 			projectile.burn = burn
 			projectile.freeze = freeze
 			projectile.peircing = basePierce
+			projectile.get_child(1).texture = projectileImage
 			get_tree().get_first_node_in_group("ProjectileContainer").add_child(projectile)
 			
 			ProduceResource()
