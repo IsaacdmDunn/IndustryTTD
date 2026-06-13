@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://b37yysmj3wdya"]
+
+[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_v4nk0"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_15b0i"]
+
+[resource]
+script = ExtResource("2_15b0i")
+itemInputID = Array[int]([6, 7])
+itemInput = Array[int]([2, 1])
+baseProductionRate = 0.8
+img = ExtResource("1_v4nk0")
+pmName = "Tree Fertilization"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

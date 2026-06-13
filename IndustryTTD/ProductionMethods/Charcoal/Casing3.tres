@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://my57biy63c36"]
+
+[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_04g2j"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_2pxxm"]
+
+[resource]
+script = ExtResource("2_2pxxm")
+itemInputID = Array[int]([5])
+itemInput = Array[int]([1])
+baseProductionRate = 1.25
+img = ExtResource("1_04g2j")
+pmName = "Metal Kilns"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

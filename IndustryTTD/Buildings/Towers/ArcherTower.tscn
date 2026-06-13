@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://d32q318wck7wl" path="res://Buildings/BaseTower.gd" id="1_f0s25"]
 [ext_resource type="PackedScene" uid="uid://tkjuwemokm52" path="res://UI/resourcePopup.tscn" id="2_7r3wf"]
 [ext_resource type="PackedScene" uid="uid://dbe7ggp8ccx4q" path="res://Projectiles/test_projectile.tscn" id="2_u00u1"]
-[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="3_lu52t"]
 [ext_resource type="Texture2D" uid="uid://p14oq6wxm4tq" path="res://Sprites/ResourceIcons/Stone.png" id="3_u00u1"]
+[ext_resource type="Texture2D" uid="uid://dw1o5h3nj3i7e" path="res://Sprites/TowerBase.png" id="5_u00u1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
 size = Vector2(128, 128)
@@ -22,7 +22,7 @@ productionMethod3ID = Array[int]([0, 1])
 popupIcon = ExtResource("2_7r3wf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1669888096]
-texture = ExtResource("3_lu52t")
+texture = ExtResource("5_u00u1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1992954678]
 shape = SubResource("RectangleShape2D_eow3j")

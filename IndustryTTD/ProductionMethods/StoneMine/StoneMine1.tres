@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://rsncqcxmacxn"]
+
+[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_pxjku"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_8w5j8"]
+
+[resource]
+script = ExtResource("2_8w5j8")
+itemInputID = Array[int]([0])
+itemInput = Array[int]([0])
+itemOutputID = Array[int]([1])
+itemOutput = Array[int]([10])
+baseProductionRate = 1.5
+img = ExtResource("1_pxjku")
+pmName = "Hand Mined"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

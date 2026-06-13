@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://7tvwjx4innh"]
+
+[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_dnkxe"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_o617p"]
+
+[resource]
+script = ExtResource("2_o617p")
+itemInputID = Array[int]([5])
+itemInput = Array[int]([1])
+baseProductionRate = 0.75
+img = ExtResource("1_dnkxe")
+pmName = "Cart Rails"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

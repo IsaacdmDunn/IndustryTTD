@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://c2gkm5i22m8wf"]
+
+[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_gnd75"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_ft0wq"]
+
+[resource]
+script = ExtResource("2_ft0wq")
+itemInputID = Array[int]([6])
+itemInput = Array[int]([3])
+itemOutputID = Array[int]([1])
+itemOutput = Array[int]([10])
+baseProductionRate = 1.0
+img = ExtResource("1_gnd75")
+pmName = "Pickaxes"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

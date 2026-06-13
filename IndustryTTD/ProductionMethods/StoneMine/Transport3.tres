@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://c4wmt2awrpq61"]
+
+[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_jdlpb"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_obt0b"]
+
+[resource]
+script = ExtResource("2_obt0b")
+itemInputID = Array[int]([5, 4])
+itemInput = Array[int]([2, 2])
+baseProductionRate = 0.5
+img = ExtResource("1_jdlpb")
+pmName = "Steam cart trains"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"
