@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://cl2o02063qukw"]
 
-[ext_resource type="PackedScene" uid="uid://cdx1mon35x0a2" path="res://Enemies/BaseEnemy.tscn" id="1_aqe4n"]
+[ext_resource type="PackedScene" uid="uid://cdx1mon35x0a2" path="res://Enemies/Orc.tscn" id="1_aqe4n"]
 [ext_resource type="Script" uid="uid://dps00bdx4sf7n" path="res://GameData/WaveSystem/WaveDataResource.gd" id="1_bxk6k"]
-[ext_resource type="PackedScene" uid="uid://c3p7v7lxtixq1" path="res://Enemies/BaseEnemyFast.tscn" id="2_3xddc"]
-[ext_resource type="PackedScene" uid="uid://c4twbn00ov8uy" path="res://Enemies/BaseEnemyTank.tscn" id="3_dwo4x"]
+[ext_resource type="PackedScene" uid="uid://c3p7v7lxtixq1" path="res://Enemies/Goblin.tscn" id="2_3xddc"]
+[ext_resource type="PackedScene" uid="uid://c4twbn00ov8uy" path="res://Enemies/Ogre.tscn" id="3_dwo4x"]
 
 [sub_resource type="Curve" id="Curve_bxk6k"]
 _limits = [0.0, 500.0, 0.0, 80.0]

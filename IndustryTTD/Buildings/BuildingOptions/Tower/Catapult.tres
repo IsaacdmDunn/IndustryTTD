@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BuildingOption" format=3 uid="uid://x8mbios13h24"]
+
+[ext_resource type="PackedScene" uid="uid://cd1ell5hrkpby" path="res://Buildings/BaseTower.tscn" id="1_gpeie"]
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_tx10y"]
+[ext_resource type="Script" uid="uid://iq3c26glpjyj" path="res://Buildings/BuildingOptions/BuildingOptionData.gd" id="3_tg5d0"]
+
+[resource]
+script = ExtResource("3_tg5d0")
+building = ExtResource("1_gpeie")
+costID = Array[int]([0, 1])
+costAmount = Array[int]([400, 500])
+buildingName = "Catapult"
+buildingType = 0
+buildingImg = ExtResource("2_tx10y")
+description = "Slow, but deals Area of Effect damage. Effective against groups of weak enemies."
+metadata/_custom_type_script = "uid://iq3c26glpjyj"

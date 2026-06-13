@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://csglo4wowmli1"]
+
+[ext_resource type="Script" uid="uid://d32q318wck7wl" path="res://Buildings/BaseTower.gd" id="1_x7vuc"]
+[ext_resource type="PackedScene" uid="uid://dbe7ggp8ccx4q" path="res://Projectiles/test_projectile.tscn" id="2_e77ne"]
+[ext_resource type="PackedScene" uid="uid://tkjuwemokm52" path="res://UI/resourcePopup.tscn" id="2_jx727"]
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="3_maxxr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
+size = Vector2(128, 128)
+
+[node name="Building" type="CharacterBody2D" unique_id=879372978]
+script = ExtResource("1_x7vuc")
+towerRange = 200.0
+attackRate = 3.0
+baseDamage = 20.0
+projectileToSpawn = ExtResource("2_e77ne")
+productionMethodID = Array[int]([0, 1])
+productionMethod2ID = Array[int]([0, 1])
+productionMethod3ID = Array[int]([0, 1])
+popupIcon = ExtResource("2_jx727")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1669888096]
+texture = ExtResource("3_maxxr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1992954678]
+shape = SubResource("RectangleShape2D_eow3j")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=38139107]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1704790519]
+shape = SubResource("RectangleShape2D_eow3j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2013727911]
+offset_left = -62.0
+offset_top = -150.0
+offset_right = 63.0
+offset_bottom = -44.0
+theme_override_constants/separation = 32
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

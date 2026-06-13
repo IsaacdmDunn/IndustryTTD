@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BuildingOption" format=3 uid="uid://bmweswvkfrhpj"]
+
+[ext_resource type="PackedScene" uid="uid://cd1ell5hrkpby" path="res://Buildings/BaseTower.tscn" id="1_0v8et"]
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="2_nbsh1"]
+[ext_resource type="Script" uid="uid://iq3c26glpjyj" path="res://Buildings/BuildingOptions/BuildingOptionData.gd" id="3_shs1h"]
+
+[resource]
+script = ExtResource("3_shs1h")
+building = ExtResource("1_0v8et")
+costID = Array[int]([0, 1])
+costAmount = Array[int]([200, 150])
+buildingName = "Archery Tower"
+buildingType = 0
+buildingImg = ExtResource("2_nbsh1")
+description = "Fast, but moderatly weak. Effectivive against small groups of unarmoured foes."
+metadata/_custom_type_script = "uid://iq3c26glpjyj"

@@ -5,11 +5,12 @@
 [ext_resource type="Script" uid="uid://b8jsmw86lu2cd" path="res://EnemyManager.gd" id="2_fc0e3"]
 [ext_resource type="Script" uid="uid://iq3c26glpjyj" path="res://Buildings/BuildingOptions/BuildingOptionData.gd" id="2_mfdv2"]
 [ext_resource type="Texture2D" uid="uid://duu5ajjx8idbm" path="res://Sprites/BuildingTiles.png" id="2_ryrav"]
-[ext_resource type="PackedScene" uid="uid://cdx1mon35x0a2" path="res://Enemies/BaseEnemy.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://cdx1mon35x0a2" path="res://Enemies/Orc.tscn" id="3_feb5d"]
 [ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="3_hve3p"]
-[ext_resource type="Resource" uid="uid://da3hrxdyccxb4" path="res://Buildings/BuildingOptions/Test.tres" id="3_iotsf"]
-[ext_resource type="Resource" uid="uid://bmweswvkfrhpj" path="res://Buildings/BuildingOptions/Test2.tres" id="4_iotsf"]
+[ext_resource type="Resource" uid="uid://bjc3jqk7p2iok" path="res://Buildings/BuildingOptions/Tower/Ballista.tres" id="4_4v2jo"]
+[ext_resource type="Resource" uid="uid://bmweswvkfrhpj" path="res://Buildings/BuildingOptions/Tower/ArcherTower.tres" id="4_iotsf"]
 [ext_resource type="Resource" uid="uid://dj8ddaadt0ue1" path="res://ProductionMethods/Test/Test.tres" id="4_mfdv2"]
+[ext_resource type="Resource" uid="uid://x8mbios13h24" path="res://Buildings/BuildingOptions/Tower/Catapult.tres" id="5_l1i01"]
 [ext_resource type="Texture2D" uid="uid://cj7k1ecaoxkks" path="res://Sprites/UIRect.png" id="7_eow3j"]
 [ext_resource type="Resource" uid="uid://c2elv6holh2ei" path="res://ProductionMethods/Test/Test2.tres" id="7_vaj68"]
 [ext_resource type="Script" uid="uid://c3dc1f8fhxh8j" path="res://GameData/Research/ResearchOptions/ResearchData.gd" id="7_x5p1p"]
@@ -88,7 +89,7 @@ bg_color = Color(0.9019608, 0.043137256, 0.20784314, 1)
 
 [node name="Node2D" type="Node2D" unique_id=328329032 groups=["GameManager"]]
 script = ExtResource("1_7jktm")
-BuildingList = Array[ExtResource("2_mfdv2")]([ExtResource("3_iotsf"), ExtResource("4_iotsf")])
+BuildingList = Array[ExtResource("2_mfdv2")]([ExtResource("4_iotsf"), ExtResource("4_4v2jo"), ExtResource("5_l1i01")])
 ProductionMethods = Array[ExtResource("3_hve3p")]([ExtResource("4_mfdv2"), ExtResource("7_vaj68")])
 ResearchList = Array[ExtResource("7_x5p1p")]([ExtResource("9_f1jbl"), ExtResource("8_qhcbd")])
 metadata/_edit_vertical_guides_ = [2182.0]
