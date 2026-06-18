@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://b7fxpk5dm42t3"]
+
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="1_0p8vr"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_ercnk"]
+
+[resource]
+script = ExtResource("2_ercnk")
+itemInputID = Array[int]([7])
+itemInput = Array[int]([1])
+baseProductionRate = 0.5
+img = ExtResource("1_0p8vr")
+pmName = "Explosive Arrows"
+bonusEffectID = Array[int]([1])
+bonusEffectAmount = Array[int]([50])
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

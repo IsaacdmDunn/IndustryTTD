@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://0p4mp88regq0"]
+
+[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_l14xx"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_dnk2f"]
+
+[resource]
+script = ExtResource("2_dnk2f")
+itemInputID = Array[int]([0])
+itemInput = Array[int]([3])
+itemOutput = Array[int]([20])
+img = ExtResource("1_l14xx")
+pmName = "Steel Caltrop"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

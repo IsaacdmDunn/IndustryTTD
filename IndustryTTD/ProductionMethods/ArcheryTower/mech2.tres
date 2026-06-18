@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://dr7lyrt7vlynx"]
+
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="1_kie17"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_mf4sa"]
+
+[resource]
+script = ExtResource("2_mf4sa")
+itemInputID = Array[int]([6])
+itemInput = Array[int]([1])
+baseProductionRate = 1.5
+img = ExtResource("1_kie17")
+pmName = "Scattershot"
+bonusEffectID = Array[int]([8])
+bonusEffectAmount = Array[int]([1])
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

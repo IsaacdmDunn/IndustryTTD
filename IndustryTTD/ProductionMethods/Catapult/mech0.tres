@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://xv36mwoujbcl"]
+
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="1_h7ijt"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_86y3j"]
+
+[resource]
+script = ExtResource("2_86y3j")
+itemInputID = Array[int]([0])
+itemInput = Array[int]([1])
+itemOutputID = Array[int]([2])
+itemOutput = Array[int]([2])
+baseProductionRate = 2.0
+img = ExtResource("1_h7ijt")
+pmName = "Test PM2"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

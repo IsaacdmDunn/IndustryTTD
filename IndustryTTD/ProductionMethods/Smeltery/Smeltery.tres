@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://dedn76j56fe1k"]
+
+[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_bo8jv"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_0jefi"]
+
+[resource]
+script = ExtResource("2_0jefi")
+itemInputID = Array[int]([1, 4])
+itemInput = Array[int]([10, 2])
+itemOutputID = Array[int]([5])
+itemOutput = Array[int]([2])
+baseProductionRate = 1.0
+img = ExtResource("1_bo8jv")
+pmName = "Basic smeltery"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

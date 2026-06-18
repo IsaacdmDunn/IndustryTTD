@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Research" format=3 uid="uid://dk6yrc16aa1l"]
+
+[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_qgsid"]
+[ext_resource type="Script" uid="uid://c3dc1f8fhxh8j" path="res://GameData/Research/ResearchOptions/ResearchData.gd" id="2_qootr"]
+
+[resource]
+script = ExtResource("2_qootr")
+researchName = "Better Miners"
+researchImage = ExtResource("1_qgsid")
+researchDescription = "Improves stone mine speed by 10%"
+researchID = 3
+unlocksID = Array[int]([4])
+isUnlocked = false
+resourceRequiredID = Array[int]([1, 0])
+resourceRequiredAmount = Array[int]([1, 3])
+metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://eoqiwgr0l1to"]
+
+[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_knxua"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_ghkwg"]
+
+[resource]
+script = ExtResource("2_ghkwg")
+itemInputID = Array[int]([0])
+itemInput = Array[int]([3])
+itemOutput = Array[int]([5])
+img = ExtResource("1_knxua")
+pmName = "Caltrops"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

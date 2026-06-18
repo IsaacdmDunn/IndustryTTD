@@ -4,7 +4,7 @@ class_name Building
 var buildingID = -1
 var buildingName: String
 var buildingImage: Texture2D
-var buildingDescription: String
+var buildingDescription: String = ""
 var extraDetails: String
 var buildingData: BuildingOption
 var selected: bool = false

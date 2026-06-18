@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://bq4s1pbtux7ha"]
+
+[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_uiwim"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_h8egf"]
+
+[resource]
+script = ExtResource("2_h8egf")
+itemInputID = Array[int]([1, 0])
+itemInput = Array[int]([7, 3])
+itemOutput = Array[int]([3])
+img = ExtResource("1_uiwim")
+pmName = "Stone Reinforced"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

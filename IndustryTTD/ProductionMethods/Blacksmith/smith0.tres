@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://dmg5mifkuooqy"]
+
+[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_0bmfp"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_apws5"]
+
+[resource]
+script = ExtResource("2_apws5")
+itemInputID = Array[int]([1, 0])
+itemInput = Array[int]([3, 2])
+itemOutputID = Array[int]([6])
+itemOutput = Array[int]([5])
+baseProductionRate = 2.0
+img = ExtResource("1_0bmfp")
+pmName = "Crude Tools"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://csof28lknmy28"]
+
+[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_c1pff"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_11pj8"]
+
+[resource]
+script = ExtResource("2_11pj8")
+itemInputID = Array[int]([0, 1, 4])
+itemInput = Array[int]([20, 15, 5])
+itemOutputID = Array[int]([3])
+itemOutput = Array[int]([20])
+baseProductionRate = 1.0
+img = ExtResource("1_c1pff")
+pmName = "Steel Frame"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

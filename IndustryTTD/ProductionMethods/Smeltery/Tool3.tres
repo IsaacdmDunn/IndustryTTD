@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://chlxaieeysi4c"]
+
+[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_5fr5p"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_ph7el"]
+
+[resource]
+script = ExtResource("2_ph7el")
+itemInputID = Array[int]([6, 4])
+itemInput = Array[int]([2, 2])
+baseProductionRate = 1.0
+img = ExtResource("1_5fr5p")
+pmName = "Steam-powered Forge"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

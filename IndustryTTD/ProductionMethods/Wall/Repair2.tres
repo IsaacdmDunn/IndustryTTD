@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://d1w4h7eymmoeq"]
+
+[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_wey1f"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_adirb"]
+
+[resource]
+script = ExtResource("2_adirb")
+itemInputID = Array[int]([0, 1])
+itemInput = Array[int]([3, 3])
+itemOutput = Array[int]([3])
+baseProductionRate = 2.0
+img = ExtResource("1_wey1f")
+pmName = "Repairs"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

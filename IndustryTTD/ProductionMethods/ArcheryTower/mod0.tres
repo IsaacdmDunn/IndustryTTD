@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://b723mbllomwdi"]
+
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="1_fvc0v"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_bux8w"]
+
+[resource]
+script = ExtResource("2_bux8w")
+img = ExtResource("1_fvc0v")
+pmName = "Untipped Arrows"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

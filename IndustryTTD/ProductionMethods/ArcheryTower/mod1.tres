@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://gqopo5lr1y0m"]
+
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="1_ftahr"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_ftlkk"]
+
+[resource]
+script = ExtResource("2_ftlkk")
+itemInputID = Array[int]([4])
+itemInput = Array[int]([1])
+baseProductionRate = 0.5
+img = ExtResource("1_ftahr")
+pmName = "Flaming Arrows"
+bonusEffectID = Array[int]([0, 5])
+bonusEffectAmount = Array[int]([5, 3])
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

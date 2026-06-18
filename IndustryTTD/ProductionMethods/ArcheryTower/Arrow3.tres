@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://bw67r7uc5p3xw"]
+
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="1_j3h4e"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_r075y"]
+
+[resource]
+script = ExtResource("2_r075y")
+itemInputID = Array[int]([1, 0])
+itemInput = Array[int]([1, 1])
+baseProductionRate = 0.5
+img = ExtResource("1_j3h4e")
+pmName = "Flint head arrows"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"
