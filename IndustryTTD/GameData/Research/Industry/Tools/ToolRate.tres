@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Research" format=3 uid="uid://dk6yrc16aa1l"]
+
+[ext_resource type="Texture2D" uid="uid://einnhmvri5ts" path="res://Sprites/ResourceIcons/Tools.png" id="1_32ldb"]
+[ext_resource type="Script" uid="uid://c3dc1f8fhxh8j" path="res://GameData/Research/ResearchOptions/ResearchData.gd" id="2_qootr"]
+
+[resource]
+script = ExtResource("2_qootr")
+researchName = "Tool Production"
+researchImage = ExtResource("1_32ldb")
+researchDescription = "Improves tool production speed by 10%"
+researchID = 29
+unlocksID = Array[int]([30])
+researchAmount = 150.0
+researchLeft = 150.0
+isUnlocked = false
+resourceRequiredID = Array[int]([5, 0])
+resourceRequiredAmount = Array[int]([1, 3])
+metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

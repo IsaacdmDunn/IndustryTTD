@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Research" format=3 uid="uid://c7r4iiun03wvi"]
+
+[ext_resource type="Texture2D" uid="uid://bq5qqeb6yabca" path="res://Sprites/ResourceIcons/Charcoal.png" id="1_2uf2l"]
+[ext_resource type="Script" uid="uid://c3dc1f8fhxh8j" path="res://GameData/Research/ResearchOptions/ResearchData.gd" id="2_b40yq"]
+
+[resource]
+script = ExtResource("2_b40yq")
+researchName = "Refined Charcoal"
+researchImage = ExtResource("1_2uf2l")
+researchDescription = "Improves charcoal output by 10%"
+researchID = 18
+unlocksID = Array[int]([19])
+researchAmount = 100.0
+researchLeft = 100.0
+isRepeatable = true
+resourceRequiredID = Array[int]([0])
+resourceRequiredAmount = Array[int]([4])
+metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

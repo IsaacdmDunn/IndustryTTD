@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Research" format=3 uid="uid://bq7e5l84f364w"]
+
+[ext_resource type="Texture2D" uid="uid://bis7f8u1exrf2" path="res://icon.svg" id="1_7dss2"]
+[ext_resource type="Script" uid="uid://c3dc1f8fhxh8j" path="res://GameData/Research/ResearchOptions/ResearchData.gd" id="2_n2tvq"]
+
+[resource]
+script = ExtResource("2_n2tvq")
+researchName = "Better Repairs"
+researchImage = ExtResource("1_7dss2")
+researchDescription = "Increases wall repair amount by 10%"
+researchID = 33
+researchAmount = 250.0
+researchLeft = 250.0
+isRepeatable = true
+isUnlocked = false
+resourceRequiredID = Array[int]([0, 1, 6])
+resourceRequiredAmount = Array[int]([1, 1, 1])
+functionToCall = "Test"
+metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

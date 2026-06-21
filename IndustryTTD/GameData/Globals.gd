@@ -29,3 +29,22 @@ func PitchAudioAsNote(semiTone: float, audio: AudioStreamPlayer):
 	
 		audio.pitch_scale = pow(2, semiTone / 12.0)
 		audio.play()
+		
+		
+##research
+func woodAmount():
+	pass
+func woodSpeed():
+	pass
+func stoneAmount():
+	pass
+func stoneSpeed():
+	pass
+func niterAmount():
+	pass
+func niterSpeed():
+	pass
+func farmAmount():
+	pass
+func farmSpeed():
+	pass

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Research" format=3 uid="uid://sfkojue5jqm0"]
+
+[ext_resource type="Texture2D" uid="uid://bka44se8bt10o" path="res://Sprites/ResourceIcons/Food.png" id="1_bxdpu"]
+[ext_resource type="Script" uid="uid://c3dc1f8fhxh8j" path="res://GameData/Research/ResearchOptions/ResearchData.gd" id="2_emuh6"]
+
+[resource]
+script = ExtResource("2_emuh6")
+researchName = "Better Fertilizers 2"
+researchImage = ExtResource("1_bxdpu")
+researchDescription = "Improves farm speed by 10%"
+researchID = 16
+unlocksID = Array[int]([17])
+researchAmount = 250.0
+researchLeft = 250.0
+isUnlocked = false
+resourceRequiredID = Array[int]([0, 4, 5])
+resourceRequiredAmount = Array[int]([5, 2, 1])
+functionToCall = "farmSpeed"
+metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

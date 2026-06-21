@@ -1,16 +1,19 @@
 [gd_resource type="Resource" script_class="Research" format=3 uid="uid://gq0imyse2p72"]
 
-[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_2be8m"]
+[ext_resource type="Texture2D" uid="uid://p14oq6wxm4tq" path="res://Sprites/ResourceIcons/Stone.png" id="1_qcn7u"]
 [ext_resource type="Script" uid="uid://c3dc1f8fhxh8j" path="res://GameData/Research/ResearchOptions/ResearchData.gd" id="2_s6s58"]
 
 [resource]
 script = ExtResource("2_s6s58")
 researchName = "Prospecting Thoery"
-researchImage = ExtResource("1_2be8m")
+researchImage = ExtResource("1_qcn7u")
 researchDescription = "Improves stone mine output by 10%"
-researchID = 2
-unlocksID = Array[int]([3])
+researchID = 6
+unlocksID = Array[int]([7])
+researchAmount = 100.0
+researchLeft = 100.0
 isRepeatable = true
 resourceRequiredID = Array[int]([1, 0])
-resourceRequiredAmount = Array[int]([1, 2])
+resourceRequiredAmount = Array[int]([2, 1])
+functionToCall = "stoneAmount"
 metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

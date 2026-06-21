@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Research" format=3 uid="uid://hnjs48ud8til"]
+
+[ext_resource type="Texture2D" uid="uid://ccvpislnrnefm" path="res://Sprites/ResourceIcons/Niter.png" id="1_m6e6f"]
+[ext_resource type="Script" uid="uid://c3dc1f8fhxh8j" path="res://GameData/Research/ResearchOptions/ResearchData.gd" id="2_fnx4a"]
+
+[resource]
+script = ExtResource("2_fnx4a")
+researchName = "Bat laxatives"
+researchImage = ExtResource("1_m6e6f")
+researchDescription = "Improves niter mine output by 10%"
+researchID = 10
+unlocksID = Array[int]([11])
+researchAmount = 150.0
+researchLeft = 150.0
+isRepeatable = true
+resourceRequiredID = Array[int]([0, 2])
+resourceRequiredAmount = Array[int]([1, 5])
+functionToCall = "niterAmount"
+metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Research" format=3 uid="uid://cd4xua4vk8lo1"]
+
+[ext_resource type="Texture2D" uid="uid://c3diwq4vg6adw" path="res://Sprites/ResourceIcons/Person.png" id="1_we36e"]
+[ext_resource type="Script" uid="uid://c3dc1f8fhxh8j" path="res://GameData/Research/ResearchOptions/ResearchData.gd" id="2_6rbet"]
+
+[resource]
+script = ExtResource("2_6rbet")
+researchName = "Better Warehouse Practices"
+researchImage = ExtResource("1_we36e")
+researchDescription = "Increases warehouse storage by 10%"
+researchID = 1
+researchAmount = 200.0
+researchLeft = 200.0
+isRepeatable = true
+resourceRequiredID = Array[int]([1, 0])
+resourceRequiredAmount = Array[int]([1, 1])
+functionToCall = "Test2"
+metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

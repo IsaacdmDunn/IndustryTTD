@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Research" format=3 uid="uid://dyrxawup3qp8p"]
+
+[ext_resource type="Texture2D" uid="uid://kbgus8vxmj3x" path="res://Sprites/ResourceIcons/Wood.png" id="1_nihq8"]
+[ext_resource type="Script" uid="uid://c3dc1f8fhxh8j" path="res://GameData/Research/ResearchOptions/ResearchData.gd" id="2_tkyno"]
+
+[resource]
+script = ExtResource("2_tkyno")
+researchName = "Prospecting Thoery"
+researchImage = ExtResource("1_nihq8")
+researchDescription = "Improves stone mine output by 10%"
+researchID = 37
+isRepeatable = true
+resourceRequiredID = Array[int]([1, 0])
+resourceRequiredAmount = Array[int]([1, 2])
+metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

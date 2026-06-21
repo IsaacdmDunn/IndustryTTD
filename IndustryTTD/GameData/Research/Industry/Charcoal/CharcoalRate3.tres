@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Research" format=3 uid="uid://p2r6s6k2mhdq"]
+
+[ext_resource type="Texture2D" uid="uid://bq5qqeb6yabca" path="res://Sprites/ResourceIcons/Charcoal.png" id="1_umnvs"]
+[ext_resource type="Script" uid="uid://c3dc1f8fhxh8j" path="res://GameData/Research/ResearchOptions/ResearchData.gd" id="2_cm35s"]
+
+[resource]
+script = ExtResource("2_cm35s")
+researchName = "Hotter Kilns 3"
+researchImage = ExtResource("1_umnvs")
+researchDescription = "Improves kiln speed by 10%"
+researchID = 22
+researchAmount = 600.0
+researchLeft = 600.0
+isUnlocked = false
+resourceRequiredID = Array[int]([0, 6, 5])
+resourceRequiredAmount = Array[int]([5, 3, 3])
+metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

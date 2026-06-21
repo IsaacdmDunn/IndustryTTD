@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Research" format=3 uid="uid://dwxtqqaq32p6u"]
+
+[ext_resource type="Texture2D" uid="uid://ccvpislnrnefm" path="res://Sprites/ResourceIcons/Niter.png" id="1_ik8yw"]
+[ext_resource type="Script" uid="uid://c3dc1f8fhxh8j" path="res://GameData/Research/ResearchOptions/ResearchData.gd" id="2_1e0ot"]
+
+[resource]
+script = ExtResource("2_1e0ot")
+researchName = "Better Bats 3"
+researchImage = ExtResource("1_ik8yw")
+researchDescription = "Improves stone mine speed by 10%"
+researchID = 13
+researchAmount = 600.0
+researchLeft = 600.0
+isUnlocked = false
+resourceRequiredID = Array[int]([2, 4, 5])
+resourceRequiredAmount = Array[int]([5, 3, 3])
+functionToCall = "niterSpeed"
+metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Research" format=3 uid="uid://dqalvthtstujw"]
+
+[ext_resource type="Texture2D" uid="uid://dvlf1i3hatod2" path="res://Sprites/ResourceIcons/Metal.png" id="1_ty6b1"]
+[ext_resource type="Script" uid="uid://c3dc1f8fhxh8j" path="res://GameData/Research/ResearchOptions/ResearchData.gd" id="2_wocxx"]
+
+[resource]
+script = ExtResource("2_wocxx")
+researchName = "Efficient Smelting"
+researchImage = ExtResource("1_ty6b1")
+researchDescription = "Improves smelting output by 10%"
+researchID = 24
+unlocksID = Array[int]([25])
+researchAmount = 100.0
+researchLeft = 100.0
+isRepeatable = true
+resourceRequiredID = Array[int]([4, 6])
+resourceRequiredAmount = Array[int]([1, 1])
+metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

@@ -20,8 +20,8 @@ func UpdateLeftReseachUI(research: Research):
 	
 	var resourceRequiredText = ""
 	$NinePatchRect/Info/VBoxContainer/Label3.text = ""
-	for resourceID in gameManager.ResearchList[currentSelectedResearch].resourceRequiredID:
-		resourceRequiredText += "[img]" + gameManager.GameResourceIcon[resourceID] + "[/img]" + str(gameManager.ResearchList[currentSelectedResearch].resourceRequiredAmount[resourceID]) + "  "
+	for resourceID in gameManager.ResearchList[currentSelectedResearch].resourceRequiredID.size():
+		resourceRequiredText += "[img]" + gameManager.GameResourceIcon[gameManager.ResearchList[currentSelectedResearch].resourceRequiredID[resourceID]] + "[/img]" + str(gameManager.ResearchList[currentSelectedResearch].resourceRequiredAmount[resourceID]) + "  "
 	resourceRequiredText += "Cost/s"
 	$NinePatchRect/Info/VBoxContainer/Label3.text = resourceRequiredText
 	pass
