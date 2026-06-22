@@ -26,3 +26,7 @@ class_name SaveData
 @export var enemySpeedTemp: float = 0
 @export var burnDamage = 3
 @export var freezeAmount = .3
+
+
+##save stuff to add
+@export var researchSpeedMod: float = 1

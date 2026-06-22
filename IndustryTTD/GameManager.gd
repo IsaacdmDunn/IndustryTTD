@@ -1,8 +1,8 @@
 extends Node
 class_name GameManager
 enum GameResourceTypes {Wood, Stone, Food, Pop, Charcoal, Metal, Niter}
-@export var GameResourceList: Array[int] = [500, 300, 300, 20, 0,0,0,0,0]
-@export var GameResourceLimit: Array[int] = [500, 500, 500, 100, 100,100,100,100,100]
+@export var GameResourceList: Array[int] = [1000, 1000, 100, 20, 0,0,0,0,0]
+@export var GameResourceLimit: Array[int] = [1000, 1000, 500, 20, 200,200,200,200,100]
 @export var GameResourceName: Array[String] = ["Wood", "Stone", "Food", "People", "Charcoal", "Metal", "Tools", "Niter"]
 @export var GameResourceIcon: Array[String] = ["res://Sprites/ResourceIcons/Wood.png","res://Sprites/ResourceIcons/Stone.png","res://Sprites/ResourceIcons/Food.png","res://Sprites/ResourceIcons/Person.png","res://Sprites/ResourceIcons/Charcoal.png","res://Sprites/ResourceIcons/Metal.png","res://Sprites/ResourceIcons/Tools.png","res://Sprites/ResourceIcons/Niter.png"]
 
