@@ -15,4 +15,5 @@ researchLeft = 300.0
 isUnlocked = false
 resourceRequiredID = Array[int]([1, 4, 6])
 resourceRequiredAmount = Array[int]([2, 2, 3])
+functionToCall = "IronSpeed"
 metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

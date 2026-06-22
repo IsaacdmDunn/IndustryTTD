@@ -15,5 +15,5 @@ researchLeft = 50.0
 isRepeatable = true
 resourceRequiredID = Array[int]([1, 0])
 resourceRequiredAmount = Array[int]([1, 1])
-functionToCall = "Test"
+functionToCall = "WallHP"
 metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

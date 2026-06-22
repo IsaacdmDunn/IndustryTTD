@@ -48,3 +48,55 @@ func farmAmount():
 	pass
 func farmSpeed():
 	pass
+	
+func CoalAmount():
+	pass
+func CoalSpeed():
+	pass
+func HouseCap():
+	pass
+func IronSpeed():
+	pass
+func IronAmount():
+	pass
+func ToolSpeed():
+	pass
+func ToolAmount():
+	pass
+func ScienceSpeed():
+	pass
+func Stockpile():
+	pass
+	
+func ArcherDam():
+	pass
+func ArcherSpeed():
+	pass
+func ArcherRange():
+	pass
+	
+func BallistaDam():
+	pass
+func BallistaSpeed():
+	pass
+func BallistaRange():
+	pass
+func BallistaPeirce():
+	pass
+	
+func CatpapultAOE():
+	pass
+func CatapultDam():
+	pass
+func CatapultSpeed():
+	pass
+func CatapultRange():
+	pass
+func FireUp():
+	pass
+	
+	
+func WallHP():
+	pass
+func WallRepair():
+	pass

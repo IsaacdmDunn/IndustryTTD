@@ -15,4 +15,5 @@ researchLeft = 100.0
 isRepeatable = true
 resourceRequiredID = Array[int]([4, 6])
 resourceRequiredAmount = Array[int]([1, 1])
+functionToCall = "IronAmount"
 metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

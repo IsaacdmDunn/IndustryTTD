@@ -5,11 +5,14 @@
 
 [resource]
 script = ExtResource("2_4u8kb")
-researchName = "Prospecting Thoery"
+researchName = "Sharper Ballistas"
 researchImage = ExtResource("1_wfbsj")
-researchDescription = "Improves stone mine output by 10%"
+researchDescription = "Adds 1 peirce to bolts"
 researchID = 38
+researchAmount = 450.0
+researchLeft = 450.0
 isRepeatable = true
-resourceRequiredID = Array[int]([1, 0])
-resourceRequiredAmount = Array[int]([1, 2])
+resourceRequiredID = Array[int]([5, 6])
+resourceRequiredAmount = Array[int]([1, 1])
+functionToCall = "BallistaPeirce"
 metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

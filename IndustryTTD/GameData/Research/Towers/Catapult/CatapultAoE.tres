@@ -5,11 +5,14 @@
 
 [resource]
 script = ExtResource("2_js3sc")
-researchName = "Prospecting Thoery"
+researchName = "Catapult Explosives"
 researchImage = ExtResource("1_7jcu8")
-researchDescription = "Improves stone mine output by 10%"
+researchDescription = "Improves catapult AOE range by 5%"
 researchID = 41
+researchAmount = 250.0
+researchLeft = 250.0
 isRepeatable = true
-resourceRequiredID = Array[int]([1, 0])
-resourceRequiredAmount = Array[int]([1, 2])
+resourceRequiredID = Array[int]([7, 5])
+resourceRequiredAmount = Array[int]([1, 1])
+functionToCall = "CatpapultAOE"
 metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

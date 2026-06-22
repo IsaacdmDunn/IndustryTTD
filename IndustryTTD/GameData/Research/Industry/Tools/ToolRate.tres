@@ -15,4 +15,5 @@ researchLeft = 150.0
 isUnlocked = false
 resourceRequiredID = Array[int]([5, 0])
 resourceRequiredAmount = Array[int]([1, 3])
+functionToCall = "ToolSpeed"
 metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

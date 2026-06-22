@@ -5,11 +5,14 @@
 
 [resource]
 script = ExtResource("2_4dh44")
-researchName = "Better Miners"
+researchName = "Better Archer Training"
 researchImage = ExtResource("1_bnj6i")
-researchDescription = "Improves stone mine speed by 10%"
+researchDescription = "Increases archer tower reload speed by 5%"
 researchID = 36
+researchAmount = 125.0
+researchLeft = 125.0
 isUnlocked = false
 resourceRequiredID = Array[int]([1, 0])
-resourceRequiredAmount = Array[int]([1, 3])
+resourceRequiredAmount = Array[int]([1, 1])
+functionToCall = "ArcherSpeed"
 metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

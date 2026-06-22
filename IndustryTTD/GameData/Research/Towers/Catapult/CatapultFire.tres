@@ -5,11 +5,14 @@
 
 [resource]
 script = ExtResource("2_ay408")
-researchName = "Prospecting Thoery"
+researchName = "Napalm"
 researchImage = ExtResource("1_nj42q")
-researchDescription = "Improves stone mine output by 10%"
+researchDescription = "Increases all fire damage by 10%"
 researchID = 43
+researchAmount = 200.0
+researchLeft = 200.0
 isRepeatable = true
-resourceRequiredID = Array[int]([1, 0])
-resourceRequiredAmount = Array[int]([1, 2])
+resourceRequiredID = Array[int]([7])
+resourceRequiredAmount = Array[int]([3])
+functionToCall = "FireUp"
 metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

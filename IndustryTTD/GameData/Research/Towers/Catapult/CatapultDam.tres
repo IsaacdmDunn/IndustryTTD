@@ -5,11 +5,14 @@
 
 [resource]
 script = ExtResource("2_17q3h")
-researchName = "Prospecting Thoery"
+researchName = "Heavier Catapult Rocks"
 researchImage = ExtResource("1_2txd6")
-researchDescription = "Improves stone mine output by 10%"
+researchDescription = "Increases Catapult Tower damage by 10%"
 researchID = 42
+researchAmount = 250.0
+researchLeft = 250.0
 isRepeatable = true
-resourceRequiredID = Array[int]([1, 0])
+resourceRequiredID = Array[int]([5, 1])
 resourceRequiredAmount = Array[int]([1, 2])
+functionToCall = "CatapultDam"
 metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

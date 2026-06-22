@@ -15,4 +15,5 @@ researchLeft = 300.0
 isUnlocked = false
 resourceRequiredID = Array[int]([0, 5])
 resourceRequiredAmount = Array[int]([5, 2])
+functionToCall = "CoalSpeed"
 metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

@@ -5,11 +5,14 @@
 
 [resource]
 script = ExtResource("2_02dg8")
-researchName = "Better Miners"
+researchName = "Stronger Bowstrings"
 researchImage = ExtResource("1_iihmm")
-researchDescription = "Improves stone mine speed by 10%"
+researchDescription = "Increases archer tower range by 10%"
 researchID = 35
-isUnlocked = false
-resourceRequiredID = Array[int]([1, 0])
-resourceRequiredAmount = Array[int]([1, 3])
+researchAmount = 300.0
+researchLeft = 300.0
+isRepeatable = true
+resourceRequiredID = Array[int]([5])
+resourceRequiredAmount = Array[int]([1])
+functionToCall = "ArcherRange"
 metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

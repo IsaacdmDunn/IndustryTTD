@@ -15,4 +15,5 @@ researchLeft = 100.0
 isRepeatable = true
 resourceRequiredID = Array[int]([1, 0])
 resourceRequiredAmount = Array[int]([2, 1])
+functionToCall = "ToolAmount"
 metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

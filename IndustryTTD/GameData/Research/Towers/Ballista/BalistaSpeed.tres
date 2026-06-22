@@ -5,11 +5,14 @@
 
 [resource]
 script = ExtResource("2_mqvy2")
-researchName = "Prospecting Thoery"
+researchName = "Ballista autoloader"
 researchImage = ExtResource("1_4g6y6")
-researchDescription = "Improves stone mine output by 10%"
+researchDescription = "Increases Ballista Tower speed by 10%"
 researchID = 40
+researchAmount = 450.0
+researchLeft = 450.0
 isRepeatable = true
-resourceRequiredID = Array[int]([1, 0])
+resourceRequiredID = Array[int]([5, 6])
 resourceRequiredAmount = Array[int]([1, 2])
+functionToCall = "BallistaSpeed"
 metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"

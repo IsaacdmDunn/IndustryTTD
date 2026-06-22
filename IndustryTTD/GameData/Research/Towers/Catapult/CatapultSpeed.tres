@@ -5,11 +5,14 @@
 
 [resource]
 script = ExtResource("2_718vr")
-researchName = "Prospecting Thoery"
+researchName = "Catapult Reloading Technique"
 researchImage = ExtResource("1_rxphp")
-researchDescription = "Improves stone mine output by 10%"
+researchDescription = "Increases Catapult Tower speed by 5%"
 researchID = 45
+researchAmount = 175.0
+researchLeft = 175.0
 isRepeatable = true
 resourceRequiredID = Array[int]([1, 0])
-resourceRequiredAmount = Array[int]([1, 2])
+resourceRequiredAmount = Array[int]([10, 2])
+functionToCall = "CatapultSpeed"
 metadata/_custom_type_script = "uid://c3dc1f8fhxh8j"
