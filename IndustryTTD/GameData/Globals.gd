@@ -1,5 +1,9 @@
 extends Node
 
+func setGM():
+	pass
+
+var gm: GameManager
 ##level data
 var levelID = 0
 
@@ -63,26 +67,51 @@ func PitchAudioAsNote(semiTone: float, audio: AudioStreamPlayer):
 		
 ##research
 func WoodAmount():
+	gm.ProductionMethods[73].outputMod -= .1
+	gm.ProductionMethods[74].outputMod -= .1
+	gm.ProductionMethods[75].outputMod -= .1
 	woodAmountMod += woodAmountMod/10
 	ResearchCounter()
 	pass
 func woodSpeed():
+	gm.ProductionMethods[73].speedMod -= .1
+	gm.ProductionMethods[74].speedMod -= .1
+	gm.ProductionMethods[75].speedMod -= .1
+	gm.ProductionMethods[76].speedMod -= .1
+	gm.ProductionMethods[77].speedMod -= .1
+	gm.ProductionMethods[78].speedMod -= .1
 	woodSpeedMod += woodSpeedMod/10
 	ResearchCounter()
 	pass
 func stoneAmount():
+	gm.ProductionMethods[56].outputMod += .1
+	gm.ProductionMethods[57].outputMod += .1
+	gm.ProductionMethods[58].outputMod += .1
 	stoneAmountMod += stoneAmountMod/10
 	ResearchCounter()
 	pass
 func stoneSpeed():
+	gm.ProductionMethods[56].speedMod -= .1
+	gm.ProductionMethods[57].speedMod -= .1
+	gm.ProductionMethods[58].speedMod -= .1
+	gm.ProductionMethods[59].speedMod -= .1
+	gm.ProductionMethods[60].speedMod -= .1
+	gm.ProductionMethods[61].speedMod -= .1
 	stoneSpeedMod += stoneSpeedMod/10
 	ResearchCounter()
 	pass
 func niterAmount():
+	gm.ProductionMethods[45].outputMod += .1
+	gm.ProductionMethods[46].outputMod += .1
 	niterAmountMod += niterAmountMod/10
 	ResearchCounter()
 	pass
 func niterSpeed():
+	gm.ProductionMethods[45].speedMod -= .1
+	gm.ProductionMethods[46].speedMod -= .1
+	gm.ProductionMethods[47].speedMod -= .1
+	gm.ProductionMethods[48].speedMod -= .1
+	gm.ProductionMethods[49].speedMod -= .1
 	niterSpeedMod += niterSpeedMod/10
 	ResearchCounter()
 	pass
@@ -96,10 +125,20 @@ func farmSpeed():
 	pass
 	
 func CoalAmount():
+	gm.ProductionMethods[33].outputMod += .1
+	gm.ProductionMethods[34].outputMod += .1
+	gm.ProductionMethods[35].outputMod += .1
+	#var gm: GameManager = get_tree().get_first_node_in_group("GameManager")
 	coalAmountMod += coalAmountMod/10
 	ResearchCounter()
 	pass
 func CoalSpeed():
+	gm.ProductionMethods[33].speedMod -= .1
+	gm.ProductionMethods[34].speedMod -= .1
+	gm.ProductionMethods[35].speedMod -= .1
+	gm.ProductionMethods[36].speedMod -= .1
+	gm.ProductionMethods[37].speedMod -= .1
+	gm.ProductionMethods[38].speedMod -= .1
 	coalSpeedMod += coalSpeedMod/10
 	ResearchCounter()
 	pass
@@ -108,10 +147,19 @@ func HouseCap():
 	ResearchCounter()
 	pass
 func IronSpeed():
+	gm.ProductionMethods[50].speedMod -= .1
+	gm.ProductionMethods[51].speedMod -= .1
+	gm.ProductionMethods[52].speedMod -= .1
+	gm.ProductionMethods[53].speedMod -= .1
+	gm.ProductionMethods[54].speedMod -= .1
+	gm.ProductionMethods[55].speedMod -= .1
 	ironSpeedMod += ironSpeedMod/10
 	ResearchCounter()
 	pass
 func IronAmount():
+	gm.ProductionMethods[50].outputMod += .1
+	gm.ProductionMethods[51].outputMod += .1
+	gm.ProductionMethods[52].outputMod += .1
 	ironAmountMod += ironAmountMod/10
 	ResearchCounter()
 	pass
@@ -120,6 +168,9 @@ func ToolSpeed():
 	ResearchCounter()
 	pass
 func ToolAmount():
+	gm.ProductionMethods[19].outputMod += .1
+	gm.ProductionMethods[20].outputMod += .1
+	gm.ProductionMethods[21].outputMod += .1
 	toolAmountMod += toolAmountMod/10
 	ResearchCounter()
 	pass
@@ -127,7 +178,7 @@ func ScienceSpeed():
 	researchSpeedMod += (researchSpeedMod / 10)
 	pass
 func Stockpile():
-	var gm:GameManager = get_tree().get_first_node_in_group("GameManager")
+	#var gm:GameManager = get_tree().get_first_node_in_group("GameManager")
 	for i in gm.GameResourceLimit:
 		i += i/10
 	ResearchCounter()

@@ -1,27 +1,4 @@
-extends CharacterBody2D
-class_name Building
-@export var buildingSize: Vector2i = Vector2i(2,2)
-var buildingID = -1
-var buildingName: String
-var buildingImage: Texture2D
-var buildingDescription: String = ""
-var extraDetails: String
-var buildingData: BuildingOption
-var selected: bool = false
-@export var productionMethodID: Array[int]
-@export var productionMethod2ID: Array[int]
-@export var productionMethod3ID: Array[int]
-var currentProductionID = 0
-var currentProduction2ID = 0
-var currentProduction3ID = 0
-var cooldown = .2
-var productionRate= 1
-var gm: GameManager
-@export var popupIcon: PackedScene
-
-func _ready() -> void:
-	gm = get_tree().get_first_node_in_group("GameManager")
-	AddAdditionInfo()
+extends Building
 
 func _physics_process(delta: float) -> void:
 	#open buildingUI
@@ -38,9 +15,9 @@ func _physics_process(delta: float) -> void:
 #produces resources
 func ProduceResource():
 	var canProduce: bool = true
-	productionRate = gm.ProductionMethods[productionMethodID[currentProductionID]].baseProductionRate * gm.ProductionMethods[currentProductionID].speedMod
-	productionRate += gm.ProductionMethods[productionMethod2ID[currentProduction2ID]].baseProductionRate * gm.ProductionMethods[currentProduction2ID].speedMod
-	productionRate += gm.ProductionMethods[productionMethod3ID[currentProduction3ID]].baseProductionRate * gm.ProductionMethods[currentProduction3ID].speedMod
+	productionRate = gm.ProductionMethods[productionMethodID[currentProductionID]].baseProductionRate
+	productionRate += gm.ProductionMethods[productionMethod2ID[currentProduction2ID]].baseProductionRate
+	productionRate += gm.ProductionMethods[productionMethod3ID[currentProduction3ID]].baseProductionRate
 	
 	AddAdditionInfo()
 	#check can produce
@@ -72,52 +49,9 @@ func IOProduce(_productionMethodID, _currentProductionID):
 		gm.GameResourceList[gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemInputID[inputID]] -= gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemInput[inputID]
 				
 	for outputID in gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemOutput.size():
-		gm.GameResourceList[gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemOutputID[outputID]] += gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemOutput[outputID] * gm.ProductionMethods[_productionMethodID[_currentProductionID]].outputMod
-		SaveSystem.saveData.resourceMined += gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemOutput[outputID]
+		gm.GameResourceList[gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemOutputID[outputID]] += gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemOutput[outputID] + Globals.houseCapMod
+		SaveSystem.saveData.resourceMined += gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemOutput[outputID] 
 		var popupToAdd = popupIcon.instantiate()
 		popupToAdd.data = "[img]" + gm.GameResourceIcon[gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemOutputID[outputID]]  + "[/img]" + " " + str(gm.ProductionMethods[_productionMethodID[_currentProductionID]].itemOutput[outputID])
 		$VBoxContainer.add_child(popupToAdd)
 		pass
-
-#stops hover over effect disallows building to be selected
-func _on_area_2d_mouse_exited() -> void:
-	#undraw range circle
-	queue_redraw()
-	
-	
-	var sizeTween: Tween = create_tween()
-	sizeTween.tween_property($Sprite2D, "scale", Vector2(1,1), .3).set_trans(Tween.TRANS_BOUNCE)
-	
-	selected = false
-	pass # Replace with function body.
-
-#hover over effect allows building to be selected
-func _on_area_2d_mouse_entered() -> void:
-	
-	#draw range circle
-	queue_redraw()
-	
-	var sizeTween: Tween = create_tween()
-	sizeTween.tween_property($Sprite2D, "scale", Vector2(1.16,1.16), .2).set_trans(Tween.TRANS_BOUNCE)
-	
-	selected = true
-	pass # Replace with function body.
-
-#destroys building when deleted
-func DestroyBuilding():
-	get_tree().get_first_node_in_group("BuildingData").DestroyBuilding(buildingSize, position)
-	
-	##removing unbuildable tiles
-	
-	queue_free()
-	pass
-
-#moves building to new position
-func MoveBuilding():
-	get_tree().get_first_node_in_group("BuildingData").MoveBuilding(buildingSize, position)
-	pass
-
-
-func AddAdditionInfo():
-	extraDetails = "\nProduction Rate: " + str(gm.ProductionMethods[productionMethodID[currentProductionID]].baseProductionRate)
-	pass

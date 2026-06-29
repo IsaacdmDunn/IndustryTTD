@@ -12,3 +12,11 @@ enum bonusStats {Damage, AoE, Peirce, Range, Freeze, Burn, RepairAmount, MaxHpMo
 @export var pmName: String
 @export var bonusEffectID: Array[bonusStats]
 @export var bonusEffectAmount: Array[int]
+@export var outputMod: float = 1
+@export var speedMod: float = 1
+
+func IncreaseOutputMod(_outputMod):
+	outputMod += _outputMod
+	
+func IncreaseSpeedMod(_speedMod):
+	speedMod += _speedMod
