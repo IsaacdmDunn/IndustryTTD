@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://bbyiyrgi2t02g"]
+
+[ext_resource type="Texture2D" uid="uid://bka44se8bt10o" path="res://Sprites/ResourceIcons/Food.png" id="1_uc4l4"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_dufwv"]
+
+[resource]
+script = ExtResource("2_dufwv")
+itemOutputID = Array[int]([2])
+itemOutput = Array[int]([10])
+baseProductionRate = 2.0
+img = ExtResource("1_uc4l4")
+pmName = "Basic Farming"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

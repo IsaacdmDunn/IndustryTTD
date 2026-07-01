@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ProductionMethod" format=3 uid="uid://b53oimc8ae8tc"]
+
+[ext_resource type="Texture2D" uid="uid://bka44se8bt10o" path="res://Sprites/ResourceIcons/Food.png" id="1_ttfuv"]
+[ext_resource type="Script" uid="uid://b4norc8o4gqy1" path="res://ProductionMethods/ProductionMethod.gd" id="2_x4omf"]
+
+[resource]
+script = ExtResource("2_x4omf")
+itemInputID = Array[int]([6, 7])
+itemInput = Array[int]([10, 3])
+itemOutputID = Array[int]([2])
+itemOutput = Array[int]([20])
+baseProductionRate = 1.0
+img = ExtResource("1_ttfuv")
+pmName = "Aggessive Farming"
+metadata/_custom_type_script = "uid://b4norc8o4gqy1"

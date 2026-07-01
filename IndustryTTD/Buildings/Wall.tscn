@@ -11,7 +11,9 @@ scale = Vector2(0.25, 1)
 script = ExtResource("1_mpnpe")
 baseMaxHealth = 10.0
 buildingSize = Vector2i(2, 10)
-productionMethodID = Array[int]([0, 1])
+productionMethodID = Array[int]([62, 63, 64, 65])
+productionMethod2ID = Array[int]([66, 67, 68, 69])
+productionMethod3ID = Array[int]([70, 71, 72])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1669888096]
 texture = ExtResource("2_k88e6")

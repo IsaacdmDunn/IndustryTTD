@@ -16,9 +16,9 @@ attackRate = 3.0
 baseDamage = 20.0
 projectileToSpawn = ExtResource("2_e77ne")
 projectileImage = ExtResource("3_e77ne")
-productionMethodID = Array[int]([0, 1])
-productionMethod2ID = Array[int]([0, 1])
-productionMethod3ID = Array[int]([0, 1])
+productionMethodID = Array[int]([10, 11, 12, 13])
+productionMethod2ID = Array[int]([14, 15, 16])
+productionMethod3ID = Array[int]([17, 18])
 popupIcon = ExtResource("2_jx727")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1669888096]

@@ -39,17 +39,17 @@ func initPMUI(pm: OptionButton, currPM: int, pmIDList):
 	pass
 	
 #updates input/ output text to show what resources the building needs
-func UpdateIOText(pm, currentProductionID, pmIDList):
+func UpdateIOText(pm, currentProductionID, pmIDList: Array[int]):
 	#$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output/Label.clear()
 	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/output/Label.clear()
 	
 	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input/Label2.clear()
 	
 	if pmIDList.size() > 0:
-		for input in gm.ProductionMethods[pmIDList[currentProductionID]].itemInputID.size():
-			inputText += "\n" + "[img]" + gm.GameResourceIcon[gm.ProductionMethods[pmIDList[currentProductionID]].itemInputID[input]]  + "[/img]" + " " +  str(gm.ProductionMethods[pmIDList[currentProductionID]].itemInput[input])
-		for output in gm.ProductionMethods[pmIDList[currentProductionID]].itemOutputID.size():
-			outputText +="\n" + "[img]" + gm.GameResourceIcon[gm.ProductionMethods[pmIDList[currentProductionID]].itemOutputID[output]]  + "[/img]" + " " + str(gm.ProductionMethods[pmIDList[currentProductionID]].itemOutput[output])
+		for input in gm.ProductionMethods[currentProductionID].itemInputID.size():
+			inputText += "\n" + "[img]" + gm.GameResourceIcon[gm.ProductionMethods[currentProductionID].itemInputID[input]]  + "[/img]" + " " +  str(gm.ProductionMethods[currentProductionID].itemInput[input])
+		for output in gm.ProductionMethods[currentProductionID].itemOutputID.size():
+			outputText +="\n" + "[img]" + gm.GameResourceIcon[gm.ProductionMethods[currentProductionID].itemOutputID[output]]  + "[/img]" + " " + str(gm.ProductionMethods[currentProductionID].itemOutput[output])
 	
 	
 	$VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/input/Label2.append_text(inputText)

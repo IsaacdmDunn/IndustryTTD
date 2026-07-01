@@ -116,10 +116,16 @@ func niterSpeed():
 	ResearchCounter()
 	pass
 func farmAmount():
+	gm.ProductionMethods[79].outputMod += .1
+	gm.ProductionMethods[80].outputMod += .1
+	gm.ProductionMethods[81].outputMod += .1
 	foodAmountMod += foodAmountMod/10
 	ResearchCounter()
 	pass
 func farmSpeed():
+	gm.ProductionMethods[79].speedMod -= .1
+	gm.ProductionMethods[80].speedMod -= .1
+	gm.ProductionMethods[81].speedMod -= .1
 	foodSpeedMod += foodSpeedMod/10
 	ResearchCounter()
 	pass

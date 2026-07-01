@@ -18,9 +18,9 @@ basePierce = 0
 baseAoE = 25.0
 projectileToSpawn = ExtResource("2_rdr1u")
 projectileImage = ExtResource("3_rdr1u")
-productionMethodID = Array[int]([0, 1])
-productionMethod2ID = Array[int]([0, 1])
-productionMethod3ID = Array[int]([0, 1])
+productionMethodID = Array[int]([22, 23, 24, 25])
+productionMethod2ID = Array[int]([26, 27, 28])
+productionMethod3ID = Array[int]([29, 30, 31, 32])
 popupIcon = ExtResource("2_mayg2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1669888096]

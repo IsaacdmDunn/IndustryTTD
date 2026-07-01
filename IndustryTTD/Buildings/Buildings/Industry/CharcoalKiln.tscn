@@ -10,9 +10,8 @@ size = Vector2(96, 96)
 [node name="Building" type="CharacterBody2D" unique_id=879372978]
 script = ExtResource("1_115ii")
 buildingSize = Vector2i(3, 3)
-productionMethodID = Array[int]([0, 1])
-productionMethod2ID = Array[int]([0, 1])
-productionMethod3ID = Array[int]([0, 1])
+productionMethodID = Array[int]([33, 34, 35])
+productionMethod2ID = Array[int]([36, 37, 38])
 popupIcon = ExtResource("2_00xyh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1669888096]
